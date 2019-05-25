@@ -56,7 +56,7 @@ Many of BJP supporters including but not limited to their leader
 article, straight away demanded his resignation][attackmanmohan] on the grounds
 that the image of India has been spoiled.
 
-{% marginfigure 'mf-id-modi12' 'https://i.pinimg.com/originals/3d/8f/69/3d8f69a98f3fdeef9359d8a1ef7b49ba.jpg' 'Narendra Modi appears for the first time on the cover page of TIME, highlited positively - `Modi means business`' %}
+{% marginfigure 'mf-id-modi12' 'https://i.pinimg.com/originals/3d/8f/69/3d8f69a98f3fdeef9359d8a1ef7b49ba.jpg' 'Narendra Modi appears for the first time on the cover page of TIME, highlighted positively - `Modi means business`' %}
 
 A subsequent edition of TIME in 2012 again showed interest in Indian economy
 featuring Modi on cover page entitled "Modi means business" - enforcing the
@@ -67,10 +67,10 @@ dream BJP instilled in Indians of the economic reform it promised.
 {% marginfigure 'mf-id-modi15' 'https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Ftimedotcom.files.wordpress.com%2F2015%2F05%2Findia-final.jpg&w=800&c=sc&poi=face&q=85' 'Modi, now Prime Minister, appeared once again on the cover page of TIME. This time, it said `Why Modi Matters`' %}
 
 And again in 2015, Modi was featured, this time as the Prime Minister. The tag
-line said "Why Modi Matters" depicting positivity about Modi government.
+line said "Why Modi Matters" depicting Modi government positively.
 
-Apart from this, he was also rewarded a place in the list of The 100 most
-influential People by (yes, you guessed it right TIME in 2014, 2015 and 2017
+Apart from this, he was also rewarded a place in the list of "The 100 Most
+Influential People" by (yes, you guessed it right) TIME in 2014, 2015 and 2017
 editions.
 
 Up until now, all in favour, all good - Lo and behold, TIME magazine is the best
@@ -101,7 +101,7 @@ by some trolls on the internet. Other means to defame him were also adopted.
 One thing worth noting here is that yes, the author actually is half-pakistani
 (born to an Indian mother, Tavleen Singh and a Pakistani father, Mr. Salmaan
 Taseer). In fact, Mr. Salmaan was one of the most liberal politicians of Pakistan,
-leading to his [assasination in 2011 because of his strong opinions on Blasphemy
+leading to his [assassination in 2011 because of his strong opinions on Blasphemy
 Laws in Pakistan][salmaan] and his mother, [Mrs. Tavleen appeers to be a Modi supporter][tavleen].
 
 [0]: https://indianexpress.com/article/india/indias-divider-in-chief-pm-modi-features-on-time-magazine-cover-5720637/
@@ -111,7 +111,7 @@ Laws in Pakistan][salmaan] and his mother, [Mrs. Tavleen appeers to be a Modi su
 [tavleen]: https://twitter.com/tavleen_singh/status/1126665638582177792
 
 This was the journey of the TIME magazine - from being used as a source for
-asking regisnation of a Prime Minster in 2012 to being stamped as an
+asking resignation of a Prime Minster in 2012 to being stamped as an
 anti-nationalist, anti-hindu, pro-Pakistani and pro-Congress magazine - which
 cannot be trusted at all.
 
@@ -119,15 +119,15 @@ cannot be trusted at all.
 
 For the past few years, there has been a shift in governance model and there
 policy and stance on failures - furthering more and more towards
-authoritaranianism. Anyone who dare questions them or speaks against them is
-drafted as 'anti-national' and as crazy as it might sound - 'anti-hindu'. If
+authoritarianism. Anyone who dare questions them or speaks against them is
+drafted 'anti-national' and crazy as it might sound - 'anti-hindu'. If
 they are lucky, then [they are charged with sedition][1]
 {% sidenote 'sn-id-sedition' "Arundhati Roy, Kanhaiya Kumar, Umar Khalid, Aseem
 Trivedi are just a few famous names who have been charged with sedition, primarily
 because they spoke against the ruling party. It's ironic that this draconian law
 was used by the British to suppress the freedom movement." %}
 , or else they are [either dealt with violence][2] - [lynched by a mob ][3] or [are
-assasinated][4] or [are forced to commit suicide][5] (which the government
+assassinated][4] or [are forced to commit suicide][5] (which the government
 officials would then put up a huge mournful act to).
 
 [1]: https://www.ndtv.com/india-news/sedition-case-registered-against-arundhati-roy-geelani-440611
@@ -137,8 +137,8 @@ officials would then put up a huge mournful act to).
 [5]: https://indianexpress.com/article/india/india-news-india/behind-dalit-student-suicide-how-his-university-campus-showed-him-the-door/ 
 
 The cases for all these victims was made further down by defaming them across
-mainstream media potraying them as criminals or associating them with terrorist
-organisations, which brings me to my second point - It isn't just the voice of
+mainstream media portraying them as criminals or associating them with terrorist
+organizations, which brings me to my second point - It isn't just the voice of
 the student leaders and activists which is silenced, but even the journalists
 and mainstream media is being curbed from exercising their right to free speech.
 
@@ -146,7 +146,7 @@ and mainstream media is being curbed from exercising their right to free speech.
 outside her house][6] because she was an outspoken critic of
 right-wing-'hindutva'-politics and was present at the forefront of many
 protests, including the protest against the smearing of Kannada writer Yogesh
-master’s face with black ink.
+Master’s face with black ink.
 
 When Punya Prasun Bajpayi, in his show _Masterstroke_ uncovered some false
 claims made by Prime Minister regarding a rural lady by interviewing her, TV
@@ -164,13 +164,13 @@ suicides, clean air and water.
 The [scripted interviews][transcripted] which our Prime Minister gives, all the
 while bluntly [blurting out lies, gibberish][9] and [factually incorrect
 statements][10], would be comprised of questions aimed at reinforcing the
-propoganda amongst the masses.
+propaganda amongst the masses.
 
 <br>
 
 {% fullwidth 'https://i.imgur.com/EQRoyEe.jpg' "This is a mainstream media
-house - The job of these 'journalists' has crumbled to the order that they now
-spend time on Kim Jong Un's wives rather than questioning or analysing
+house - The job of these 'journalists' has crumbled to the extent that they now
+spend time on Kim Jong Un's wives rather than questioning or analyzing
 government policies, creating awareness or showing statistics about the current
 unemployment in India." %}
 
@@ -193,7 +193,7 @@ Index][rank], which is a disaster for the world's largest democracy.
 
 [In the words of Ravish Kumar][ravish] (one of the handful journalists
 {% sidenote 'sn-id-himmat' "Himmat, a magazine, edited by Rajmohan Gandhi, maintained independence despite State repression [when Emergency was imposed during 1975] serves as a means of great inspiration for today's journalists, to find ways to resist corporate control and to tell readers the truth. [Read complete story][himmat]" %}
-who haven't yet forgotten what journalism is and and still have the potency to raise the right
+who haven't yet forgotten what journalism is and and still have the courage to raise the right
 questions):
 
 [ravish]: https://youtu.be/stNh_di8OM8?t=920
@@ -261,6 +261,6 @@ This nazm couldn't be any more relevant today. Have a read for yourself (English
 
 </div>
 
-I want to appeal that it is rather pressing that we, the citizens of India give
-a form factor to voice of Faiz and Ravish - by speaking out, questioning the
-government, and spreading awareness amongst our fellows regarding our rights.
+It is rather pressing that we, the citizens of India give
+a form factor to voice of Faiz and Ravish. I appeal that we, the citizens of India speak out, question the
+government, and spread awareness amongst our fellows citizens our rights.
