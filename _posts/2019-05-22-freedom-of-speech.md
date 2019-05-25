@@ -34,7 +34,7 @@ Under Prime Minister Modi, the story read,
 Furthering the argument, it says:
 
 > “…Under Modi, minorities of every stripe – from liberals and lower castes to
-> Muslims and Christians – have come under assault,”
+> Muslims and Christians – have come under assault”
 
 It talked about the promise of the economic reform of the messiah which has
 failed to materialize and how "he [the BJP] is lucky to be blessed with so weak
@@ -117,17 +117,18 @@ cannot be trusted at all.
 
 ## The Rise of authoritarianism
 
-For the past few years, there has been a shift in governance model and there
+For the past few years, there has been a shift in governance model and their
 policy and stance on failures - furthering more and more towards
 authoritarianism. Anyone who dare questions them or speaks against them is
-drafted 'anti-national' and crazy as it might sound - 'anti-hindu'. If
-they are lucky, then [they are charged with sedition][1]
-{% sidenote 'sn-id-sedition' "Arundhati Roy, Kanhaiya Kumar, Umar Khalid, Aseem
-Trivedi are just a few famous names who have been charged with sedition, primarily
-because they spoke against the ruling party. It's ironic that this draconian law
-was used by the British to suppress the freedom movement." %}
-, or else they are [either dealt with violence][2] - [lynched by a mob ][3] or [are
-assassinated][4] or [are forced to commit suicide][5] (which the government
+drafted 'anti-national' and crazy as it might sound - 'anti-hindu'. First comes
+hate speech, death threats and trolling for propaganda. Even then, if someone
+doesn't stop, then, if they are lucky, [they are charged with sedition][1] {%
+sidenote 'sn-id-sedition' "Arundhati Roy, Kanhaiya Kumar, Umar Khalid, Aseem
+Trivedi are just a few famous names who have been charged with sedition,
+primarily because they spoke against the ruling party. It's ironic that this
+draconian law was used by the British to suppress the freedom movement." %}, or
+else they are [either dealt with violence][2] - [lynched by a mob ][3],
+[assassinated][4] or [forced to commit suicide][5] (which the government
 officials would then put up a huge mournful act to).
 
 [1]: https://www.ndtv.com/india-news/sedition-case-registered-against-arundhati-roy-geelani-440611
@@ -139,8 +140,8 @@ officials would then put up a huge mournful act to).
 The cases for all these victims was made further down by defaming them across
 mainstream media portraying them as criminals or associating them with terrorist
 organizations, which brings me to my second point - It isn't just the voice of
-the student leaders and activists which is silenced, but even the journalists
-and mainstream media is being curbed from exercising their right to free speech.
+the student leaders and activists which is silenced, but even the mainstream
+media journalists are being denied their right to free speech.
 
 [Gauri Lankesh, one of the top political journalists of India was shot dead
 outside her house][6] because she was an outspoken critic of
@@ -192,7 +193,7 @@ Index][rank], which is a disaster for the world's largest democracy.
 ## What can we do?
 
 [In the words of Ravish Kumar][ravish] (one of the handful journalists
-{% sidenote 'sn-id-himmat' "Himmat, a magazine, edited by Rajmohan Gandhi, maintained independence despite State repression [when Emergency was imposed during 1975] serves as a means of great inspiration for today's journalists, to find ways to resist corporate control and to tell readers the truth. [Read complete story][himmat]" %}
+{% sidenote 'sn-id-himmat' "Himmat, a magazine, edited by Rajmohan Gandhi, which maintained independence despite State repression [when Emergency was imposed during 1975] serves as a means of great inspiration for today's journalists, to find ways to resist corporate control and to tell readers the truth. [Read complete story][himmat]" %}
 who haven't yet forgotten what journalism is and and still have the courage to raise the right
 questions):
 
@@ -207,22 +208,20 @@ who was also a protagonist of the Progressive Movement of India (1936), wrote
 a [nazm][nazm]: _"Bol ke Lab Aazad Hain Tere"_ {% sidenote 'sn-id-safdar-hashmi'
 "When Safdar Hashmi, who later became a symbol of cultural resistance against
 authoritarianism for the Indian left, was murdered while performing his
-street-play 'Halla Bol' (Attack), Faiz's nazm served a rallying cry of the
+street-play 'Halla Bol' (Attack), Faiz's nazm served a rallying cry for the
 protestors with each line followed by chanting 'Halla Bol'." %} (English: Speak,
 for your lips are free), [possibly in the wake of Kashmir Liberation
 Movement][faizkashmir] dedicated to his friend and renowned music composer
 Arshad Mahmud, who was also his student and compatriot.
 
-This nazm couldn't be any more relevant today. Have a read for yourself (English translation [here][english]):
+This nazm couldn't be any more relevant today. Have a read for yourself (English translation below):
 
 [nazm]: https://en.wikipedia.org/wiki/Nazm
 [faizkashmir]: https://kashmirlife.net/famous-faiz-poem-bol-ki-lab-azad-hein-teray-was-for-sheikh-abdullah-193424/
-[english]: https://www.rekhta.org/nazms/bol-bol-ki-lab-aazaad-hain-tere-faiz-ahmad-faiz-nazms
 
 <div style="font-size:34px">
 <br>
-
-بول کہ لب آزاد ہیں تیرے 
+بول کہ لب آزاد ہیں تیرے
 <br>
 <br>
 بول زباں اب تک تیری ہے 
@@ -260,6 +259,43 @@ This nazm couldn't be any more relevant today. Have a read for yourself (English
 <br>
 
 </div>
+
+### English:
+bol ki lab āzād haiñ tere 
+> Speak, for your lips are free
+
+bol zabāñ ab tak terī hai
+> Speak, your tounge is still your own
+
+terā sutvāñ jism hai terā 
+> That this frail body is still yours
+
+bol ki jaañ ab tak terī hai 
+> Speak, your life is still your own
+
+dekh ki āhan-gar kī dukāñ meñ 
+> See how in the blacksmith's forge
+
+tund haiñ sho.ale surḳh hai aahan 
+> Flames leap high and steel grows red
+
+khulne lage qufloñ ke dahāne 
+> Padlocks opening wide their jaws
+
+phailā har ik zanjīr kā dāman 
+> Every chain's embrace outspread!
+
+bol ye thoḌā vaqt bahut hai 
+> Time enough is this brief hour
+
+jism o zabāñ kī maut se pahle 
+> Until body and tounge lie dead
+
+bol ki sach zinda hai ab tak 
+> Speak, for the truth is living yet
+
+bol jo kuchh kahnā hai kah le 
+> Speak whatever must be said!
 
 It is rather pressing that we, the citizens of India give
 a form factor to voice of Faiz and Ravish. I appeal that we, the citizens of India speak out, question the
