@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GSoC 2018</title>
+  <meta name="description" content="  “Good luck is a residue of preparation.”― Jack YoungbloodGetting selected as a Google Summer of Code student with coala was abreakthrough for me. The coala...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/articles/18/gsoc-2018">
+
+  <link rel="alternate" type="application/rss+xml" title="Rahul Jha" href="/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+		    
+		      <a href="/">RJ722's blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About RJ722</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>GSoC 2018</h1>
+<p class="subtitle">May 10, 2018</p>
+
+<blockquote>
+  <p>“Good luck is a residue of preparation.”
+― Jack Youngblood</p>
+</blockquote>
+
+<p>Getting selected as a Google Summer of Code student with coala was a
+breakthrough for me. The coala community touched me on every aspect of open
+source software development, especially how to get along with peers (and troll
+them :-p). And it has happened again - I am a student with coala one more time,
+and I look forward to learn yet more from my dear mentors and the beloved coala
+community.</p>
+
+<!--more-->
+
+<p>Let me give a brief overview of the project I would be working on: The aim is to
+automatically create whitelists (to be utilized by
+<a href="https://github.com/jendrikseipp/vulture">vulture</a>) for projects using sip files
+to communicate between C++ level API and Python programs, most significant of
+them being PyQt projects.</p>
+
+<h3 id="action-plan">ACTION PLAN</h3>
+
+<ul>
+  <li>Create a script which takes sip files as input and spits a whitelist with all
+the virtual functions defined in the sip files. (Add Documentation and tests)</li>
+  <li>Use that script for generating a whitelist for popular projects using PyQt
+(like <a href="https://github.com/qutebrowser/qutebrowser">qutebrowser</a>).</li>
+  <li>Allow passing coverage.xml to vulture via <code class="highlighter-rouge">--make-whitelist</code> and let it find
+the list of false-positive functions. (Add Documentation and tests as well)</li>
+  <li>Write a whitelist generator for <code class="highlighter-rouge">shiboken</code>, the binding generator used for
+PySide2</li>
+</ul>
+
+<p>You may find more information about the project
+<a href="https://projects.coala.io/#/projects?project=automate_whitelist_creation_for_vulture&amp;lang=en">here</a></p>
+
+<h3 id="thank-you">Thank You</h3>
+
+<p>I’m forever indebted to my mentors for they taught me whatever I know today. I
+want to take a moment here and thank some special people:</p>
+
+<p>A huge shout out to my mentors:</p>
+<ul>
+  <li><a href="https://github.com/jendrikseipp">Jendrik Seipp</a></li>
+  <li><a href="https://github.com/The-Compiler">Florian Bruhin</a></li>
+  <li><a href="https://github.com/AbdealiJK">Abdeali Kothari</a></li>
+  <li><a href="https://github.com/jayvdb">John Vandenberg</a></li>
+  <li>My Mom and Dad</li>
+</ul>
+
+<p>Also, I owe a thank you to my brilliant peers who have had always inspired me:</p>
+<ul>
+  <li><a href="https://github.com/yash-nisar">Yash Nisar</a></li>
+  <li><a href="https://github.com/satwikkansal">Satwik Kansal</a></li>
+  <li><a href="https://github.com/aptrishu">Rishav Jha</a></li>
+  <li><a href="https://github.com/hemangsk">Hemang Kumar</a></li>
+  <li><a href="https://github.com/iamareebjamal">Areeb Jamal</a></li>
+  <li><a href="https://github.com/cran-cg">Chiranjeev Gupta</a></li>
+  <li><a href="https://github.com/mohdomama">Mohd. Omama</a></li>
+</ul>
+
+<p>Thanks for reading! :-)</p>
+
+
+
+    </article>
+    <span class="print-footer">GSoC 2018 - May 10, 2018 - Rahul Jha</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:rahul722j@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/rahul722j"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/RJ722"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;RAHUL JHA</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Blogging is fun! </a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>

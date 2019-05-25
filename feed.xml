@@ -1,31 +1,1709 @@
----
-layout: null
-nav_exclude: true
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>Rahul Jha</title>
+    <description>A Jekyll theme for content-rich sites</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 25 May 2019 23:53:00 +0530</pubDate>
+    <lastBuildDate>Sat, 25 May 2019 23:53:00 +0530</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>Freedom of Speech, Authoritarianism, Freedom of Press and Faiz</title>
+        <description>&lt;p&gt;Right to Free Speech is essential for a democracy. This blog post aims to shed
+some light on the recent authoritarian attempts made by hindutva-right-wing to
+curb free speech and how can we fight back.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;indias-divider-in-chief&quot;&gt;&lt;em&gt;“India’s Divider in chief”&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;TIME magazine, in it’s May 20 edition, featured the Prime Minister of India, Mr.
+Narendra Damodardas &lt;a href=&quot;https://indianexpress.com/article/india/indias-divider-in-chief-pm-modi-features-on-time-magazine-cover-5720637/&quot;&gt;Modi on it’s cover page&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;label for=&quot;mf-id-modi19&quot; class=&quot;margin-toggle&quot;&gt;⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;mf-id-modi19&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;&lt;img class=&quot;fullwidth&quot; src=&quot;https://i.imgur.com/necOF1d.jpg&quot; /&gt;&lt;br /&gt;The photo, which appeared rather grim, was tagged &lt;code class=&quot;highlighter-rouge&quot;&gt;India's Divider in Chief&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The article opens with the sentence:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Of the great democracies to fall to populism, India was the first.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Under Prime Minister Modi, the story read,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Nation’s most basic norms, such as the character of the Indian state, its
+founding fathers, the place of minorities and its institutions, from
+universities to corporate houses to the media, were shown to be severely
+distrusted.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Furthering the argument, it says:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“…Under Modi, minorities of every stripe – from liberals and lower castes to
+Muslims and Christians – have come under assault”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It talked about the promise of the economic reform of the messiah which has
+failed to materialize and how “he [the BJP] is lucky to be blessed with so weak
+an opposition–a ragtag coalition of parties, led by the Congress, with no agenda
+other than to defeat him&lt;/p&gt;
+
+&lt;p&gt;But, we aren’t here to debate this. Let’s look at the before and aftermath of
+the incident.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2012&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;label for=&quot;mf-id-manmohan&quot; class=&quot;margin-toggle&quot;&gt;⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;mf-id-manmohan&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;&lt;img class=&quot;fullwidth&quot; src=&quot;http://img.timeinc.net/time/images/covers/asia/2012/20120716_600.jpg&quot; /&gt;&lt;br /&gt;Manmohan Singh featured on one of the 2012 editions of the same magazine&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;In 2012, Manmohan Singh appeared on the cover of the same magazine as &lt;em&gt;“The
+Underachiever”&lt;/em&gt;, even which might have been an understatement at the time.&lt;/p&gt;
+
+&lt;p&gt;Many of BJP supporters including but not limited to their leader
+&lt;a href=&quot;https://www.thehindu.com/news/national/bjp-attacks-manmohan-after-time-magazine-report/article3616536.ece#!&quot;&gt;Ravi Shankar Prasad, without a shred of doubt on the authenticity of the
+article, straight away demanded his resignation&lt;/a&gt; on the grounds
+that the image of India has been spoiled.&lt;/p&gt;
+
+&lt;p&gt;&lt;label for=&quot;mf-id-modi12&quot; class=&quot;margin-toggle&quot;&gt;⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;mf-id-modi12&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;&lt;img class=&quot;fullwidth&quot; src=&quot;https://i.pinimg.com/originals/3d/8f/69/3d8f69a98f3fdeef9359d8a1ef7b49ba.jpg&quot; /&gt;&lt;br /&gt;Narendra Modi appears for the first time on the cover page of TIME, highlighted positively - &lt;code class=&quot;highlighter-rouge&quot;&gt;Modi means business&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;A subsequent edition of TIME in 2012 again showed interest in Indian economy
+featuring Modi on cover page entitled “Modi means business” - enforcing the
+dream BJP instilled in Indians of the economic reform it promised.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2015&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;label for=&quot;mf-id-modi15&quot; class=&quot;margin-toggle&quot;&gt;⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;mf-id-modi15&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;&lt;img class=&quot;fullwidth&quot; src=&quot;https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Ftimedotcom.files.wordpress.com%2F2015%2F05%2Findia-final.jpg&amp;amp;w=800&amp;amp;c=sc&amp;amp;poi=face&amp;amp;q=85&quot; /&gt;&lt;br /&gt;Modi, now Prime Minister, appeared once again on the cover page of TIME. This time, it said &lt;code class=&quot;highlighter-rouge&quot;&gt;Why Modi Matters&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;And again in 2015, Modi was featured, this time as the Prime Minister. The tag
+line said “Why Modi Matters” depicting Modi government positively.&lt;/p&gt;
+
+&lt;p&gt;Apart from this, he was also rewarded a place in the list of “The 100 Most
+Influential People” by (yes, you guessed it right) TIME in 2014, 2015 and 2017
+editions.&lt;/p&gt;
+
+&lt;p&gt;Up until now, all in favour, all good - Lo and behold, TIME magazine is the best
+magazine in the world.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2019&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The trend line of TIME on the opinion on Narendra Modi is very similar to the
+change of opinion of people, slowly declining until 2017 and a much steeper fall
+after that. The cover page of 2019 is a simple depiction of that, but now the
+complaints begin.&lt;/p&gt;
+
+&lt;h3 id=&quot;controversy-behind-pakistani-writer&quot;&gt;Controversy behind Pakistani Writer&lt;/h3&gt;
+
+&lt;p&gt;The article of author, Mr. Aatish Taseer is a Pakistani Journalist. Following the
+release of the magazine, his &lt;a href=&quot;https://en.wikipedia.org/w/index.php?title=Aatish_Taseer&amp;amp;type=revision&amp;amp;diff=896408874&amp;amp;oldid=896403743&quot;&gt;wikipedia page was severly vandalized&lt;/a&gt; - stating
+that he writes against Brahmins, is a member of Lashkar-E-Tayabba, a pakistani
+militant group and that he is also working as a PR manager for Congress.&lt;/p&gt;
+
+&lt;figure&gt;&lt;figcaption&gt;Wikipedia page of Aatish vandalized&lt;/figcaption&gt;&lt;img src=&quot;/assets/img/ateesh-wiki.png&quot; /&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;img src=&quot;/assets/img/ateesh-wiki2.png&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;This false information was then tweeted numerous times as widespread propaganda
+by some trolls on the internet. Other means to defame him were also adopted.&lt;/p&gt;
+
+&lt;p&gt;&lt;label for=&quot;mf-id-ateeshi&quot; class=&quot;margin-toggle&quot;&gt;⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;mf-id-ateeshi&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;&lt;img class=&quot;fullwidth&quot; src=&quot;https://i.imgur.com/9d2Z78v.jpg&quot; /&gt;&lt;br /&gt;One of many fake TIME cover created by trolls for defaming Ateeshi&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;One thing worth noting here is that yes, the author actually is half-pakistani
+(born to an Indian mother, Tavleen Singh and a Pakistani father, Mr. Salmaan
+Taseer). In fact, Mr. Salmaan was one of the most liberal politicians of Pakistan,
+leading to his &lt;a href=&quot;https://foreignpolicy.com/2011/01/04/pakistans-dangerous-blasphemy-laws-claim-the-governor-of-punjab/&quot;&gt;assassination in 2011 because of his strong opinions on Blasphemy
+Laws in Pakistan&lt;/a&gt; and his mother, &lt;a href=&quot;https://twitter.com/tavleen_singh/status/1126665638582177792&quot;&gt;Mrs. Tavleen appeers to be a Modi supporter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This was the journey of the TIME magazine - from being used as a source for
+asking resignation of a Prime Minster in 2012 to being stamped as an
+anti-nationalist, anti-hindu, pro-Pakistani and pro-Congress magazine - which
+cannot be trusted at all.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-rise-of-authoritarianism&quot;&gt;The Rise of authoritarianism&lt;/h2&gt;
+
+&lt;p&gt;For the past few years, there has been a shift in governance model and their
+policy and stance on failures - furthering more and more towards
+authoritarianism. Anyone who dare questions them or speaks against them is
+drafted ‘anti-national’ and crazy as it might sound - ‘anti-hindu’. First comes
+hate speech, death threats and trolling for propaganda. Even then, if someone
+doesn’t stop, then, if they are lucky, &lt;a href=&quot;https://www.ndtv.com/india-news/sedition-case-registered-against-arundhati-roy-geelani-440611&quot;&gt;they are charged with sedition&lt;/a&gt; &lt;label for=&quot;sn-id-sedition&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;sn-id-sedition&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt;Arundhati Roy, Kanhaiya Kumar, Umar Khalid, Aseem
+Trivedi are just a few famous names who have been charged with sedition,
+primarily because they spoke against the ruling party. It’s ironic that this
+draconian law was used by the British to suppress the freedom movement. &lt;/span&gt;, or
+else they are &lt;a href=&quot;https://www.india.com/news/india/jnu-row-pro-bjp-lawyers-admit-thrashing-kanhaiya-kumar-inside-police-custody-till-he-wet-his-pants-watch-video-971691/&quot;&gt;either dealt with violence&lt;/a&gt; - &lt;a href=&quot;https://indianexpress.com/article/india/india-news-india/jnu-kanhaiya-kumar-patiala-house-court-lawyers-media-attacked/&quot;&gt;lynched by a mob &lt;/a&gt;,
+&lt;a href=&quot;https://www.hindustantimes.com/india-news/anyone-speaking-against-bjp-rss-is-silenced-sonia-rahul-on-gauri-lankesh-s-murder/story-Z240UB6qkxJnzcTD9rzYmO.html&quot;&gt;assassinated&lt;/a&gt; or &lt;a href=&quot;https://indianexpress.com/article/india/india-news-india/behind-dalit-student-suicide-how-his-university-campus-showed-him-the-door/&quot;&gt;forced to commit suicide&lt;/a&gt; (which the government
+officials would then put up a huge mournful act to).&lt;/p&gt;
+
+&lt;p&gt;The cases for all these victims was made further down by defaming them across
+mainstream media portraying them as criminals or associating them with terrorist
+organizations, which brings me to my second point - It isn’t just the voice of
+the student leaders and activists which is silenced, but even the mainstream
+media journalists are being denied their right to free speech.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.hindustantimes.com/india-news/anyone-speaking-against-bjp-rss-is-silenced-sonia-rahul-on-gauri-lankesh-s-murder/story-Z240UB6qkxJnzcTD9rzYmO.html&quot;&gt;Gauri Lankesh, one of the top political journalists of India was shot dead
+outside her house&lt;/a&gt; because she was an outspoken critic of
+right-wing-‘hindutva’-politics and was present at the forefront of many
+protests, including the protest against the smearing of Kannada writer Yogesh
+Master’s face with black ink.&lt;/p&gt;
+
+&lt;p&gt;When Punya Prasun Bajpayi, in his show &lt;em&gt;Masterstroke&lt;/em&gt; uncovered some false
+claims made by Prime Minister regarding a rural lady by interviewing her, TV
+screens &lt;a href=&quot;https://scroll.in/article/889026/resignations-of-two-journalists-at-abp-news-cause-disquiet-in-newsrooms-and-far-beyond&quot;&gt;were blackened out&lt;/a&gt; for the consequent episodes for his show in many
+parts of the nation. This political pressure on ABP news further lead to
+&lt;a href=&quot;https://scroll.in/article/889026/resignations-of-two-journalists-at-abp-news-cause-disquiet-in-newsrooms-and-far-beyond&quot;&gt;resignation of ABP’s network managing editor, Milind Khandekar&lt;/a&gt;, closely
+followed by Bajpayi’s own. After this round of resignations, another journalist
+at the network &lt;a href=&quot;https://www.newslaundry.com/shorts/abp-news-abhisar-sharma-resigns&quot;&gt;Abhisar Sharma went for leave&lt;/a&gt; and &lt;a href=&quot;https://www.newslaundry.com/shorts/abp-news-abhisar-sharma-resigns&quot;&gt;finally resigned a few
+days later&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is an organized attack on media, disrupting any dialogue or questions in
+the matter of starvation deaths, unemployment, education affairs, farmer
+suicides, clean air and water.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://www.ndtv.com/opinion/modi-interviews-packed-with-lines-rg-could-never-get-away-with-2037244&quot;&gt;scripted interviews&lt;/a&gt; which our Prime Minister gives, all the
+while bluntly &lt;a href=&quot;https://www.thequint.com/elections/social-dangal/incredible-liar-twitter-pm-modi-email-digital-camera-1988&quot;&gt;blurting out lies, gibberish&lt;/a&gt; and &lt;a href=&quot;https://www.aljazeera.com/news/2019/05/laughing-matter-india-modi-mocked-tech-gaffes-190513091851774.html&quot;&gt;factually incorrect
+statements&lt;/a&gt;, would be comprised of questions aimed at reinforcing the
+propaganda amongst the masses.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;fullwidth&quot;&gt;&lt;img src=&quot;https://i.imgur.com/EQRoyEe.jpg&quot; /&gt;&lt;figcaption&gt;This is a mainstream media
+house - The job of these 'journalists' has crumbled to the extent that they now
+spend time on Kim Jong Un's wives rather than questioning or analyzing
+government policies, creating awareness or showing statistics about the current
+unemployment in India.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;India currently &lt;a href=&quot;https://rsf.org/en/india&quot;&gt;ranks 140 out of 180 countries on World Press Freedom
+Index&lt;/a&gt;, which is a disaster for the world’s largest democracy.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-can-we-do&quot;&gt;What can we do?&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/stNh_di8OM8?t=920&quot;&gt;In the words of Ravish Kumar&lt;/a&gt; (one of the handful journalists
+&lt;label for=&quot;sn-id-himmat&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;sn-id-himmat&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt;Himmat, a magazine, edited by Rajmohan Gandhi, which maintained independence despite State repression [when Emergency was imposed during 1975] serves as a means of great inspiration for today’s journalists, to find ways to resist corporate control and to tell readers the truth. &lt;a href=&quot;https://scroll.in/article/735844/himmat-during-the-emergency-when-the-press-crawled-some-refused-to-even-bend&quot;&gt;Read complete story&lt;/a&gt; &lt;/span&gt;
+who haven’t yet forgotten what journalism is and and still have the courage to raise the right
+questions):&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ask questions. Questioning government is the highest service to the nation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Faiz_Ahmad_Faiz&quot;&gt;Faiz Ahmad Faiz&lt;/a&gt;, one of the most celebrated poets in Urdu literature,
+who was also a protagonist of the Progressive Movement of India (1936), wrote
+a &lt;a href=&quot;https://en.wikipedia.org/wiki/Nazm&quot;&gt;nazm&lt;/a&gt;: &lt;em&gt;“Bol ke Lab Aazad Hain Tere”&lt;/em&gt; &lt;label for=&quot;sn-id-safdar-hashmi&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;sn-id-safdar-hashmi&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt;When Safdar Hashmi, who later became a symbol of cultural resistance against
+authoritarianism for the Indian left, was murdered while performing his
+street-play ‘Halla Bol’ (Attack), Faiz’s nazm served a rallying cry for the
+protestors with each line followed by chanting ‘Halla Bol’. &lt;/span&gt; (English: Speak,
+for your lips are free), &lt;a href=&quot;https://kashmirlife.net/famous-faiz-poem-bol-ki-lab-azad-hein-teray-was-for-sheikh-abdullah-193424/&quot;&gt;possibly in the wake of Kashmir Liberation
+Movement&lt;/a&gt; dedicated to his friend and renowned music composer
+Arshad Mahmud, who was also his student and compatriot.&lt;/p&gt;
+
+&lt;p&gt;This nazm couldn’t be any more relevant today. Have a read for yourself (English translation below):&lt;/p&gt;
+
+&lt;div style=&quot;font-size:34px&quot;&gt;
+&lt;br /&gt;
+بول کہ لب آزاد ہیں تیرے
+&lt;br /&gt;
+&lt;br /&gt;
+بول زباں اب تک تیری ہے 
+&lt;br /&gt;
+&lt;br /&gt;
+تیرا ستواں جسم ہے تیرا 
+&lt;br /&gt;
+&lt;br /&gt;
+بول کہ جاں اب تک تیری ہے 
+&lt;br /&gt;
+&lt;br /&gt;
+دیکھ کہ آہن گر کی دکاں میں 
+&lt;br /&gt;
+&lt;br /&gt;
+تند ہیں شعلے سرخ ہے آہن 
+&lt;br /&gt;
+&lt;br /&gt;
+کھلنے لگے قفلوں کے دہانے 
+&lt;br /&gt;
+&lt;br /&gt;
+پھیلا ہر اک زنجیر کا دامن 
+&lt;br /&gt;
+&lt;br /&gt;
+بول یہ تھوڑا وقت بہت ہے 
+&lt;br /&gt;
+&lt;br /&gt;
+جسم و زباں کی موت سے پہلے 
+&lt;br /&gt;
+&lt;br /&gt;
+بول کہ سچ زندہ ہے اب تک 
+&lt;br /&gt;
+&lt;br /&gt;
+بول جو کچھ کہنا ہے کہہ لے 
+&lt;br /&gt;
+&lt;br /&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;english&quot;&gt;English:&lt;/h3&gt;
+&lt;p&gt;bol ki lab āzād haiñ tere&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Speak, for your lips are free&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;bol zabāñ ab tak terī hai&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Speak, your tounge is still your own&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;terā sutvāñ jism hai terā&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;That this frail body is still yours&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;bol ki jaañ ab tak terī hai&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Speak, your life is still your own&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;dekh ki āhan-gar kī dukāñ meñ&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;See how in the blacksmith’s forge&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;tund haiñ sho.ale surḳh hai aahan&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Flames leap high and steel grows red&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;khulne lage qufloñ ke dahāne&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Padlocks opening wide their jaws&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;phailā har ik zanjīr kā dāman&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Every chain’s embrace outspread!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;bol ye thoḌā vaqt bahut hai&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Time enough is this brief hour&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;jism o zabāñ kī maut se pahle&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Until body and tounge lie dead&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;bol ki sach zinda hai ab tak&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Speak, for the truth is living yet&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;bol jo kuchh kahnā hai kah le&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Speak whatever must be said!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It is rather pressing that we, the citizens of India give
+a form factor to voice of Faiz and Ravish. I appeal that we, the citizens of India speak out, question the
+government, and spread awareness amongst our fellows citizens our rights.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 22 May 2019 00:00:00 +0530</pubDate>
+        <link>/articles/19/freedom-of-speech</link>
+        <guid isPermaLink="true">/articles/19/freedom-of-speech</guid>
+        
+        <category>history</category>
+        
+        
+        <category>blog</category>
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>A glimpse into the darkness: the 'Brutish' rule in India</title>
+        <description>&lt;p&gt;A second-generation freeborn attempts to understand the impact and aftermath of
+colonization of India by British. It turns out that even an educated Indian of
+today is still not aware of the atrocities and turmoil it caused the country.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;India - the golden bird of medieval times, known for it’s riches - the diamonds
+and the muslins, one of the world’s greatest exporter of silk - a country
+sharing a cut of more than 27% in the world’s economy during the sixteenth
+century - the country which was then capitalized for 200 years all the while
+feeding to the interests of Britain, leaving the post-British India with a
+crumbling share of a little more than 3% in the world GDP.&lt;/p&gt;
+
+&lt;p&gt;This is my country.&lt;/p&gt;
+
+&lt;p&gt;I am an Indian. This blog post highlights the pain it causes me that we, the
+youth of India - the second-generation freeborn aren’t afflicted by this dark
+side of the history, and how our education [A British establishment] merely
+portrays colonization as a chronological series, celebrating the independence and
+mapping it with subsequent post-independence failures. There is none or timid
+attempt made to lay emphasis on the curtailed legacy of India, the utter
+amorality of the British rule or the atrocities imposed on our forefathers
+without scruple or principle. This case of insincerity has lead to an incomplete
+analysis of the deep wounds of the colonization and of finding a cure.&lt;/p&gt;
+
+&lt;p&gt;On the contrary, the notions about how the British brought industrialization to
+India, how trains were supposedly a precious ‘gift’, and how British were key to
+the political ‘unification’ of India are quite popular.&lt;/p&gt;
+
+&lt;p&gt;But recently coming across an Oxford Union Debate by Dr. Shashi Tharoor, a
+novelist, diplomat and Indian politician, on the proposition “Britain Owes
+Reparations to her Former Colonies” - which he admissibly won with his
+characteristically impassioned and precisely argued speech - was an eye-opening
+experience, which lead me to further pursue the topic.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-debate&quot;&gt;The Debate&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;iframe width=&quot;70%&quot; height=&quot;533&quot; src=&quot;https://www.youtube.com/embed/f7CW7S0zxv4&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+After the debate, Tharoor left England (in his own words, “pleased enough, but
+without giving the proceedings a second thought”). However, a couple of months
+later, once the speech was posted online, it took on an almost surreal
+afterlife, not only going viral across various social media platforms and
+causing many a storm in chai cups across the sub-continent and Britain, but also
+managed to unite, in India, the old and the young, the radical and the
+conservative, and most uniquely, the ever-estranged political left, right, and
+centre of our country in unequivocal approbation.&lt;/p&gt;
+
+&lt;p&gt;On this, says Tharoor&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Yet the fact that my speech struck such a chord with so many listeners
+suggested that what I considered basic was unfamiliar to many, perhaps most,
+educated Indians. They reacted as if I had opened their eyes, instead of
+merely reiterating what they had already known.&lt;/p&gt;
+
+  &lt;p&gt;It was this realisation that prompted my friend and publisher, David Davidar,
+to insist I convert my speech into a short book – something that could be read
+and digested by a layman but also be a valuable source of reference to
+students and others looking for the basic facts about India’s experience with
+British colonialism. The moral urgency of explaining to today’s Indians – and
+Britons – why colonialism was the horror it turned out to be could not be put
+aside.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;the-book&quot;&gt;The Book&lt;/h2&gt;
+
+&lt;p&gt;He indeed did gift India with his book “An Era of Darkness” deconstructing the
+british rule, unfolding around various themes: Of loot and of the hemorrhaged
+Indian wealth, of the increased rural poverty, the nefarious British policies
+(like divide-and-rule) which continue to haunt the contemporary India to date,
+the famines and the holocausts, and &lt;em&gt;of course&lt;/em&gt; Cricket.&lt;/p&gt;
+
+&lt;p&gt;The book provides as a leaping point, marking a paradigm shift forward so that
+the Youth of India knows the importance of the past and of talking about it, if
+only to unpick its skein better – but to do it yet, with a sense of irony and
+wisdom.&lt;/p&gt;
+
+&lt;h3 id=&quot;tldr&quot;&gt;TLDR;&lt;/h3&gt;
+
+&lt;p&gt;An Era of Darkness, by Shashi Tharoor is a must read!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 18 May 2019 00:00:00 +0530</pubDate>
+        <link>/articles/19/a-glimpse-into-the-darkness</link>
+        <guid isPermaLink="true">/articles/19/a-glimpse-into-the-darkness</guid>
+        
+        <category>history</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Do we really need to cover coverage with Vulture?</title>
+        <description>&lt;p&gt;The team behind Vulture (a tool used for detecting unused Python code) decided
+not to integrate it with coverage (a tool for measuring code coverage of Python
+programs). Read why!&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;coverage---wow-so-accurate---we-need-it&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;coverage&lt;/code&gt; - wow, so accurate - we need it…?&lt;/h2&gt;
+
+&lt;p&gt;When this phase kicked in, I was still wrapping my head around coverage - My
+plan was to get coverage integrated with Vulture, which would allow users to
+“transfer” the results from coverage to Vulture so that the false positives were
+automatically detected and thereby supressed. It sounded so neat and moreso
+doable (using an interminnent xml file) and so naturally, I just quickly got
+down to nuts and bolts and started a Pull Request. But, alongst those splendid
+colors of awesome functionality, Jendrik comes in and talks a bunch on why we
+shouldn’t do it. I could extrapolate the following reasons:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;We already created an easier, dynamic and robust way to create and manage
+whitelists (&lt;code class=&quot;highlighter-rouge&quot;&gt;--make-whitelist&lt;/code&gt;) which shall eliminate the need of having 10
+different things for dealing with false positives.&lt;/li&gt;
+  &lt;li&gt;Coverage is a tool for dynamic analysis (which requires your code to be
+actually run) and is therefore slow, but gives much more accurate results.
+And, if we already have results from coverage, why would we then need Vulture
+for??&lt;/li&gt;
+  &lt;li&gt;Vulture is supposed to be a static analysis tool.&lt;/li&gt;
+  &lt;li&gt;Vulture would’ve no longer been independent of external modules.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But, still it struck me as a little odd at that time because I thought that the
+functionality was optional and if someone didn’t want it, he would simply just
+not use it - simple. By now, may be you’ve judged that that this was the
+&lt;em&gt;“feature syndrome”&lt;/em&gt; talking (The more features we have, the more usable we are)
+and yes, you’re right. Luckily, Jendrik foresaw this early and redirected me
+towards &lt;a href=&quot;this blog post&quot;&gt;http://neugierig.org/software/blog/2018/07/options&lt;/a&gt;
+which explains why it’s actually toxic for anything to have more “options” and
+how it was an expensive process in terms of time spent on writing, documenting
+and maintaining it.&lt;/p&gt;
+
+&lt;p&gt;I’m very thankful of Jendrik and proud of the fact that we’ve still managed to
+keep the workflow involved when using &lt;code class=&quot;highlighter-rouge&quot;&gt;Vulture&lt;/code&gt; as simple as it could get. :-)&lt;/p&gt;
+</description>
+        <pubDate>Sat, 18 Aug 2018 00:00:00 +0530</pubDate>
+        <link>/articles/18/cover-coverage-vulture</link>
+        <guid isPermaLink="true">/articles/18/cover-coverage-vulture</guid>
+        
+        <category>vulture</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Dynamic code analysis with Vulture</title>
+        <description>&lt;p&gt;This is a follow up post of &lt;a href=&quot;https://rj722.github.io/blog/2018/05/19/why-use-coverage-to-find-which-python-code-is-run/&quot;&gt;Why use coverage to find which parts of a python
+code were executed?&lt;/a&gt; - there we discussed how we stumbled on this plan of
+dynamic code analysis with vulture. Here, we talk about the development process
+we (the Vulture team) underwent to integrate Vulture with
+&lt;a href=&quot;https://github.com/nedbat/coveragepy&quot;&gt;coverage.py&lt;/a&gt; in order to automatically generate a whitelist of
+functions which Vulture reports as unused but are actually being used.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;overview&quot;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;The idea was to let &lt;a href=&quot;https://github.com/nedbat/coveragepy&quot;&gt;coverage&lt;/a&gt; do the dynamic analysis and report it’s
+results to Vulture (through &lt;code class=&quot;highlighter-rouge&quot;&gt;XML&lt;/code&gt;) which could then be used to cross check
+functions being reported as unused by Vulture. It was further decided to present
+this functionality to user in the form of a command line flag, eg.:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vulture --make-whitelist coverage.xml files/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This would print a whitelist containing false positives reported for &lt;code class=&quot;highlighter-rouge&quot;&gt;files/&lt;/code&gt; to
+&lt;code class=&quot;highlighter-rouge&quot;&gt;stdout&lt;/code&gt;. Let’s walk through all of it step by step:&lt;/p&gt;
+
+&lt;h1 id=&quot;dynamic-code-analysis---what-is-it&quot;&gt;Dynamic Code Analysis - What is it?&lt;/h1&gt;
+
+&lt;p&gt;To analyse a program dynamically means to execute the program on a real or
+virtual processor and to monitor the process to check which lines are being hit
+(i.e. being used). This is in contrast to static analysis where the program is
+analysed on the sole basis of source code or some form of code object.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nedbat/coveragepy&quot;&gt;coverage.py&lt;/a&gt; is a tool, widely popular in Python community which
+allows user to perform code coverage measurements through dynamic code analysis.&lt;/p&gt;
+
+&lt;h1 id=&quot;implementing-make-whitelist&quot;&gt;Implementing –make-whitelist&lt;/h1&gt;
+
+&lt;p&gt;Code was pretty simple - just look up for &lt;code class=&quot;highlighter-rouge&quot;&gt;hit&lt;/code&gt; switch in the &lt;code class=&quot;highlighter-rouge&quot;&gt;XML&lt;/code&gt; in the
+entire range of the unused function. As soon as you find any line which is used,
+print it. ;-)&lt;/p&gt;
+
+&lt;p&gt;Here is the &lt;code class=&quot;highlighter-rouge&quot;&gt;make_whitelist&lt;/code&gt; module from vulture:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# vulture/make_whitelist.py
+&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;__future__&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;print_function&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os.path&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;xml.etree&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ElementTree&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ET&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;vulture&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utils&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;create_namewise_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;namewise_unused_funcs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unused_funcs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normcase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utils&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;namewise_unused_funcs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namewise_unused_funcs&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;make_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;xpath_file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'./packages/package/classes/class'&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;tree&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;attrib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'filename'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tree&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findall&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xpath_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;namewise_unused_funcs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;create_namewise_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;xpath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./packages/package/classes/class/[@filename=&quot;{}&quot;]'&lt;/span&gt;
+                 &lt;span class=&quot;s&quot;&gt;'/lines/line[@hits=&quot;1&quot;]'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;lines_hit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;attrib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'number'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tree&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findall&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xpath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normcase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;unused_funcs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namewise_unused_funcs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unused_funcs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;# &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unused_funcs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_lineno&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;last_lineno&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lineno&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lineno&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lines_hit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;were-there-any-problems&quot;&gt;Were there any problems?&lt;/h2&gt;
+
+&lt;p&gt;Yes, a lot of them. But, I’m glad that there are a lot of smart people in the
+Vulture community. ;-)&lt;/p&gt;
+
+&lt;p&gt;Here are some weird &amp;amp; notable issues I would like to document:&lt;/p&gt;
+
+&lt;h3 id=&quot;output-all-over-pytest-results&quot;&gt;Output all over pytest results&lt;/h3&gt;
+
+&lt;p&gt;When writing tests, I had to capture the output when running &lt;code class=&quot;highlighter-rouge&quot;&gt;make_whitelist&lt;/code&gt;,
+so I decided to use pytest’s &lt;a href=&quot;https://docs.pytest.org/en/latest/capture.html#accessing-captured-output-from-a-test-function&quot;&gt;capsys&lt;/a&gt; fixture. The code was as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_create_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;class Greeter:
+    def greet(self):
+        print(&quot;Hi&quot;)
+greeter = Greeter()
+greet_func = getattr(greeter, &quot;greet&quot;)
+greet_func()
+&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;# {}
+greet
+
+&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normcase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;unused_code.py&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage.xml&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'w'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;run&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;xml&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;-o&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scavenge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;make_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readouterr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;But, the output from &lt;code class=&quot;highlighter-rouge&quot;&gt;coverage&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;scavenge&lt;/code&gt; (in verbose mode) would pollute
+&lt;code class=&quot;highlighter-rouge&quot;&gt;capsys.readouterr().out&lt;/code&gt;, so I tried disabling capsys from recording while
+executing these commmands, therefore tried this:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# ...
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;run&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;xml&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;-o&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scavenge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;make_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readouterr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The tests now passed, &lt;code class=&quot;highlighter-rouge&quot;&gt;\o/&lt;/code&gt;, but the output we just omitted would now show up
+while running the tests, thus ruining pytest’s output when running tests, just
+like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;============================= test session starts ==============================
+platform linux -- Python 3.5.5, pytest-3.6.2, py-1.5.3, pluggy-0.6.0
+rootdir: /home/travis/build/RJ722/vulture, inifile: setup.cfg
+plugins: cov-2.5.1
+collected 156 items                                                            
+tests/test_conditions.py ..............                                  [  8%]
+tests/test_confidence.py .......                                         [ 13%]
+tests/test_errors.py ....                                                [ 16%]
+tests/test_format_strings.py ......                                      [ 19%]
+tests/test_imports.py .............                                      [ 28%]
+tests/test_item.py .                                                     [ 28%]
+tests/test_make_whitelist.py Hi
+Scanning: /tmp/pytest-of-travis/pytest-0/test_create_whitelist0/unused_code.py
+1 Module(body=[ClassDef(name='Greeter', bases=[], keywords=[], body=[FunctionDef(name='greet', args=arguments(args=[arg(arg='self', 
+etc...
+etc...
+1 Load() class Greeter:
+.                                           [ 29%]
+tests/test_scavenging.py ...........................................     [ 57%]
+tests/test_script.py ...........                                         [ 64%]
+tests/test_size.py ..............................                        [ 83%]
+tests/test_sorting.py .                                                  [ 83%]
+tests/test_unreachable.py .........................                      [100%]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, after scratching my head for a while, when I was on the brink of giving up,
+I pinged Grand Master &lt;strong&gt;&lt;a href=&quot;https://github.com/the-compiler&quot;&gt;The-Compiler&lt;/a&gt;&lt;/strong&gt; for help &lt;label for=&quot;sn-id-florian&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;sn-id-florian&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt;I think that I underrepresented the enthusiasm and humility
+with which &lt;a href=&quot;https://github.com/the-compiler&quot;&gt;Florian&lt;/a&gt; helped me. He even asked me to ask for help
+sooner rather than later to prevent confusion. A huge shoutout to him - Thank You
+so much! &lt;/span&gt; . In a matter of seconds, he inspected the code and the output and
+pointed out that whenever &lt;code class=&quot;highlighter-rouge&quot;&gt;capsys.disabled()&lt;/code&gt; is used, the output is printed to
+&lt;code class=&quot;highlighter-rouge&quot;&gt;stdout&lt;/code&gt; immediately. Aha!&lt;/p&gt;
+
+&lt;p&gt;He suggested the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# ...
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;run&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;xml&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;-o&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scavenge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readouterr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Flush output from coverage run
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;make_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readouterr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Hooray! &lt;code class=&quot;highlighter-rouge&quot;&gt;\o/&lt;/code&gt; Thank You Florian! &lt;code class=&quot;highlighter-rouge&quot;&gt;:-)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-pass-around-fixtures&quot;&gt;How to pass around fixtures?&lt;/h3&gt;
+
+&lt;p&gt;Observing the test case, it came to me that most of the code could be reused and
+thereby I decided to write a helper function and soon came up with the following
+implementation:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;check_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normcase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;unused_code.py&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage.xml&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'w'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;run&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;xml&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;-o&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scavenge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readouterr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Flush output from coverage run
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;make_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readouterr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_create_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;class Greeter:
+    def greet(self):
+        print(&quot;Hi&quot;)
+greeter = Greeter()
+greet_func = getattr(greeter, &quot;greet&quot;)
+greet_func()
+&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;# {}
+greet
+
+&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;check_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The problem with this implementation was that with every test case, all the
+fixture objects (&lt;code class=&quot;highlighter-rouge&quot;&gt;v&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;tmpdir&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;capsys&lt;/code&gt;, etc.) needed to be juggled around to
+the helper function - there had to be a better way, I thought and started
+digging things around but soon, I was down the rabbit hole.&lt;/p&gt;
+
+&lt;p&gt;Once again, I went to &lt;a href=&quot;https://github.com/the-compiler&quot;&gt;The-Compiler&lt;/a&gt; for rescue - He said that
+this problem was not uncommon and pointed me to check out the following
+solutions:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Creating a class for test cases - Particularly helpful when having a lot of
+test cases. eg.
+&lt;a href=&quot;https://github.com/qutebrowser/qutebrowser/blob/master/tests/unit/javascript/conftest.py&quot;&gt;qutebrowser/qutebrowser/tests/unit/javascript/conftest.py&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Defining an inner function inside a fixture, and then using that fixture
+instead of calling the function directly. eg.
+&lt;a href=&quot;https://github.com/qutebrowser/qutebrowser/blob/master/tests/unit/browser/webkit/network/test_filescheme.py#L125-L153&quot;&gt;qutebrowser/qutebrowser/tests/unit/browser/webkit/network/test_filescheme.py#L125-L153&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since the former option “looked” like a lot of work, I decided to go with the
+inner function and quickly came up with the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pytest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fixture&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;check_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normcase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;unused_code.py&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage.xml&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'w'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;run&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;xml&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;-o&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scavenge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readouterr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Flush output from coverage run
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;make_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readouterr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;check&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_create_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;check_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;class Greeter:
+    def greet(self):
+        print(&quot;Hi&quot;)
+greeter = Greeter()
+greet_func = getattr(greeter, &quot;greet&quot;)
+greet_func()
+&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;# {}
+greet
+
+&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;check_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;and soon the tests were green and I was busy finding a bottle of Champagne for
+celebrations when I receive a message from &lt;a href=&quot;https://github.com/the-compiler&quot;&gt;The-Compiler&lt;/a&gt; saying
+that it isn’t supposed to work that way, did it do the job? and myself while
+being drunk in the divine green flavours of &lt;a href=&quot;https://travis-ci.org&quot;&gt;travis&lt;/a&gt;
+replied: “It did :-p”. Next, he tells me that the test running successfully was
+a false positive - Behind the hoods, it wasn’t running at all. :-(&lt;/p&gt;
+
+&lt;p&gt;Due to the way, pytest’s fixtures work, &lt;code class=&quot;highlighter-rouge&quot;&gt;check_whitelist&lt;/code&gt; - the argument to
+&lt;code class=&quot;highlighter-rouge&quot;&gt;test_create_whitelist&lt;/code&gt; wasn’t the function &lt;code class=&quot;highlighter-rouge&quot;&gt;check_whitelist&lt;/code&gt; declared outside
+and that it was a mere representation and when calling it from within the test,
+pytest would intelligently call the inner function. Let’s see the final code:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pytest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fixture&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;check_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normcase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;unused_code.py&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmpdir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage.xml&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'w'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;run&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;coverage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;xml&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;-o&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scavenge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readouterr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Flush output from coverage run
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;make_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capsys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readouterr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;check&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_create_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;check_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;class Greeter:
+    def greet(self):
+        print(&quot;Hi&quot;)
+greeter = Greeter()
+greet_func = getattr(greeter, &quot;greet&quot;)
+greet_func()
+&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;# {}
+greet
+
+&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;check_whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected_output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Despite being deceptive at first (especially given the mismatch in the arguments
+and parameters to &lt;code class=&quot;highlighter-rouge&quot;&gt;check_whitelist&lt;/code&gt;), the resulting test case still provides a
+neat and robust hack.&lt;/p&gt;
+
+&lt;p&gt;Again, Thank You so much Florian! :-)&lt;/p&gt;
+
+&lt;h3 id=&quot;ms-windows&quot;&gt;MS Windows&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;As usual&lt;/em&gt;, Microsoft Windows was being a pain in the ass - which in the end
+(after 6 hours of swearing and 44 appveyor builds - I do not have access to a
+Windows machine) was a result of non normalised (wrong slashes and case
+sensitive) paths, &lt;em&gt;as usual&lt;/em&gt;. :-p&lt;/p&gt;
+
+&lt;p&gt;At one point, I was thinking of dropping support for Windows, but thanks to
+&lt;a href=&quot;https://github.com/jendrikseipp&quot;&gt;Jendrik&lt;/a&gt; - I could finally find my way out.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 27 Jun 2018 00:00:00 +0530</pubDate>
+        <link>/articles/18/dynamic-analysis-with-vulture</link>
+        <guid isPermaLink="true">/articles/18/dynamic-analysis-with-vulture</guid>
+        
+        <category>GSoC</category>
+        
+        <category>vulture</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Google Summer of Code 2018 - Phase 1</title>
+        <description>&lt;p&gt;Here’s my work progress with the first phase of Google Summer of Code 2018.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;goals&quot;&gt;Goals&lt;/h2&gt;
+
+&lt;p&gt;There were two primary goals to be achieved:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a tool which would to create whitelists for projects using &lt;a href=&quot;https://www.riverbankcomputing.com/software/sip/intro&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sip&lt;/code&gt;&lt;/a&gt; (eg. &lt;code class=&quot;highlighter-rouge&quot;&gt;PyQt&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;Maximise test coverage for &lt;a href=&quot;https://github.com/jendrikseipp/vulture&quot;&gt;Vulture&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;vulture-whitelist&quot;&gt;Vulture-Whitelist&lt;/h1&gt;
+
+&lt;p&gt;Idea was to create a tool for people running Vulture analysis on projects using &lt;a href=&quot;https://www.riverbankcomputing.com/software/sip/intro&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sip&lt;/code&gt;&lt;/a&gt;
+to create Python bingings for C/C++ code.&lt;/p&gt;
+
+&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;/h3&gt;
+
+&lt;p&gt;Consider a scenario where a user imports a class in Python, defined through a C++ module. Now,
+if the user decides to overload any virtual function of that class - It won’t  be executed by Python &lt;em&gt;directly&lt;/em&gt;.
+Thus, leaving no way to determine beforehand if that particular method is used anytime,
+thus causing static analysis tools, like Vulture to report them as unused.&lt;/p&gt;
+
+&lt;h3 id=&quot;proposed-solution&quot;&gt;Proposed Solution&lt;/h3&gt;
+
+&lt;p&gt;The most obvious solution is parse virtual functions present in &lt;code class=&quot;highlighter-rouge&quot;&gt;sip&lt;/code&gt; files and write them
+to a file which could then be included in the list of files to be analysed by Vulture which would then inturn
+treat these methods as if they are used, thus preventing Vulture from reporting
+them as unused.&lt;/p&gt;
+
+&lt;p&gt;It has one caveat though - The results may contain a false negative when there is an overloaded
+method which isn’t run anytime because Vulture would consider it as “used” anyways, but nonetheless
+given that projects like PyQt (the main consumer of &lt;code class=&quot;highlighter-rouge&quot;&gt;sip&lt;/code&gt;) have thousands of virtual functions,
+it would still be better to negotiate a false negative than a false positive.&lt;/p&gt;
+
+&lt;p&gt;Gladly, &lt;code class=&quot;highlighter-rouge&quot;&gt;sip&lt;/code&gt; already provided us with a way to export data in XML format, and in no time
+&lt;a href=&quot;https://github.com/The-Compiler&quot;&gt;@The-Compiler&lt;/a&gt; &lt;a href=&quot;http://www.riverbankcomputing.com/pipermail/pyqt/2015-July/036150.html&quot;&gt;merged a patch&lt;/a&gt; so that XML includes a &lt;code class=&quot;highlighter-rouge&quot;&gt;virtual=&quot;(1|0)&quot;&lt;/code&gt;
+attribute for Function tag and he quickly implemented a &lt;a href=&quot;https://github.com/jendrikseipp/vulture/issues/8#issuecomment-284328136&quot;&gt;script&lt;/a&gt; to parse the XML
+and filter out all virtual functions and save them as a whitelist.&lt;/p&gt;
+
+&lt;p&gt;My job was to create a plugin based python package as a wrapper around that script because there
+are multiple generators for creating bindings and we would want to support many of them
+incrementally. &lt;a href=&quot;https://github.com/RJ722/vulture-whitelist-generators&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vulture-whitelist&lt;/code&gt;&lt;/a&gt; can be found &lt;a href=&quot;https://github.com/RJ722/vulture-whitelist-generators&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;code-coverage&quot;&gt;Code Coverage&lt;/h1&gt;
+
+&lt;p&gt;Vulture had an excellent code coverage of &lt;code class=&quot;highlighter-rouge&quot;&gt;95%&lt;/code&gt; prior to my stride on
+maximizing the coverage ratio. At first, &lt;a href=&quot;https://github.com/jendrikseipp&quot;&gt;Jendrik&lt;/a&gt; thought that achieving &lt;code class=&quot;highlighter-rouge&quot;&gt;100%&lt;/code&gt;
+wouldn’t be possible without major changes in how the tests were currently written. But,
+after inspecting the coverage report closely we found out that only a minor tweaks and
+removal of some obsolete code did the job. It also unveiled a bug in how the tests for
+&lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt; functions were written - They weren’t even being run because of a &lt;a href=&quot;https://github.com/jendrikseipp/vulture/commit/7ff8d6814844b321d62cb3c1a7797567b0bd94a1#diff-498cf53d35427897613cdfc4b76fc6ea&quot;&gt;faulty fixture
+I wrote.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, after the successful culmination of the first phase, I look forward to working on
+an entirely new feature on Vulture - Dynamic Analysis for detecting false positives. Stay
+tuned for more info.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 14 Jun 2018 00:00:00 +0530</pubDate>
+        <link>/articles/18/gsoc-18-phase-1</link>
+        <guid isPermaLink="true">/articles/18/gsoc-18-phase-1</guid>
+        
+        <category>GSoC</category>
+        
+        <category>vulture</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>The story of Dead Code, Vulture and scavenging</title>
+        <description>&lt;p&gt;It isn’t uncommon for software developers to encounter some code that they had
+written in the past and reflecting on it - the most common reaction would
+probably be “It must be the most horrible thing I wrote”. But sometimes, there’s
+that aha moment where you find something and you are instantly gratified and
+proud of yourself, “Oh, this is so beautiful, no wonder it took so many
+sleepless nights”. However glamorous it may sound, but it is indeed a difficult
+task to write and maintain such code, and this is where automatic tools come in
+to the picture. Let’s discuss about one such tool - &lt;a href=&quot;https://github.com/jendrikseipp/vulture&quot;&gt;Vulture&lt;/a&gt;, which
+helps discover unused stuff in Python code.&lt;/p&gt;
+
+&lt;p&gt;So, today we present to you the voodoo which throws out unused code.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;the-obvious-todo---find-things-which-arent-used-and-remove-them&quot;&gt;The obvious TODO - Find things which aren’t used and remove them&lt;/h2&gt;
+
+&lt;!--I am Rahul Jha. I study Electronics Engineering at Aligarh Muslim
+University.--&gt;
+&lt;p&gt;&lt;!--Also, and more importantly, I am the youngest person on the
+face of earth to--&gt; &lt;!--have spoken at so many technical conferences,
+_obviously_ aside from the people--&gt; &lt;!--who have spoken at more conferences
+than me.--&gt;&lt;/p&gt;
+
+&lt;p&gt;Before, we let ourselves dive in the nitty gritty details of &lt;a href=&quot;https://github.com/jendrikseipp/vulture&quot;&gt;Vulture&lt;/a&gt;,
+let me first tell you a story from my childhood.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Being a young, fearless and curious lad I was, whenever I used to visit
+someone’s house, I was very interested in some of the stuff they had in their,
+ahmm, store room - All those cool &lt;strong&gt;worn out&lt;/strong&gt; CFL Bulbs, game boards,
+extension chords and all other kinds of circuitry you can imagine and just so
+it happened, people would readily give me any of those items I asked for. And
+guess what, I used to take away &lt;strong&gt;all&lt;/strong&gt; of that with me (my mom was kind
+enough to let me play with it, obviously as long as she didn’t see all of it
+:D). There were two main reasons I used to collect these ‘things’ - One, I
+wanted to understand how such wonders could actually happen, and second and
+more importantly, I thought that if I become a circuit wizard some day, I
+might need some of this ‘equipment’ in my toolbox. Now, while learning this
+wizardry, of course, I had to deal with new tools as well, so I bought some
+things for myself, and more and more. On one fine day, it so happened that I
+came up with this wonderful idea to create a local fax machine (a different
+story for a different day), and I desperately needed a couple of (working)
+bulbs to fit into it, but I couldn’t find one in my stash - none of them would
+light up, although I knew that I bought a few earlier and had them somewhere
+here. That was a painful experience and that’s when it hit me - How important
+it is not to keep things which aren’t/can’t being used anymore or at the very
+least, storing them away. Anyways, I had a hard time testing every piece and
+dumping the ones which couldn’t be used anymore.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;PS: It later turned out that I didn’t actually had any bulbs, the ones’ I had
+bought were already martyred in my brother’s quest to see what would happen to
+the filament if we crack the glass open, genius it was!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Later, when I found Vulture, I realised the worth of a tool which could do such
+fumigation for me.&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;By now, it must’ve been pretty clear what exactly does Vulture do - it cleans up
+stuff, chops dead code. But, this statement begs the question that what exactly
+is dead code?&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-dead-code&quot;&gt;What is dead code?&lt;/h3&gt;
+
+&lt;p&gt;In simple terms, dead code is that code which is never ever run by your program.
+Some examples of dead code:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A variable/function/class which is defined, but is never utilised by your
+program.&lt;/li&gt;
+  &lt;li&gt;Code after return statement in a function/method.&lt;/li&gt;
+  &lt;li&gt;Code inside an &lt;code class=&quot;highlighter-rouge&quot;&gt;if False:&lt;/code&gt; statement. (:facepalm:)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;why-on-holy-earth-would-i-write-dead-code-in-my-own-software&quot;&gt;Why on holy Earth would I write dead code in my own software?&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;For the same reason you introduce bugs in it ;-)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Dead code isn’t intentionally introduced into the source code, instead it just
+crawls in through tiny sieves of carelessness and lack of attention, which is
+completely humane. Some of the most common causes of dead code are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Refactoring&lt;/strong&gt; - Many a times, programmers delete some legacy code which used
+to call a function (or use an import) and rewrite it in a different manner.
+Thus, eliminating the need of those old functions/imports. Now, these unused
+functions/imports are dead.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Misspellings&lt;/strong&gt; - Was it &lt;code class=&quot;highlighter-rouge&quot;&gt;increase_temperature&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;temperatur_increase&lt;/code&gt;???
+Hmmm, let’s go with &lt;code class=&quot;highlighter-rouge&quot;&gt;increase_temperature&lt;/code&gt; - If both of these names are
+already defined in your codebase, and you used the wrong one, not only have
+you introduced dead code, but also a bug into your program. Luckily, Vulture
+would help you catch those bugs.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;During debugging&lt;/strong&gt; - As humans, we tend to be lazy and that is why instead
+of using debugger checkpoints, we tend to use debug strings like &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Reached
+here&quot;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Here2&quot;&lt;/code&gt; and obscurely placed &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;break&lt;/code&gt; statements. If
+not paid attention, these changes can be committed and would again introduce
+bugs alongside dead code.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By now, it must be evident that having dead code is &lt;strong&gt;evil&lt;/strong&gt; - it causes bugs,
+confusion for newcomers and unnecessarily increases your program size and that
+you should absolutely remove it. It also helps improve maintainability and code
+quality of your program.&lt;/p&gt;
+
+&lt;p&gt;In the next post, I would continue with how to install Vulture and how to use
+it.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 30 May 2018 00:00:00 +0530</pubDate>
+        <link>/articles/18/vulture-how-to</link>
+        <guid isPermaLink="true">/articles/18/vulture-how-to</guid>
+        
+        <category>vulture</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Why use coverage to find which parts of a python code were executed?</title>
+        <description>&lt;p&gt;In this post, I’ll walk you through the decision making process the team behind
+Vulture underwent to come up with a way to deal with false positives in it’s
+results.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Let’s first start with a brief introduction of
+&lt;a href=&quot;https://github.com/jendrikseipp/vulture&quot;&gt;Vulture&lt;/a&gt;:&lt;/p&gt;
+
+&lt;h2 id=&quot;vulture&quot;&gt;Vulture&lt;/h2&gt;
+
+&lt;p&gt;As the name suggests, vulture helps find &lt;a href=&quot;https://en.wikipedia.org/wiki/Dead_code&quot;&gt;dead
+code&lt;/a&gt; for Python programs. There are
+many reasons for dead code ending up in a project. The most common is
+refactoring, but another is misspellings, which are only detected at runtime for
+dynamic languages. Finding and removing dead code allows to keep the code base
+clean and reduces bugs.&lt;/p&gt;
+
+&lt;p&gt;Vulture can detect unused imports, variables, attributes, functions, methods,
+properties and classes. Other than these, code after return statements and
+checking for a Boolean False (eg. &lt;code class=&quot;highlighter-rouge&quot;&gt;if False:&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;while 0:&lt;/code&gt;) can also be
+detected.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-vulture&quot;&gt;Using vulture&lt;/h3&gt;
+
+&lt;p&gt;Vulture is a standard Python package, that is installed with &lt;code class=&quot;highlighter-rouge&quot;&gt;pip&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(venv) $ pip install vulture
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Let us say that you have the following program (say &lt;code class=&quot;highlighter-rouge&quot;&gt;program.py&lt;/code&gt;) on which you
+want to perform analysis:&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# program.py
+&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;false_positive_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+    A function which is vital for your application to function, but Vulture
+    reports it as unused.
+    &quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hello_world&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello World&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;hello_world&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__main__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Analysing the program with vulture is as simple as running the following
+command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(venv) $ vulture program.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;which would produce the following output (on &lt;code class=&quot;highlighter-rouge&quot;&gt;vulture 0.26&lt;/code&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;program.py:2: unused import 'os' (90% confidence)
+program.py:4: unused function 'false_positive_function' (60% confidence)
+program.py:12: unused variable 'message' (60% confidence)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As you can see, along with every result, vulture also reports a confidence
+value - which is a measure of how sure vulture is about that part of code being
+unused. This output can be made even more meaningful with the help of flags like
+&lt;code class=&quot;highlighter-rouge&quot;&gt;--min-confidence&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;--sort-by-size&lt;/code&gt;. Read more about them
+&lt;a href=&quot;https://github.com/jendrikseipp/vulture/tree/master/README.rst&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Owing to Python’s dynamic nature, Vulture is likely to miss some dead code.
+Also, code which is only implicitly used is reported unused, such as overloading
+a parent class method, overriding methods of C/C++ extensions, etc.&lt;/p&gt;
+
+&lt;p&gt;Some other examples where vulture may report “useful” code as unused:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;API Endpoints&lt;/strong&gt; - They are meant for users and are not employed to any use
+directly in the source code, therefore confusing vulture.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ORM Schema&lt;/strong&gt; - Again, they aren’t used by program’s source code directly.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;handling-false-positives&quot;&gt;Handling false positives&lt;/h3&gt;
+
+&lt;p&gt;One way to prevent Vulture from reporting false positives is to explicitly use
+the code anyway. &amp;gt; WHAT! - Are you telling me to run my already used code?&lt;/p&gt;
+
+&lt;p&gt;Worry not! - no need to actually call the code - If you create a mocking class
+with attributes, name of whose exactly match the name of the unused code
+(variables, functions, classes, anything which can be unused and has a name),
+you can very cleverly fool Vulture into believing that that part of the code is
+being used (because Vulture keeps only track of the names parsed from the AST).
+This is known as “Whitelisting” and since it is a fairly common practice to
+create such a class for mocking objects, we already ship it with Vulture.&lt;/p&gt;
+
+&lt;p&gt;Let me show how you can create your own whitelists with our previous example.
+(Remeber we had a &lt;code class=&quot;highlighter-rouge&quot;&gt;false_positive_function&lt;/code&gt; - let’s whitelist it.)&lt;/p&gt;
+
+&lt;p&gt;Note that I am calling this file &lt;code class=&quot;highlighter-rouge&quot;&gt;whitelist_program.py&lt;/code&gt; because it’s a good idea
+to start the name with &lt;code class=&quot;highlighter-rouge&quot;&gt;whitelist&lt;/code&gt; just so you know what that file does, but
+there is no such compulsion - You can call it whatever you want.&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# whitelist_program.py
+&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;vulture.whitelist_utils&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Whitelist&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;awesome_whitelist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;Whitelist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;false_positive_function&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, let’s run Vulture using the following command:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(venv) $ vulture program.py whitelist_program.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And hurray, output does not contain the false positive function.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;program.py:2: unused import 'os' (90% confidence)
+program.py:12: unused variable 'message' (60% confidence)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;How did that work?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Since you also passed the whitelist file along with the file to be analysed,
+vulture created &lt;code class=&quot;highlighter-rouge&quot;&gt;ast&lt;/code&gt;’s for both of them and while parsing those trees, Vulture
+created a common &lt;code class=&quot;highlighter-rouge&quot;&gt;set&lt;/code&gt; for storing the names of used and defined objects. Since
+the name of the false positive function occurs in both of them, it is therefore
+not treated as unused.&lt;/p&gt;
+
+&lt;p&gt;A thing you may find interesting and  noteworthy about the &lt;code class=&quot;highlighter-rouge&quot;&gt;Whitelist&lt;/code&gt; class is that  it does absolutely “nothing”. It’s current implementation is as follows:&lt;/p&gt;
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Whitelist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+    Helper class that allows mocking Python objects.
+    Use it to create whitelist files that are not only syntactically
+    correct, but can also be executed.
+    &quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__getattr__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, since whitelists are so extensively used, Vulture already comes &lt;a href=&quot;https://github.com/jendrikseipp/vulture/tree/master/vulture/whitelists/&quot;&gt;loaded for
+some popular libraries like &lt;code class=&quot;highlighter-rouge&quot;&gt;sys&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;collections&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;unittest&lt;/code&gt;,
+etc.&lt;/a&gt; -
+These whitelists are automatically “activated” as soon as the user imports that
+library. The developers at Vulture are working hard (gives a pat on his back) to
+ship even more of these. Guess what, you can add one for your library, or just
+open an issue and we would create one for you. PR’s are more than welcome! :-)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Some other ways of dealing with false poisitives:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Mark unused variables by starting them with an “&lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt;”. (e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;_x, y =
+get_pos()&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Use different files for API endpoints, ORM, etc. and exclude them with the
+help of &lt;code class=&quot;highlighter-rouge&quot;&gt;--exclude&lt;/code&gt; flag.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can find more information about &lt;a href=&quot;https://github.com/jendrikseipp/vulture/tree/master/README.rst&quot;&gt;vulture in it’s
+documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-more-does-vulture-want&quot;&gt;What more does vulture want?&lt;/h2&gt;
+
+&lt;p&gt;As we saw earlier, the results reported by vulture sometimes contain false
+positives. We want to be able to develop such a system which should be able to
+detect wether or not the result given by vulture is a false positive.&lt;/p&gt;
+
+&lt;p&gt;Please note that this discussion originally occurred on
+&lt;a href=&quot;https://github.com/jendrikseipp/vulture/issues/109&quot;&gt;jendrikseipp/vulture/#109&lt;/a&gt;
+and this post is going to be a translation with some insight on how we finally
+came up with a decision.&lt;/p&gt;
+
+&lt;h3 id=&quot;approach-1---user-employed-regular-expressions&quot;&gt;Approach 1 - User employed regular expressions&lt;/h3&gt;
+
+&lt;p&gt;Vulture has different methods for parsing different kind of nodes in an &lt;code class=&quot;highlighter-rouge&quot;&gt;ast&lt;/code&gt;.
+So for example, if Vulture encounters a function definition, it triggers the
+&lt;code class=&quot;highlighter-rouge&quot;&gt;visitFunctionDef&lt;/code&gt; method for parsing that node and similarly for classes,
+variables, etc. Now, in those methods, we can easily insert a check to see if a
+name matches with any of the regex then we should ignore that construct.&lt;/p&gt;
+
+&lt;p&gt;The implementation for this was very easy, but there was a whole new problem -
+How do we present this functionality to the user?&lt;/p&gt;
+
+&lt;p&gt;All the inputs in Vulture are supplied through command line arguments and there
+aren’t any config files or variables (because that would be an overkill for such
+a simple tool). Although passing regex through a cli argument is possibe,
+seeking that it would be a non trivial task to write such a command and that
+there would be way too many different permutations of “lists” of regex for all
+the different types of constructs (functions, classes, variables, methods,
+properties, etc.), we soon dropped the idea.&lt;/p&gt;
+
+&lt;h3 id=&quot;approach-2---using-xml-output-from-coveragepy&quot;&gt;Approach 2 - Using XML output from &lt;code class=&quot;highlighter-rouge&quot;&gt;coverage.py&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Now, since we were restricted to minimum user interaction, Jendrik came up with
+this brilliant idea of automatically generating an initial whitelist and then
+letting user adapt it to her needs. This lead us to think that we should let
+user run &lt;a href=&quot;http://coverage.readthedocs.io/&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;coverage.py&lt;/code&gt;&lt;/a&gt; on their code base and
+export the XML output which could then be consumed by Vulture to detect which
+lines are actually used.&lt;/p&gt;
+
+&lt;p&gt;So, we tried a basic prototype. We took a sample file, let’s say &lt;code class=&quot;highlighter-rouge&quot;&gt;ab.py&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Running &lt;code class=&quot;highlighter-rouge&quot;&gt;coverage.py&lt;/code&gt;, the following XML output was observed:&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; ?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;coverage&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;branch-rate=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;line-rate=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0.75&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;timestamp=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1524751600489&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;version=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;4.3.4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Generated by coverage.py: https://coverage.readthedocs.io --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Based on https://raw.githubusercontent.com/cobertura/web/f0366e5e2cf18f111cbd61fc34ef720a6584ba02/htdocs/xml/coverage-03.dtd --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sources&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;source&amp;gt;&lt;/span&gt;/Users/rahuljha/Documents/test_everything_here&lt;span class=&quot;nt&quot;&gt;&amp;lt;/source&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sources&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;packages&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;package&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;branch-rate=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;complexity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;line-rate=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0.75&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;.&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;classes&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;class&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;branch-rate=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;complexity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;filename=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ab.py&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;line-rate=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0.75&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ab.py&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;methods/&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;lines&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;line&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;hits=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;number=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;line&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;hits=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;number=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;line&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;hits=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;number=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;line&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;hits=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;number=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/lines&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/class&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/classes&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/package&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/packages&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/coverage&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, as you may have observed, the problem with this was that the line numbers
+were not accurate (function &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt; starts at line number 6, but according to the
+report, line only line number 6 is unused) and no information about the name of
+the unused code was provided. So, we discraded this idea and decided to go yet
+more bare bones and to write a tracer.&lt;/p&gt;
+
+&lt;h3 id=&quot;approach-3---writing-a-tracer&quot;&gt;Approach 3 - Writing a &lt;code class=&quot;highlighter-rouge&quot;&gt;tracer&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;A tracer would allow us to keep track of what is going on in the current Python
+process, but after trying to develop a simple protoype, I knew that it wasn’t a
+trivial task. Also, Abdeali who have had previous experience working with such
+“technology” held the following opinion:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If vulture starts to maintain tracer and so on it is starting to go towards
+non-static analysis which I am not sure you guys want to maintain as it can
+have a bunch of issues :/&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So, in this moment of confusion, we decided to ask Ned Batchelder, the guy
+behind &lt;code class=&quot;highlighter-rouge&quot;&gt;coverage.py&lt;/code&gt; himself. Let me quote him:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You will need a trace function. Writing your own doesn’t have to be
+complicated, though you are right there are details like subprocesses that can
+be a pain. Writing a file tracer plugin could be a way to piggy-back on
+coverage.py. Getting function names wouldn’t be hard, since you can inspect the
+frame object in the trace function to get what you need. Variables are harder.
+You’ve noted that coverage.py reports line numbers, but then you say it’s hard
+to go from line numbers to the information you need. But you already are doing
+AST analysis. Couldn’t you use coverage.py’s line numbers to index into the AST
+you already have, and then use your AST expertise from there?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So, we were back to square one (well, square two in this case) - Use output from
+&lt;code class=&quot;highlighter-rouge&quot;&gt;coverage.xml&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;back-to-approach-2---use-xml-output-from-coveragepy&quot;&gt;Back to approach 2 - Use XML output from &lt;code class=&quot;highlighter-rouge&quot;&gt;coverage.py&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;We quickly discovered that &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;line hits=&quot;1&quot;&amp;gt;&lt;/code&gt; was merely a binary switch
+indicative of whether or not that line was called and contained no information
+about “how many times”. It was important because it would always be “1” for the
+first line of function (It is used when the program is initialised to store the
+name of the function in memory) and therefore we couldn’t use this switch as an
+indication of whether or not the function was actually used. This also explained
+why the line numbers were off when we inspected the output earlier.&lt;/p&gt;
+
+&lt;p&gt;But, this gave us a workable idea: If Vulture says that a function is unused, we
+can check whether this is really the case by checking whether the next line is
+marked as unused in the coverage.py XML file. The only exception would be a
+function defined in a single line, such as:&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;which aren’t very common nor very useful and therefore can be neglected.&lt;/p&gt;
+
+&lt;p&gt;And that’s how my dear friends we decided to use &lt;code class=&quot;highlighter-rouge&quot;&gt;coverage.py&lt;/code&gt; to detect if code
+was actually used or not. Although, it would only enable vulture to detect
+unused “functions” (and properties, maybe) and not classes or variable, but it
+would still be a very useful feature.&lt;/p&gt;
+
+&lt;p&gt;P.S. I am excited to work with the team on this feature. It is also one of the
+goals of my Google Summer of Code project.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 19 May 2018 00:00:00 +0530</pubDate>
+        <link>/articles/18/why-use-coverage-to-find-which-python-code-is-run</link>
+        <guid isPermaLink="true">/articles/18/why-use-coverage-to-find-which-python-code-is-run</guid>
+        
+        <category>vulture</category>
+        
+        <category>GSoC</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>A meeting with my GSoC'18 mentors</title>
+        <description>&lt;p&gt;Tell me and I forget, teach me and I may remember, involve me and I learn. This
+blog post is a public memoir of an online meeting I had with my GSoC mentors.
+Kudos to me for having such awesome mentors! :P&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;So, a few days back I see some sudden activity in
+&lt;a href=&quot;https://github.com/jendrikseipp/vulture&quot;&gt;vulture&lt;/a&gt; with a lot of questions and
+ideas from the legendary &lt;a href=&quot;https://github.com/AbdealiJK&quot;&gt;@AbdealiJK&lt;/a&gt;. I had
+already known him because of his contributions to &lt;a href=&quot;https://coala.io&quot;&gt;coala&lt;/a&gt;. But
+to my surprise, a week down, I come to know that he is mentoring me for my GSoC
+project: &lt;a href=&quot;https://summerofcode.withgoogle.com/projects/#5620743946108928&quot;&gt;“Automatic Whitelist generation for
+vulture”&lt;/a&gt; along
+with &lt;a href=&quot;https://github.com/jendrikseipp/vulture&quot;&gt;@jendrikseipp&lt;/a&gt; and
+&lt;a href=&quot;https://github.com/The-Compiler&quot;&gt;@The-Compiler&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now, since we wanted everyone to be on the same page and catch up with the
+developments in the project, we planned to have a kick off call. All of us
+quickly marked our free time on a &lt;a href=&quot;https://doodle.com/poll/hn5dibfgz2y63ssa#calendar&quot;&gt;doodle
+calendar&lt;/a&gt; and thereby decided
+to have the call on May 4 (08:00 PM). In the meanwhile, &lt;a href=&quot;https://twitter.com/hashtag/westandwithamu&quot;&gt;a protest caught up
+momentum in my college&lt;/a&gt; and seeking
+to it, government shut down Internet services in my town, Aligarh on May 4 (The
+nuances of it’s repercussions are yet to be lamented by). While, I was somehow
+still being able to surf the Internet, I quickly notified Abdeali and asked for
+his number so that if I couldn’t access Internet, I would notify him through
+SMS. But, it must have been a bad day for humanity for not only did I lose
+Internet, I had such an abrupt network connection in my mobile phone, that
+sending an SMS took a couple hours.&lt;/p&gt;
+
+&lt;p&gt;It was bound to happen, but I was lucky that exams were postponed from May 7 to
+May 12, and that we could reschedule the meeting to happen on May 7 now. Yay!
+:-)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;May 7, 7:30 PM&lt;/em&gt;: I’m all set with audio/video equipment and make a hangout call
+to my friend to ensure that everything was indeed working. (Thanks
+&lt;a href=&quot;https://github.com/proishan11&quot;&gt;@proishan11&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;May 7, 7:35 PM&lt;/em&gt;: I’ve already joined the call. Eagerly waiting for everyone!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;May 7, 7:48 PM&lt;/em&gt;: I e-mail the hangout link to everyone and create a Google doc
+for notes and share it with everyone.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;May 7, 7:55 PM&lt;/em&gt;: Florian joins the call, tells me that he is sitting a
+StarBucks cafe right now and that he was on mobile and that he would be joining
+the call right back with his computer.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;May 7, 8:00 PM&lt;/em&gt;: Abdeali and Jendrik join the call, and that point marked the
+point where we embark on our journey of GSoC 2018. Let me walk you through it.&lt;/p&gt;
+
+&lt;h2 id=&quot;gsoc-kick-off&quot;&gt;GSoC Kick-off&lt;/h2&gt;
+
+&lt;p&gt;As soon as they join the call, we have a casual conversation about t-shirts,
+protests and politics all the while we were waiting for Florian to join the
+call.&lt;/p&gt;
+
+&lt;p&gt;We start with have a round of introduction:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Abdeali:
+    &lt;ul&gt;
+      &lt;li&gt;We should call him Ali.&lt;/li&gt;
+      &lt;li&gt;Works in a startup based in Bangalore, India.&lt;/li&gt;
+      &lt;li&gt;Have had been a GSoC student twice.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Jendrik:
+    &lt;ul&gt;
+      &lt;li&gt;Based in Basel, Switzerland&lt;/li&gt;
+      &lt;li&gt;Completed his PhD in Artificial Intelligence from University of Basel.&lt;/li&gt;
+      &lt;li&gt;Currently a postdoctoral researcher at the same place.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Florian
+    &lt;ul&gt;
+      &lt;li&gt;Software Engineering Student&lt;/li&gt;
+      &lt;li&gt;Maintainer of &lt;a href=&quot;https://github.com/qutebrowser&quot;&gt;qutebrowser&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Has very long hair. (&amp;lt;3)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After the introductions, we discuss about what common communication medium
+should we use and finally arrive on a consensus that we should be using mailing
+lists for elaborate discourse and IRC (#vulture on irc.freenode.org) for more
+real time dialogue.&lt;/p&gt;
+
+&lt;p&gt;We then have a brief discussion about examinations, vacation plans, etc. to mark
+our availability. I also became a subject of pity when I told them the truth of
+my monotonous life: No Vacation, No pilgrimage! :-( (I really should plan a
+vacation!)&lt;/p&gt;
+
+&lt;p&gt;In the meanwhile, Jendrik notices that someone has had been taking notes in the
+&lt;a href=&quot;https://docs.google.com/document/d/1TltVoSFNxfjuiKTM8tnYmMllc6Z7GfmvJNIePWKgp6M/edit?usp=sharing&quot;&gt;Google
+Doc&lt;/a&gt; -
+We find out that it’s Florian. I am totally taken aback by his ability to
+listen, process, speak and type at the same time. Hats off! - It is one of the
+reason that I’ve started learning touch typing.&lt;/p&gt;
+
+&lt;p&gt;After a few more rounds of discussions, following verdicts are pronounced:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;No dedicated traces, use coverage.py output&lt;/li&gt;
+  &lt;li&gt;Have the coverage tracing thing in the same repository as vulture&lt;/li&gt;
+  &lt;li&gt;But use a different repo for the whitelist generator.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Jendrik does not have exams and is very happy about it.&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After all of this crazy fun for 40 mins, it was time that we bid each other good
+bye. But all in all, it was a great experience (and productive) to be finally
+able to meet with mentors and to see some faces behind the names. :-) Thank You
+everyone for making this possible.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 13 May 2018 00:00:00 +0530</pubDate>
+        <link>/articles/18/a-meeting-with-my-gsoc'18-mentors</link>
+        <guid isPermaLink="true">/articles/18/a-meeting-with-my-gsoc'18-mentors</guid>
+        
+        <category>GSoC</category>
+        
+        <category>meeting</category>
+        
+        <category>mentor</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>GSoC 2018</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“Good luck is a residue of preparation.”
+― Jack Youngblood&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Getting selected as a Google Summer of Code student with coala was a
+breakthrough for me. The coala community touched me on every aspect of open
+source software development, especially how to get along with peers (and troll
+them :-p). And it has happened again - I am a student with coala one more time,
+and I look forward to learn yet more from my dear mentors and the beloved coala
+community.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Let me give a brief overview of the project I would be working on: The aim is to
+automatically create whitelists (to be utilized by
+&lt;a href=&quot;https://github.com/jendrikseipp/vulture&quot;&gt;vulture&lt;/a&gt;) for projects using sip files
+to communicate between C++ level API and Python programs, most significant of
+them being PyQt projects.&lt;/p&gt;
+
+&lt;h3 id=&quot;action-plan&quot;&gt;ACTION PLAN&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a script which takes sip files as input and spits a whitelist with all
+the virtual functions defined in the sip files. (Add Documentation and tests)&lt;/li&gt;
+  &lt;li&gt;Use that script for generating a whitelist for popular projects using PyQt
+(like &lt;a href=&quot;https://github.com/qutebrowser/qutebrowser&quot;&gt;qutebrowser&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;Allow passing coverage.xml to vulture via &lt;code class=&quot;highlighter-rouge&quot;&gt;--make-whitelist&lt;/code&gt; and let it find
+the list of false-positive functions. (Add Documentation and tests as well)&lt;/li&gt;
+  &lt;li&gt;Write a whitelist generator for &lt;code class=&quot;highlighter-rouge&quot;&gt;shiboken&lt;/code&gt;, the binding generator used for
+PySide2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You may find more information about the project
+&lt;a href=&quot;https://projects.coala.io/#/projects?project=automate_whitelist_creation_for_vulture&amp;amp;lang=en&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;thank-you&quot;&gt;Thank You&lt;/h3&gt;
+
+&lt;p&gt;I’m forever indebted to my mentors for they taught me whatever I know today. I
+want to take a moment here and thank some special people:&lt;/p&gt;
+
+&lt;p&gt;A huge shout out to my mentors:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jendrikseipp&quot;&gt;Jendrik Seipp&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/The-Compiler&quot;&gt;Florian Bruhin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/AbdealiJK&quot;&gt;Abdeali Kothari&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jayvdb&quot;&gt;John Vandenberg&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;My Mom and Dad&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Also, I owe a thank you to my brilliant peers who have had always inspired me:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/yash-nisar&quot;&gt;Yash Nisar&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/satwikkansal&quot;&gt;Satwik Kansal&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/aptrishu&quot;&gt;Rishav Jha&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/hemangsk&quot;&gt;Hemang Kumar&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/iamareebjamal&quot;&gt;Areeb Jamal&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cran-cg&quot;&gt;Chiranjeev Gupta&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mohdomama&quot;&gt;Mohd. Omama&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thanks for reading! :-)&lt;/p&gt;
+</description>
+        <pubDate>Thu, 10 May 2018 00:00:00 +0530</pubDate>
+        <link>/articles/18/gsoc-2018</link>
+        <guid isPermaLink="true">/articles/18/gsoc-2018</guid>
+        
+        <category>GSoC</category>
+        
+        <category>vulture</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Statement of Chaos</title>
+        <description>&lt;p&gt;Should I go for a job or an MS?&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;tldr-why-the-title&quot;&gt;TLDR; Why the title?&lt;/h2&gt;
+
+&lt;p&gt;Because I am in that phase of life where I need to take one of the most
+important decisions of my life and it turns out that my thoughts are a chaos.
+Let’s compare the things I know v/s the things I don’t:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;I know what I can do&lt;/strong&gt;*&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Contribute to open source more often.&lt;/li&gt;
+  &lt;li&gt;Write more regularly.&lt;/li&gt;
+  &lt;li&gt;Start looking for ideas for my research.&lt;/li&gt;
+  &lt;li&gt;Finish all the MOOC’s I’ve lined up.&lt;/li&gt;
+  &lt;li&gt;Start implementing the pet project I’ve been thinking for months.&lt;/li&gt;
+  &lt;li&gt;Read more books.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;I don’t know what I would do&lt;/strong&gt;*&lt;/p&gt;
+
+&lt;p&gt;Do I go for a job after B.tech? If yes, then do I need to do something
+differently from what I am currently doing?&lt;/p&gt;
+
+&lt;p&gt;or, should I rather go for higher studies - MS, Robotics? If yes, then does the preparation requires that I need to abandon some of the things I’ve listed.&lt;/p&gt;
+
+&lt;p&gt;Is the preparation for the above two mutually exclusive?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Moreover, I don’t know what is stopping me?&lt;/strong&gt;
+&lt;em&gt;Is it lethargy?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Do I not want to do these things? Nope, it’s the exact opposite, I don’t want to
+do anything other than these things. I can dedicate any (or all) amount of my
+free time doing these things.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Am I too busy?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Nope, the workload from College is pretty less. Apart from hanging out with a
+few friends, I don’t really do much.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Do I not put in enough efforts?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;No, I try every bit I can to achieve these things, I wake up as early
+as 5:30, don’t have a girlfriend, no TV, no movies.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Do I not have enough resources?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;No, I have more than enough resources at hand - I have a fast Internet
+connection, a powerful computer and access to powerful servers for anything
+power savvy. I have god friends to support me and wise teachers/mentors to
+advice me.&lt;/p&gt;
+
+&lt;p&gt;_Am I just slow?**&lt;/p&gt;
+
+&lt;p&gt;Yes, probably.&lt;/p&gt;
+
+&lt;h2 id=&quot;is-it-the-first-time-you-are-confused&quot;&gt;Is it the first time you are confused?&lt;/h2&gt;
+
+&lt;p&gt;Every career related decision I had to take up until now, I never really had to
+sit and think. They just came naturally, take the example of:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What stream after High School?&lt;/strong&gt;
+Biology - Nope, can’t look at blood.&lt;/p&gt;
+
+&lt;p&gt;Arts - My sense of art is “horrible”, not very good with social sciences
+either.&lt;/p&gt;
+
+&lt;p&gt;Commerce - Although I like it, I wasn’t very fond of finding mistakes in
+other people’s calculation.&lt;/p&gt;
+
+&lt;p&gt;Mathematics - Hell yeah, let’s go study it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What college do you want to go to?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I was already a student in the Aligarh Muslim University when I applied for
+B.Tech program and my rank elsewhere was average, so it was the only option.
+I like the city, my friends are here - I feel like I did no mistake.&lt;/p&gt;
+
+&lt;h2 id=&quot;did-you-always-wanted-to-pursue-higher-studies&quot;&gt;Did you always wanted to pursue higher studies?&lt;/h2&gt;
+
+&lt;p&gt;Nope, I never even thought of pursuing higher education. With the advent of
+MOOC’s and the Internet, I thought that I would never need formal training.
+But, soon enough, I was introduced to the field of autonomous robotics and
+MOOC’s weren’t able to satisfy my hunger, perhaps because it requires
+practical/physical exposure. At this time, I just had a faint, out of
+nowhere idea of an MS, but I wasn’t very serious. When no one around me was
+getting a job I thought we can get, I started to take this idea into
+consideration.&lt;/p&gt;
+
+&lt;p&gt;When the results for the third semester were out, a month ago, before entering
+my name into the website, I thought to myself about planning my reaction and
+almost naturally, yet passionlessly, my brain spurred out that I am ready to
+accept whatever I had expected (~ 8 ± 0.2). There need not any “resolutions”
+wherein I would try working harder the next time or to attend more classes,
+because what I believe today “Mr. Busy effect” - I won’t be able to give time
+to other things I (like to) do (contribute to open source, mentor new folks in
+AMU-OSS, study robotics, write blog posts, read). I also thought that I ain’t
+learning in class anyways, so my current way of studying (don’t ever open your
+book in regular days and cram everything the night before the test) was the
+“optimum” choice.&lt;/p&gt;
+
+&lt;p&gt;Ready for results, with absolutely no enthusiasm, I entered my credentials into
+the website and kept staring at it. I was trying to calculate how precarious
+life can turn out to be - I had scored a whooping 9.4 / 10 (my highest ever in
+college) and I was actually feeling happy (maybe it was shock, I’m not sure).
+The next few moments, I critically examined my result only to find out that I
+have got a few A’s in the subjects I thought I never would and quite ironically
+I also scored a B in a subject I thought I never would! ;-) I had “my moment”
+then and there, but soon everything faded away in the color of life.&lt;/p&gt;
+
+&lt;p&gt;Not until, I had started preparing myself for this (4th) semester’s mid-term
+tests, I realized that somewhere inside me, I had started to feel that I want
+to score high again, I want to study for exams - What if I scored low again? -
+What about MS?&lt;/p&gt;
+
+&lt;p&gt;This is where I started feeling confused. Can I afford an MS, would I be
+selected, am I too late?&lt;/p&gt;
+
+&lt;h3 id=&quot;solutions-i-thought-of-when-researching-for-this-post&quot;&gt;Solutions (I thought of when researching for this post)&lt;/h3&gt;
+
+&lt;p&gt;Although I don’t have answers to all (or any) of my questions, it turns out
+that writing this blog post gave me some clarity on the situation:&lt;/p&gt;
+
+&lt;p&gt;I should read more on the topic, especially Quora.&lt;/p&gt;
+
+&lt;p&gt;I am not late, it is the ideal time to start preparation.&lt;/p&gt;
+
+&lt;p&gt;that I need to go out there and get things done, no more infinitely long
+“thought drills”&lt;/p&gt;
+
+&lt;p&gt;Also, that if you decide to take one step ahead and you would definitely
+find a way to a solution.&lt;/p&gt;
+
+&lt;p&gt;Thank You for reading! - I’d highly appreciate your advice!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 30 Mar 2018 00:00:00 +0530</pubDate>
+        <link>/articles/18/statement-of-chaos</link>
+        <guid isPermaLink="true">/articles/18/statement-of-chaos</guid>
+        
+        <category>thought</category>
+        
+        <category>career</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
   </channel>
 </rss>

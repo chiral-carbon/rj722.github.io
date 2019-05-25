@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GSoC Project</title>
+  <meta name="description" content="The project I will be working this (G) summer (oC)">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/articles/17/gsoc_project">
+
+  <link rel="alternate" type="application/rss+xml" title="Rahul Jha" href="/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+		    
+		      <a href="/">RJ722's blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About RJ722</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>GSoC Project</h1>
+<p class="subtitle">May 20, 2017</p>
+
+<p>The project I will be working this (G) summer (oC)</p>
+
+<!--more-->
+
+<h2 id="overview">Overview</h2>
+
+<p>The motivation, here, is to extend the functionality of vulture as a library,
+and to pass on all metadata through the API and then to harness this utility in
+VultureBear for auto removing dead code, which would greatly optimise the bear.
+The second part of this project focuses on offering the source range of the dead
+code which would make auto-removal much easier. As of now, vulture only supplies
+the beginning of the dead code. Also, it proposes to enhance vulture in order to
+detect unreachable code (like <code class="highlighter-rouge">if False</code>, <code class="highlighter-rouge">if True else</code>, any code written after
+return statements, etc). - this shall help the user in trimming down their
+codebase without affecting usability. Also, the third part would be to implement
+a confidence value for every result, this shall be helpful when tackling false
+positives.</p>
+
+<figure><figcaption>Project Architecure</figcaption><img src="https://cloud.githubusercontent.com/assets/15556382/26275557/580cae2c-3d81-11e7-89ed-ac1ccbf9dc26.png" /></figure>
+
+<h2 id="goals">Goals</h2>
+<ul>
+  <li>Modify vulture, such as to extend its core functionality as a library.</li>
+  <li>Refactor VultureBear accordingly for ensuring optimal performance.</li>
+  <li>Implement a method to acquire the source range of dead code and make suitable
+changes in the API and Bear.</li>
+  <li>Detect the instances of unreachable code, like `if False** statements</li>
+  <li>Analyse and implement a confidence value for results.</li>
+</ul>
+
+<h3 id="specifications">Specifications</h3>
+<p><strong>1.) Realise vulture’s API in VultureBear</strong>*</p>
+
+<p><strong>Extending vulture’s API</strong>: This would allow the user to find all the unused
+	code through a single abstract layer: <code class="highlighter-rouge">get_unused_code</code>. Strategy here
+	would be to:
+Parse all files straight away from dict(filename: filecontent) - This
+would highly improve the performance of the bear later due to the time we
+save of memory copying.</p>
+
+<p>Return a sorted list of tuples <code class="highlighter-rouge">[(item.filename, item.lineno, item.typ,
+item)...]</code> - which would be easily configurable. This can be easily implemented,
+given the already existing <code class="highlighter-rouge">Vulture.scan(), Vulture.report(),
+Vulture.unused_funcs()</code>, etc.</p>
+
+<p><strong>Enhance VultureBear</strong></p>
+
+<p>Refactor VultureBear to directly fetch results through <code class="highlighter-rouge">get_unused_code</code>
+(API), thus making it more efficient- we would have memory files passing
+(An extra layer of parsing would then be removed)</p>
+
+<p>Further enhancements in vulture (detect unreachable code and reporting
+ranges of dead code** would influence the API, which would also need
+refactoring of the Bear.</p>
+
+<p><strong>2.) Making whitelist default and extending it further</strong></p>
+
+<p>The first step here would be to make the whitelist default. The important thing
+would be to identify possible cases which might cause vulture to report a false
+positive. This can be achieved through extensive testing with major projects -
+trending python projects on github would cater to our need for the purpose. This
+approach would serve us many benefits:</p>
+
+<p>We can identify instances of what should ideally be in our whitelist file - as
+we may find any lesser known constructs.</p>
+
+<p>We can test vulture for any unreported bugs.</p>
+
+<p>We can find many projects which use/might want to use vulture - they may
+further collaborate with us in making the whitelists together. (As proposed by
+<a href="https://github.com/jendrikseipp">@jendrikseipp</a>**</p>
+
+<p><strong>3.) Acquiring source range and implementing auto-removal</strong></p>
+
+<p>Analyse and discuss with the community the utilities of ast or enhanced pyflake
+ast for what would better cater to our problem and would offer simplicity for
+source-range acquisition and arrive at a concrete conclusion. Also, there was
+another proposal by <a href="https://bitbucket.org/m0hawk">@m0hawk</a> to get everything
+until the next node starts. Dialogue here -
+<a href="https://github.com/jendrikseipp/vulture/issues/25">#25</a></p>
+
+<p>Also, if able to fetch the source range successfully, implement the pathway
+through which the metadata flows in and out of API, this would not require much
+work because we can easily change item.lineno (int) to item.dead_range (tuple of
+ints** and can parse them over in the VultureBear.</p>
+
+<p><strong>4.) Detecting unreachable code</strong></p>
+
+<p>We would first need to identify cases where code cannot be reached. Some of the
+common ones are:</p>
+<ul>
+  <li><code class="highlighter-rouge">If False</code></li>
+  <li><code class="highlighter-rouge">If True; else</code></li>
+  <li>Any code after <code class="highlighter-rouge">return</code> statement in the block containing return itself.</li>
+  <li><code class="highlighter-rouge">raise</code> statement in `try** block.</li>
+</ul>
+
+<p>Similar constructs would have to be looked onto. The crude form of this would
+be:</p>
+<ul>
+  <li>Analyse the ast’s</li>
+  <li>Look for the if nodes</li>
+  <li>Check the boolean affiliated to it, tracking previous arguments.</li>
+</ul>
+
+<p><strong>5.) Implementing a confidence value for  results</strong></p>
+
+<p>We would need to analyse every construct individually on a case by case basis.
+For example, we already know that import statements can be predicted with 100%
+surety (except for * imports, where it would be 0%), but functions often have
+false-positives.</p>
+
+<p>The confidence value will be alike the ones given below: (The finer grained
+distinctions will need further discussion)</p>
+
+<p><label for="table-1-id" class="margin-toggle"> ⊕</label><input type="checkbox" id="table-1-id" class="margin-toggle" /><span class="marginnote"><em>Table 1</em>: A table with default style formatting </span></p>
+<div class="table-wrapper">
+<table class="table-alpha">
+<col align="middle" />
+<col align="right" />
+<thead>
+  <tr>
+    <th>Construct</th>
+    <th>Confidence Value</th>
+  </tr>
+</thead>
+
+<tr><td>import </td>          <td class="r">100%</td></tr>
+<tr><td>from foo import *</td><td class="r">0%</td></tr>
+<tr><td>variable</td>         <td class="r">&lt;100%</td></tr>
+<tr><td>function</td>         <td class="r">&lt;100%</td></tr>
+<tr><td>class</td>            <td class="r">&lt;100%</td></tr>
+<tr><td>if False</td>         <td class="r">100%</td></tr>
+</table>
+</div>
+
+<p>References:</p>
+
+<ul>
+  <li><a href="https://github.com/jendrikseipp/vulture">vulture</a></li>
+  <li><a href="https://docs.google.com/document/d/1gzRH-rdJsiAD-TOEB0O4OqtcnTp0zotcNl6agAuXGHw/edit?usp=sharing">Original Project
+Proposal</a></li>
+</ul>
+
+<h3 id="milestones">Milestones</h3>
+
+<p><strong>PREPARATION/BONDING</strong></p>
+
+<ul>
+  <li>A concept for the source range acquisition is finalized.</li>
+  <li>Use vulture to report dead code for popular Python projects on Github</li>
+</ul>
+
+<p><strong>CODING PHASE 1</strong></p>
+
+<ul>
+  <li>Vulture offers its functionality as a library</li>
+  <li>The VultureBear uses the new vulture library</li>
+  <li>Confidence values are implemented for vulture results</li>
+</ul>
+
+<p><strong>CODING PHASE 2</strong></p>
+
+<ul>
+  <li>Create whitelist files for popular Python frameworks like Django</li>
+  <li>Refine default whitelists for vulture</li>
+  <li>If a way was found to offer source ranges, the removal of dead code is
+implemented for the VultureBear using a confidence value as threshold.</li>
+</ul>
+
+<p><strong>CODING PHASE 3</strong></p>
+<ul>
+  <li>Implement additional detection cases for unreachable code</li>
+  <li>Update the API to easily transmit newly created data (confidence values,
+unreachable code, source range, etc.)</li>
+  <li>Integrate the resulting API with the VultureBear</li>
+  <li>All implemented code is fully tested and documented.</li>
+</ul>
+
+<p>Thank You for reading along, please feel free to tweet to @rahul722j or reach
+out to me at rahul722j@gmail.com, or just comment below for any queries.</p>
+
+
+
+    </article>
+    <span class="print-footer">GSoC Project - May 20, 2017 - Rahul Jha</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:rahul722j@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/rahul722j"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/RJ722"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;RAHUL JHA</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Blogging is fun! </a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>

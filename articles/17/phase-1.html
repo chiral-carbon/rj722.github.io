@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Phase-1</title>
+  <meta name="description" content="Phase 1 of the coding period ended on 26’th June 23:30 GMT+5:30.With this post, I would like to reflect upon the development progress so far andshare some of...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/articles/17/phase-1">
+
+  <link rel="alternate" type="application/rss+xml" title="Rahul Jha" href="/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+		    
+		      <a href="/">RJ722's blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About RJ722</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Phase-1</h1>
+<p class="subtitle">June 24, 2017</p>
+
+<p>Phase 1 of the coding period ended on 26’th June 23:30 GMT+5:30.
+With this post, I would like to reflect upon the development progress so far and
+share some of the challenges I faced.</p>
+
+<!--more-->
+
+<h2 id="overview">Overview</h2>
+
+<p>I had the following things to tackle:</p>
+<ul>
+  <li>Make vulture available as an API</li>
+  <li>Refactor VultureBear accordingly</li>
+  <li>Add an option to exclude some files from being analysed by vulture</li>
+  <li>Implement confidence values for results given by vulture</li>
+  <li>Make use of the <a href="https://github.com/jendrikseipp/vulture/blob/master/vulture/whitelists/stdlib.py"><code class="highlighter-rouge">stdlib whitelist</code></a> in every run by default.</li>
+  <li>Add appveyor CI</li>
+</ul>
+
+<h3 id="making-vulture-available-as-an-api">Making vulture available as an API</h3>
+
+<p>Thanks to the already implemented <code class="highlighter-rouge">Vulture.Item</code> class and <code class="highlighter-rouge">vulture.scavenge</code>
+method, we had to do <strong>nothing</strong> to extend vulture’s utility as an API.
+We just had to manipulate the way VultureBear calls vulture.</p>
+
+<h3 id="refactor-vulturebear">Refactor VultureBear</h3>
+
+<p>Previosuly, VultureBear created a POpen instance, executed vulture over the input
+files and piped the output. Output was then parsed for information (filename, lineno, type, etc.)
+using Regular Expressions.</p>
+
+<p>You can read more about it here - <a href="/meeting-jendrik">Meeting Jendrik</a></p>
+
+<h3 id="add-an-option-to-exclude-files">Add an option to exclude files</h3>
+
+<p>There might be a variety of reasons where people would want VultureBear to <em>not</em>
+analyse some files, like:</p>
+<ul>
+  <li>vulture reports False positives, and they are fed up of errors.</li>
+  <li>some configuration files define environment variales, they are being
+reported as dead code by vulture.</li>
+  <li>Author plans to use the specified code later.</li>
+</ul>
+
+<p>Now, previously, I had the vulture’s exclude option in my mind. But, then @jayvdb
+pointed out that there is an ignore option in coala. After further discussion, the
+issue was marked as already resolved. :-) Thanks @jayvdb</p>
+
+<h3 id="implement-confidence-values-for-results-given-by-vulture">Implement confidence values for results given by vulture</h3>
+
+<p>This was an important change, as it would have changed the format in which
+vulture reports it’s results.</p>
+
+<p>In a prior meeting with @jendrikseipp, it was decided that imports would be
+reported with 100% confidence and everything else with 70%. There was also some
+discussion for a flag <code class="highlighter-rouge">--min-confidence</code> which would enable a filter which
+would only allow results which have a confidence more than the value given.</p>
+
+<p>But after further thought the idea of making this change upstream was dropped
+and the <code class="highlighter-rouge">CONFIDENCE_MAP</code> was implemented in the <code class="highlighter-rouge">VultureBear</code> itself. The implementation
+is quite simple:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CONFIDENCE_MAP</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'attribute'</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+    <span class="s">'class'</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+    <span class="s">'function'</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+    <span class="s">'import'</span><span class="p">:</span> <span class="mi">95</span><span class="p">,</span>
+    <span class="s">'property'</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+    <span class="s">'variable'</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">_find_unused_code</span><span class="p">(</span><span class="n">filenames</span><span class="p">):</span>
+    <span class="s">"""
+    :param filenames: List of filenames to check.
+    :return: Generator of Result objects.
+    """</span>
+
+    <span class="k">def</span> <span class="nf">file_lineno</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">filename</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">item</span><span class="o">.</span><span class="n">lineno</span><span class="p">)</span>
+
+    <span class="n">vulture</span> <span class="o">=</span> <span class="n">Vulture</span><span class="p">()</span>
+    <span class="n">vulture</span><span class="o">.</span><span class="n">scavenge</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="n">vulture</span><span class="o">.</span><span class="n">unused_funcs</span> <span class="o">+</span> <span class="n">vulture</span><span class="o">.</span><span class="n">unused_imports</span> <span class="o">+</span>
+            <span class="n">vulture</span><span class="o">.</span><span class="n">unused_props</span> <span class="o">+</span> <span class="n">vulture</span><span class="o">.</span><span class="n">unused_vars</span> <span class="o">+</span>
+            <span class="n">vulture</span><span class="o">.</span><span class="n">unused_attrs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">file_lineno</span><span class="p">):</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="s">'Unused {0}: {1}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">typ</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">Result</span><span class="o">.</span><span class="n">from_values</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s">'VultureBear'</span><span class="p">,</span>
+                                 <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+                                 <span class="nb">file</span><span class="o">=</span><span class="n">item</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span>
+                                 <span class="n">line</span><span class="o">=</span><span class="n">item</span><span class="o">.</span><span class="n">lineno</span><span class="p">,</span>
+                                 <span class="n">confidence</span><span class="o">=</span><span class="n">CONFIDENCE_MAP</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">typ</span><span class="p">])</span>
+
+
+<span class="k">class</span> <span class="nc">VultureBear</span><span class="p">(</span><span class="n">GlobalBear</span><span class="p">):</span>
+    <span class="n">LANGUAGES</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Python'</span><span class="p">,</span> <span class="s">'Python 3'</span><span class="p">}</span>
+    <span class="n">REQUIREMENTS</span> <span class="o">=</span> <span class="p">{</span><span class="n">PipRequirement</span><span class="p">(</span><span class="s">'vulture'</span><span class="p">,</span> <span class="s">'0.14.0'</span><span class="p">)}</span>
+    <span class="n">AUTHORS</span> <span class="o">=</span> <span class="p">{</span><span class="s">'The coala developers'</span><span class="p">}</span>
+    <span class="n">AUTHORS_EMAILS</span> <span class="o">=</span> <span class="p">{</span><span class="s">'coala-devel@googlegroups.com'</span><span class="p">}</span>
+    <span class="n">LICENSE</span> <span class="o">=</span> <span class="s">'AGPL-3.0'</span>
+    <span class="n">ASCIINEMA_URL</span> <span class="o">=</span> <span class="s">'https://asciinema.org/a/82256'</span>
+    <span class="n">CAN_DETECT</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Unused Code'</span><span class="p">}</span>
+    <span class="n">SEE_MORE</span> <span class="o">=</span> <span class="s">'https://github.com/jendrikseipp/vulture'</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""
+        Check Python code for unused variables and functions using `vulture`.
+        """</span>
+        <span class="n">filenames</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">_find_unused_code</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="default-whitelisting">Default whitelisting</h3>
+
+<p>The idea here was to take into account a whitelist - by default in every run.
+For this, some ground work needed to be layed down first - It seemed like a daunting
+task at first because it needed a major change in the way vulture was shipped -
+It had to be shipped as a package, so that we can bundle any additional <em>package data</em>
+with it - like whitelists.</p>
+
+<p>But au contraire this was relatively easy - we just needed to rename some files and
+change the directory structure.</p>
+
+<p>Now, only whitelists needed to be bundled</p>
+
+<p>For this, I added this to the <code class="highlighter-rouge">setup.py</code>:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package_data={'vulture': ['whitelists/**/*.py']},
+</code></pre></div></div>
+
+<p>But no matter what, an error kept on cramming:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>no whitelists/ file were found in the package-dir
+</code></pre></div></div>
+
+<p>Now, here comes the confusing part: package_data is not supposed to take up recursive
+glob patterns and this wasn’t mentioned <strong>anywhere</strong> in the documentation. :-( I found
+it written in a very small font in some comment on Stack Overflow. Anyways, removing the
+<code class="highlighter-rouge">**</code> made it work.</p>
+
+<p>Finally we could now add whitelists to the list of modules being scanned, @jendrikseipp
+suggested a much efficient way to append the core whitelist data and I was finally able
+to merge this PR. :-)</p>
+
+<p>Here are the commits:</p>
+<ul>
+  <li><a href="https://github.com/jendrikseipp/vulture/commit/7e41b08cbc7ef3a4076ee84c749a9a8058ed6e0c">Ship vulture as a package.</a></li>
+  <li><a href="https://github.com/jendrikseipp/vulture/commit/f2c0cf5eb9347e6a983362e80eb029ceb31901d3">Use stdlib.py as a default whitelist</a></li>
+</ul>
+
+<h3 id="add-appveyor-ci">Add appveyor CI</h3>
+
+<p>After going through their documentation more than twice, I still had no idea what would
+be the constructs of the <code class="highlighter-rouge">appveyor.yml</code>(The configuration file for appveyor). Then, it
+came to me, just copy the file from coala-bears and make suitable changes.</p>
+
+<p>Here’s the appveyor file for coala-bears:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">environment</span><span class="pi">:</span>
+  <span class="na">global</span><span class="pi">:</span>
+    <span class="c1"># SDK v7.0 MSVC Express 2008's SetEnv.cmd script will fail if the</span>
+    <span class="c1"># /E:ON and /V:ON options are not enabled in the batch script intepreter</span>
+    <span class="c1"># See: http://stackoverflow.com/a/13751649/163740</span>
+    <span class="na">CMD_IN_ENV</span><span class="pi">:</span> <span class="s2">"</span><span class="s">cmd</span><span class="nv"> </span><span class="s">/E:ON</span><span class="nv"> </span><span class="s">/V:ON</span><span class="nv"> </span><span class="s">/C</span><span class="nv"> </span><span class="s">.</span><span class="se">\\</span><span class="s">.ci</span><span class="se">\\</span><span class="s">run_with_env.cmd"</span>
+
+  <span class="na">matrix</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">PYTHON</span><span class="pi">:</span> <span class="s2">"</span><span class="s">C:</span><span class="se">\\</span><span class="s">Python34"</span>
+      <span class="na">PYTHON_VERSION</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.4"</span>
+      <span class="na">PYTHON_ARCH</span><span class="pi">:</span> <span class="s2">"</span><span class="s">32"</span>
+
+    <span class="pi">-</span> <span class="na">PYTHON</span><span class="pi">:</span> <span class="s2">"</span><span class="s">C:</span><span class="se">\\</span><span class="s">Python34-x64"</span>
+      <span class="na">PYTHON_VERSION</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.4"</span>
+      <span class="na">PYTHON_ARCH</span><span class="pi">:</span> <span class="s2">"</span><span class="s">64"</span>
+
+<span class="na">cache</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">C:</span><span class="se">\\</span><span class="s">pip_cache"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">node_modules"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">C:</span><span class="se">\\</span><span class="s">Users</span><span class="se">\\</span><span class="s">appveyor</span><span class="se">\\</span><span class="s">AppData</span><span class="se">\\</span><span class="s">Local</span><span class="se">\\</span><span class="s">coala-bears</span><span class="se">\\</span><span class="s">coala-bears"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">C:</span><span class="se">\\</span><span class="s">Users</span><span class="se">\\</span><span class="s">appveyor</span><span class="se">\\</span><span class="s">AppData</span><span class="se">\\</span><span class="s">Roaming</span><span class="se">\\</span><span class="s">nltk_data"</span>
+
+<span class="na">branches</span><span class="pi">:</span>
+  <span class="na">except</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">/^sils\/.*/</span>
+
+<span class="na">install</span><span class="pi">:</span>
+  <span class="c1"># Prepend newly installed Python to the PATH of this build (this cannot be</span>
+  <span class="c1"># done from inside the powershell script as it would require to restart</span>
+  <span class="c1"># the parent CMD process).</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">SET</span><span class="nv"> </span><span class="s">PATH=%PYTHON%;%PYTHON%</span><span class="se">\\</span><span class="s">Scripts;%PATH%"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">SET</span><span class="nv"> </span><span class="s">PATH=C:</span><span class="se">\\</span><span class="s">Program</span><span class="se">\ </span><span class="s">Files</span><span class="se">\\</span><span class="s">Java</span><span class="se">\\</span><span class="s">jdk1.7.0</span><span class="se">\\</span><span class="s">bin;%PATH%"</span>
+
+  <span class="c1"># language-tool needs the registry tweaked here since it determines the java</span>
+  <span class="c1"># version wrong (since appveyor has both, 1.7 and 1.8 in x86 and x64).</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">SET</span><span class="nv"> </span><span class="s">KEY_NAME=HKLM</span><span class="se">\\</span><span class="s">Software</span><span class="se">\\</span><span class="s">JavaSoft</span><span class="se">\\</span><span class="s">Java</span><span class="nv"> </span><span class="s">Runtime</span><span class="nv"> </span><span class="s">Environment"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">REG</span><span class="nv"> </span><span class="s">add</span><span class="nv"> </span><span class="se">\"</span><span class="s">%KEY_NAME%</span><span class="se">\"</span><span class="nv"> </span><span class="s">/v</span><span class="nv"> </span><span class="s">CurrentVersion</span><span class="nv"> </span><span class="s">/t</span><span class="nv"> </span><span class="s">REG_SZ</span><span class="nv"> </span><span class="s">/d</span><span class="nv"> </span><span class="s">1.7</span><span class="nv"> </span><span class="s">/f"</span>
+
+  <span class="c1"># Check that we have the expected version and architecture for Python</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">python</span><span class="nv"> </span><span class="s">--version"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">python</span><span class="nv"> </span><span class="s">-c</span><span class="nv"> </span><span class="se">\"</span><span class="s">import</span><span class="nv"> </span><span class="s">struct;</span><span class="nv"> </span><span class="s">print(struct.calcsize('P')</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">8)</span><span class="se">\"</span><span class="s">"</span>
+
+
+  <span class="pi">-</span> <span class="pi">&gt;</span>
+    <span class="no">"%CMD_IN_ENV% pip install</span>
+    <span class="no">--cache-dir=C:\\pip_cache -r requirements.txt -r test-requirements.txt</span>
+
+  <span class="pi">-</span> <span class="na">ps</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Install-Product</span><span class="nv"> </span><span class="s">node</span><span class="nv"> </span><span class="s">''"</span>  <span class="c1"># Use latest node v5.x.x</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">npm</span><span class="nv"> </span><span class="s">config</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">loglevel</span><span class="nv"> </span><span class="s">warn"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">npm</span><span class="nv"> </span><span class="s">install"</span>
+
+<span class="na">build</span><span class="pi">:</span> <span class="no">false</span>  <span class="c1"># Not a C# project, build stuff at the test step instead.</span>
+
+<span class="na">test_script</span><span class="pi">:</span>
+  <span class="c1"># Force DOS format, as Checkstyle configs enable NewlineAtEndOfFile,</span>
+  <span class="c1"># which defaults to CRLF on Windows, and Appveyor CI ignores .gitattributes</span>
+  <span class="c1"># http://help.appveyor.com/discussions/problems/5687-gitattributes-changes-dont-have-any-effect</span>
+  <span class="pi">-</span> <span class="s">unix2dos tests/java/test_files/CheckstyleGood.java</span>
+  <span class="c1"># Clang DLLs x64 were nowadays installed, but the x64 version hangs, so we</span>
+  <span class="c1"># exclude according tests. See https://github.com/appveyor/ci/issues/495 and</span>
+  <span class="c1"># https://github.com/appveyor/ci/issues/688</span>
+  <span class="pi">-</span> <span class="pi">&gt;</span>
+    <span class="no">"%CMD_IN_ENV% python -m pytest</span>
+    <span class="no">--cov -k "not ClangASTPrintBear and not ClangCloneDetectionBear and</span>
+    <span class="no">not ClangComplexityBear and not ClangCountVectorCreator and</span>
+    <span class="no">not ClangCountingConditions"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">%CMD_IN_ENV%</span><span class="nv"> </span><span class="s">python</span><span class="nv"> </span><span class="s">setup.py</span><span class="nv"> </span><span class="s">install"</span>
+
+<span class="na">on_success</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">codecov</span>
+
+<span class="na">on_failure</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">codecov</span>
+
+<span class="na">matrix</span><span class="pi">:</span>
+  <span class="na">fast_finish</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>After tweaking around a little bit, it looked like this:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">environment</span><span class="pi">:</span>
+  <span class="na">global</span><span class="pi">:</span>
+    <span class="c1"># SDK v7.0 MSVC Express 2008's SetEnv.cmd script will fail if the</span>
+    <span class="c1"># /E:ON and /V:ON options are not enabled in the batch script intepreter</span>
+    <span class="c1"># See: http://stackoverflow.com/a/13751649/163740</span>
+    <span class="na">CMD_IN_ENV</span><span class="pi">:</span> <span class="s2">"</span><span class="s">cmd</span><span class="nv"> </span><span class="s">/E:ON</span><span class="nv"> </span><span class="s">/V:ON</span><span class="nv"> </span><span class="s">/C</span><span class="nv"> </span><span class="s">.</span><span class="se">\\</span><span class="s">.ci</span><span class="se">\\</span><span class="s">run_with_env.cmd"</span>
+
+
+  <span class="na">matrix</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">PYTHON</span><span class="pi">:</span> <span class="s2">"</span><span class="s">C:</span><span class="se">\\</span><span class="s">Python34"</span>
+      <span class="na">PYTHON_VERSION</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.4"</span>
+      <span class="na">PYTHON_ARCH</span><span class="pi">:</span> <span class="s2">"</span><span class="s">32"</span>
+
+    <span class="pi">-</span> <span class="na">PYTHON</span><span class="pi">:</span> <span class="s2">"</span><span class="s">C:</span><span class="se">\\</span><span class="s">Python34-x64"</span>
+      <span class="na">PYTHON_VERSION</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.4"</span>
+      <span class="na">PYTHON_ARCH</span><span class="pi">:</span> <span class="s2">"</span><span class="s">64"</span>
+
+<span class="na">cache</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">C:</span><span class="se">\\</span><span class="s">pip_cache"</span>
+
+<span class="na">install</span><span class="pi">:</span>
+  <span class="c1"># Prepend newly installed Python to the PATH of this build (this cannot be</span>
+  <span class="c1"># done from inside the powershell script as it would require to restart</span>
+  <span class="c1"># the parent CMD process).</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">SET</span><span class="nv"> </span><span class="s">PATH=%PYTHON%;%PYTHON%</span><span class="se">\\</span><span class="s">Scripts;%PATH%"</span>
+
+  <span class="c1"># Check that we have the expected version and architecture for Python</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">python</span><span class="nv"> </span><span class="s">--version"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">python</span><span class="nv"> </span><span class="s">-c</span><span class="nv"> </span><span class="se">\"</span><span class="s">import</span><span class="nv"> </span><span class="s">struct;</span><span class="nv"> </span><span class="s">print(struct.calcsize('P')</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">8)</span><span class="se">\"</span><span class="s">"</span>
+
+
+  <span class="pi">-</span> <span class="pi">&gt;</span>
+    <span class="no">"%CMD_IN_ENV% pip install</span>
+    <span class="no">--cache-dir=C:\\pip_cache tox</span>
+
+<span class="na">build</span><span class="pi">:</span> <span class="no">false</span>  <span class="c1"># Not a C# project, build stuff at the test step instead.</span>
+
+<span class="na">test_script</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="pi">&gt;</span>
+    <span class="no"># tox takes care of everything, from installing to running tests and even reporting the code coverage</span>
+    <span class="no">"%CMD_IN_ENV% tox</span>
+
+<span class="na">matrix</span><span class="pi">:</span>
+  <span class="na">fast_finish</span><span class="pi">:</span> <span class="no">true</span>
+
+</code></pre></div></div>
+<p>But, sadly, this didn’t work. :-( But then, an option called <code class="highlighter-rouge">Ignore YAML</code> caught
+my eye - This meant there was another way to do this - It was the helper GUI in appveyor
+and then, I thought, I would export all the settings in the form of the YAML file.
+Browsing through every setting and after 10 failed builds, when the eleventh one finally
+finished successfully, I was all set to celebrate. :-)</p>
+
+<p>Here’s what the current <code class="highlighter-rouge">appveyor.yml</code> file looks like:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s">1.0.{build}</span>
+
+<span class="na">install</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">cmd</span><span class="pi">:</span> <span class="s">pip install tox</span>
+
+<span class="na">build_script</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">cmd</span><span class="pi">:</span> <span class="s">python setup.py install</span>
+
+<span class="na">test_script</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">cmd</span><span class="pi">:</span> <span class="s">tox</span>
+
+<span class="na">matrix</span><span class="pi">:</span>
+  <span class="na">fast_finish</span><span class="pi">:</span> <span class="no">true</span>
+
+</code></pre></div></div>
+
+<p>I was finally able to get things to work in the given time.
+Here’s how my Burndown chart looks like for the Phase 1:
+<img src="https://user-images.githubusercontent.com/15556382/27702696-7b5eb3b4-5d22-11e7-9a72-38863baad16d.png" alt="screen shot 2017-06-29 at 11 25 47 pm" /></p>
+
+<p>Special thanks to @jendrikseipp and @jayvdb. <strong>Thank You! :-)</strong></p>
+
+
+
+    </article>
+    <span class="print-footer">Phase-1 - June 24, 2017 - Rahul Jha</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:rahul722j@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/rahul722j"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/RJ722"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;RAHUL JHA</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Blogging is fun! </a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>

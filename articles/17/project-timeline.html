@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GSoC Project Timeline</title>
+  <meta name="description" content="Here is a description of how I plan to manage my schedule during GSoC period.">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/articles/17/project-timeline">
+
+  <link rel="alternate" type="application/rss+xml" title="Rahul Jha" href="/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+		    
+		      <a href="/">RJ722's blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About RJ722</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>GSoC Project Timeline</h1>
+<p class="subtitle">May 28, 2017</p>
+
+<p>Here is a description of how I plan to manage my schedule during GSoC period.</p>
+
+<!--more-->
+
+<h2 id="project-overview">Project Overview</h2>
+
+<p>Presently, we have coala - an automatic code linter and vulture - dead code
+reporter. Amongst coala’s fundamental <code class="highlighter-rouge">code checkers</code> known as <code class="highlighter-rouge">Bears</code>, there is
+a <code class="highlighter-rouge">VultureBear</code> which runs vulture over the input batch of files and prepares a
+patch for the respective files. The project proposal focuses on improving the
+VultureBear and making vulture available as a library rather than as command
+line tool.</p>
+
+<p>Full project description can be found here: <a href="https://rj722.tech/gsoc_project">GSoC Project I am working on this
+summer</a></p>
+
+<h2 id="milestones">Milestones</h2>
+
+<p>The milestones are yet to be reviewed by my mentor
+(<a href="https://github.com/jendrikseipp">@jendrikseipp</a>).</p>
+
+<h3 id="pre---community-bonding-period--up-till--may-4">Pre - Community Bonding Period ( Up Till  May 4)</h3>
+<ul>
+  <li>Initial investigation and discussion on what features to be added to API, and
+start implementing them on the go.</li>
+  <li>Continue discussion with the community on ast and enhanced pyflakes ast - What
+are the underlying differences, and what can be possible implementations for
+source range acquisition.</li>
+  <li>Diagnose possible cases which would render the code unreachable.</li>
+  <li>Inculcate a habit of downloading the trending project of the day, running
+vulture on it, analyzing the results and adding anything suitable to whitelist
+file. This would help us in maintaining a rich whitelist file.</li>
+  <li>Prioritize all the goals and targets</li>
+</ul>
+
+<h3 id="community-bonding-may-5---30">Community Bonding (May 5 - 30)</h3>
+<ul>
+  <li>Finalize what should be implemented for source range acquisition on the basis
+of discussions during pre - community bonding period.</li>
+</ul>
+
+<h3 id="week-1--2-may-31---june-13">Week 1 &amp; 2 (May 31 - June 13)</h3>
+<ul>
+  <li>Implement API - At this point, we would have a fully functioning API, and we
+would be ready to incorporate these changes into the VultureBear.</li>
+  <li>Refactor VultureBear to incorporate API - This would be relatively easy as the
+API would have had until now respected it’s usage in the VultureBear.</li>
+</ul>
+
+<h3 id="week-3-june-14---20">Week 3 (June 14 - 20)</h3>
+<ul>
+  <li>Realize VultureBear completely - At this point, it should be able to execute
+vulture, parse output, produce the patch file for removing the dead code what so
+ever found. Review the tests written so far and add relevant test cases.</li>
+  <li>Document Bear</li>
+  <li>API documentation including, but not limited to possible use cases, example
+code snippets</li>
+  <li>See that code is completely documented in place</li>
+  <li>Buffer time to finish pending work.</li>
+</ul>
+
+<h3 id="week-4-june-20---26">Week 4 (June 20 - 26)</h3>
+<ul>
+  <li>Develop an analysis report on what all constructs can we detect with complete
+surety, partial surety and the ones we cannot detect for the sake of
+implementing a confidence value with results. (A crude version is here in this
+thread).</li>
+  <li>Discuss on the levels of certainty we would need to have (perhaps four for
+highly accurate (100%), accurate (&gt;80%), medium (70 - 80%) and can’t say)</li>
+</ul>
+
+<h3 id="week-5-june-27---july-4">Week 5 (June 27 - July 4)</h3>
+<ul>
+  <li>Create whitelist files for popular Python frameworks like Django</li>
+  <li>Configure vulture in order to ensure that whitelist is taken into account by
+default.</li>
+  <li>Updating docs and writing tests.</li>
+</ul>
+
+<h3 id="week-6-july-4---15">Week 6 (July 4 - 15)</h3>
+<ul>
+  <li>Adapt to the strategy worked during community bonding period for obtaining
+source range.</li>
+</ul>
+
+<h3 id="week-7--8-july-15---29">Week 7 &amp; 8 (July 15 - 29)</h3>
+<ul>
+  <li>Diagnose the instances of unreachable code, our concern here would be to
+identify all such cases which would render the code unreachable, like the if
+False; if True: else; code after return statements, etc. - Adding this to the
+dead code classes, under a new category: get_unreachable</li>
+</ul>
+
+<h3 id="week-9-august-1---7">Week 9 (August 1 - 7)</h3>
+<ul>
+  <li>Integrate these results with the VultureBear, which would primarily consist
+of:</li>
+  <li>Transmitting source range, and unreachable code instances through API</li>
+  <li>Yielding the results of Bear in the new format.</li>
+</ul>
+
+<h3 id="week-11-august-8---17">Week 11 (August 8 - 17)</h3>
+<ul>
+  <li>Adding the suitable documentation for the new changes incorporated in the API,
+Bear and vulture itself.</li>
+  <li>Code Review</li>
+  <li>Taking feedback and making any improvements proposed.</li>
+</ul>
+
+<h3 id="week-12-august-17---24">Week 12 (August 17 - 24)</h3>
+<ul>
+  <li>Buffer week to complete any pending work, evaluate and review tasks completed,
+review documentation and test cases.</li>
+</ul>
+
+<p>Please drop by a message in the comments section, <a href="malito:rahul@rj722.tech">send me an
+e-mail</a> or even awesome, send a PR to suggest any
+changes or queries you may have.</p>
+
+
+
+    </article>
+    <span class="print-footer">GSoC Project Timeline - May 28, 2017 - Rahul Jha</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:rahul722j@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/rahul722j"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/RJ722"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;RAHUL JHA</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Blogging is fun! </a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>

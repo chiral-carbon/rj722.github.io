@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Phase-2</title>
+  <meta name="description" content="Phase 2 is coming to an end today (24’th of July, 11:30 PM IST). It had been anintensive and healthy work-period with a high steep-learning curve. Let merefl...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/articles/17/phase-2">
+
+  <link rel="alternate" type="application/rss+xml" title="Rahul Jha" href="/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+		    
+		      <a href="/">RJ722's blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About RJ722</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Phase-2</h1>
+<p class="subtitle">July 24, 2017</p>
+
+<p>Phase 2 is coming to an end today (24’th of July, 11:30 PM IST). It had been an
+intensive and healthy work-period with a high steep-learning curve. Let me
+reflect on my journey throughout the month.</p>
+
+<!--more-->
+
+<h2 id="overview">Overview</h2>
+<ul>
+  <li>Differentiate between classes and functions</li>
+  <li>Allow running “python -m vulture”</li>
+  <li>Choose whitelists depending on used imports</li>
+  <li><strong>Implement a method for source range acquisition</strong></li>
+  <li>Let item inherit from object rather than str</li>
+  <li>Create whitelist files for popular Python frameworks like Django</li>
+</ul>
+
+<h3 id="differentiating-between-functions-and-classes">Differentiating between functions and classes</h3>
+
+<p>vulture previously saved the <code class="highlighter-rouge">defined_classes</code> in the <code class="highlighter-rouge">defined_functions</code> list.
+I just needed to change the <code class="highlighter-rouge">visitClassDef</code> function which is triggered
+whenever <code class="highlighter-rouge">ast</code> finds any Class Definition node.</p>
+
+<h3 id="allow-running-python--m-vulture">Allow running “python -m vulture”</h3>
+
+<p>Changing the entry_point did the work. :-)</p>
+
+<h3 id="choose-whitelists-depending-on-used-imports">Choose whitelists depending on used imports</h3>
+
+<p>So, our plan was to make whitelists for some modules default
+based on whether or not thaat corresponding module was imported or not.</p>
+
+<p>In the previous phase, we started shipping vulture as a package. Because of the
+change, we could now ship additional data with the package, like the</p>
+
+<h3 id="source-range-acquisition">Source Range Acquisition</h3>
+
+<p>Perhaps, the most important part of my GSoC Proposal.
+The idea was to implement such a function which if given an ast node could find
+it’s end. For demo purposes, we started <a href="https://github.com/rj722/source.git">source</a>.
+From the first commit [here] to the current implementation, there is affiliated an
+impressive amount of research, debigging and creativity (special credits to
+@jendrikseipp).</p>
+
+<h3 id="let-item-inherit-from-object-rather-than-str">Let item inherit from object rather than str</h3>
+
+<p>vulture stores dead code in a special data structure - <code class="highlighter-rouge">Item</code> - a lightwight
+representation of the <code class="highlighter-rouge">ast node</code>. Previously, <code class="highlighter-rouge">Item</code> inherited from <code class="highlighter-rouge">str</code>
+although there was no absolute need of doing so, and changing it would give us
+more command and flexibilty with the design. So, we decided to change it.
+The implementation was pretty basic. You may see the changes here:<a href="https://github.com/jendrikseipp/vulture/commit/99ca09ff44cc5b75a6911bdae3416933e8d83c35">commit</a></p>
+
+<h3 id="create-whitelist-files-for-popular-python-frameworks-like-django">Create whitelist files for popular Python frameworks like Django</h3>
+
+<p>This required me to run vulture over a few web-apps powered by both, flask
+and django. Analysing flasky, the book on flask, we uncovered several
+interesting facts and surprisingly, we ended up making a whitelist for
+the <code class="highlighter-rouge">unittest</code> library.</p>
+
+<h4 id="other-things">Other things</h4>
+
+<p>I read @damngamerz post on EuroPython and felt pretty thrilled. I also recieved
+the news that we are gonna hack PyCon India (or Pune) and make it coalaCon. We
+will also get coala stickers. Yay!</p>
+
+<p>It has been a pretty awesome journey up till now. I really accredit this to
+both, my mentor @jendrikseipp and student-admin @jayvdb and to the awesome
+coala community where every one is so open minded and intelligent.</p>
+
+<p>Thanks! :-)</p>
+
+
+
+    </article>
+    <span class="print-footer">Phase-2 - July 24, 2017 - Rahul Jha</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:rahul722j@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/rahul722j"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/RJ722"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;RAHUL JHA</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Blogging is fun! </a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>

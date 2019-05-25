@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The story of Dead Code, Vulture and scavenging</title>
+  <meta name="description" content="It isn’t uncommon for software developers to encounter some code that they hadwritten in the past and reflecting on it - the most common reaction wouldprobab...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/articles/18/vulture-how-to">
+
+  <link rel="alternate" type="application/rss+xml" title="Rahul Jha" href="/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+		    
+		      <a href="/">RJ722's blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About RJ722</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>The story of Dead Code, Vulture and scavenging</h1>
+<p class="subtitle">May 30, 2018</p>
+
+<p>It isn’t uncommon for software developers to encounter some code that they had
+written in the past and reflecting on it - the most common reaction would
+probably be “It must be the most horrible thing I wrote”. But sometimes, there’s
+that aha moment where you find something and you are instantly gratified and
+proud of yourself, “Oh, this is so beautiful, no wonder it took so many
+sleepless nights”. However glamorous it may sound, but it is indeed a difficult
+task to write and maintain such code, and this is where automatic tools come in
+to the picture. Let’s discuss about one such tool - <a href="https://github.com/jendrikseipp/vulture">Vulture</a>, which
+helps discover unused stuff in Python code.</p>
+
+<p>So, today we present to you the voodoo which throws out unused code.</p>
+
+<!--more-->
+
+<h2 id="the-obvious-todo---find-things-which-arent-used-and-remove-them">The obvious TODO - Find things which aren’t used and remove them</h2>
+
+<!--I am Rahul Jha. I study Electronics Engineering at Aligarh Muslim
+University.-->
+<p><!--Also, and more importantly, I am the youngest person on the
+face of earth to--> <!--have spoken at so many technical conferences,
+_obviously_ aside from the people--> <!--who have spoken at more conferences
+than me.--></p>
+
+<p>Before, we let ourselves dive in the nitty gritty details of <a href="https://github.com/jendrikseipp/vulture">Vulture</a>,
+let me first tell you a story from my childhood.</p>
+
+<blockquote>
+  <p>Being a young, fearless and curious lad I was, whenever I used to visit
+someone’s house, I was very interested in some of the stuff they had in their,
+ahmm, store room - All those cool <strong>worn out</strong> CFL Bulbs, game boards,
+extension chords and all other kinds of circuitry you can imagine and just so
+it happened, people would readily give me any of those items I asked for. And
+guess what, I used to take away <strong>all</strong> of that with me (my mom was kind
+enough to let me play with it, obviously as long as she didn’t see all of it
+:D). There were two main reasons I used to collect these ‘things’ - One, I
+wanted to understand how such wonders could actually happen, and second and
+more importantly, I thought that if I become a circuit wizard some day, I
+might need some of this ‘equipment’ in my toolbox. Now, while learning this
+wizardry, of course, I had to deal with new tools as well, so I bought some
+things for myself, and more and more. On one fine day, it so happened that I
+came up with this wonderful idea to create a local fax machine (a different
+story for a different day), and I desperately needed a couple of (working)
+bulbs to fit into it, but I couldn’t find one in my stash - none of them would
+light up, although I knew that I bought a few earlier and had them somewhere
+here. That was a painful experience and that’s when it hit me - How important
+it is not to keep things which aren’t/can’t being used anymore or at the very
+least, storing them away. Anyways, I had a hard time testing every piece and
+dumping the ones which couldn’t be used anymore.</p>
+</blockquote>
+
+<blockquote>
+  <p>PS: It later turned out that I didn’t actually had any bulbs, the ones’ I had
+bought were already martyred in my brother’s quest to see what would happen to
+the filament if we crack the glass open, genius it was!</p>
+</blockquote>
+
+<p>Later, when I found Vulture, I realised the worth of a tool which could do such
+fumigation for me.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>By now, it must’ve been pretty clear what exactly does Vulture do - it cleans up
+stuff, chops dead code. But, this statement begs the question that what exactly
+is dead code?</p>
+
+<h3 id="what-is-dead-code">What is dead code?</h3>
+
+<p>In simple terms, dead code is that code which is never ever run by your program.
+Some examples of dead code:</p>
+
+<ul>
+  <li>A variable/function/class which is defined, but is never utilised by your
+program.</li>
+  <li>Code after return statement in a function/method.</li>
+  <li>Code inside an <code class="highlighter-rouge">if False:</code> statement. (:facepalm:)</li>
+</ul>
+
+<h3 id="why-on-holy-earth-would-i-write-dead-code-in-my-own-software">Why on holy Earth would I write dead code in my own software?</h3>
+
+<blockquote>
+  <p>For the same reason you introduce bugs in it ;-)</p>
+</blockquote>
+
+<p>Dead code isn’t intentionally introduced into the source code, instead it just
+crawls in through tiny sieves of carelessness and lack of attention, which is
+completely humane. Some of the most common causes of dead code are:</p>
+
+<ul>
+  <li><strong>Refactoring</strong> - Many a times, programmers delete some legacy code which used
+to call a function (or use an import) and rewrite it in a different manner.
+Thus, eliminating the need of those old functions/imports. Now, these unused
+functions/imports are dead.</li>
+  <li><strong>Misspellings</strong> - Was it <code class="highlighter-rouge">increase_temperature</code> or <code class="highlighter-rouge">temperatur_increase</code>???
+Hmmm, let’s go with <code class="highlighter-rouge">increase_temperature</code> - If both of these names are
+already defined in your codebase, and you used the wrong one, not only have
+you introduced dead code, but also a bug into your program. Luckily, Vulture
+would help you catch those bugs.</li>
+  <li><strong>During debugging</strong> - As humans, we tend to be lazy and that is why instead
+of using debugger checkpoints, we tend to use debug strings like <code class="highlighter-rouge">"Reached
+here"</code> and <code class="highlighter-rouge">"Here2"</code> and obscurely placed <code class="highlighter-rouge">return</code> &amp; <code class="highlighter-rouge">break</code> statements. If
+not paid attention, these changes can be committed and would again introduce
+bugs alongside dead code.</li>
+</ul>
+
+<p>By now, it must be evident that having dead code is <strong>evil</strong> - it causes bugs,
+confusion for newcomers and unnecessarily increases your program size and that
+you should absolutely remove it. It also helps improve maintainability and code
+quality of your program.</p>
+
+<p>In the next post, I would continue with how to install Vulture and how to use
+it.</p>
+
+
+
+
+    </article>
+    <span class="print-footer">The story of Dead Code, Vulture and scavenging - May 30, 2018 - Rahul Jha</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:rahul722j@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/rahul722j"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/RJ722"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;RAHUL JHA</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Blogging is fun! </a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Why use coverage to find which parts of a python code were executed?</title>
+  <meta name="description" content="In this post, I’ll walk you through the decision making process the team behindVulture underwent to come up with a way to deal with false positives in it’sre...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/articles/18/why-use-coverage-to-find-which-python-code-is-run">
+
+  <link rel="alternate" type="application/rss+xml" title="Rahul Jha" href="/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+		    
+		      <a href="/">RJ722's blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About RJ722</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Why use coverage to find which parts of a python code were executed?</h1>
+<p class="subtitle">May 19, 2018</p>
+
+<p>In this post, I’ll walk you through the decision making process the team behind
+Vulture underwent to come up with a way to deal with false positives in it’s
+results.</p>
+
+<!--more-->
+
+<p>Let’s first start with a brief introduction of
+<a href="https://github.com/jendrikseipp/vulture">Vulture</a>:</p>
+
+<h2 id="vulture">Vulture</h2>
+
+<p>As the name suggests, vulture helps find <a href="https://en.wikipedia.org/wiki/Dead_code">dead
+code</a> for Python programs. There are
+many reasons for dead code ending up in a project. The most common is
+refactoring, but another is misspellings, which are only detected at runtime for
+dynamic languages. Finding and removing dead code allows to keep the code base
+clean and reduces bugs.</p>
+
+<p>Vulture can detect unused imports, variables, attributes, functions, methods,
+properties and classes. Other than these, code after return statements and
+checking for a Boolean False (eg. <code class="highlighter-rouge">if False:</code> or <code class="highlighter-rouge">while 0:</code>) can also be
+detected.</p>
+
+<h3 id="using-vulture">Using vulture</h3>
+
+<p>Vulture is a standard Python package, that is installed with <code class="highlighter-rouge">pip</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(venv) $ pip install vulture
+</code></pre></div></div>
+
+<p>Let us say that you have the following program (say <code class="highlighter-rouge">program.py</code>) on which you
+want to perform analysis:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># program.py
+</span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">false_positive_function</span><span class="p">():</span>
+    <span class="s">"""
+    A function which is vital for your application to function, but Vulture
+    reports it as unused.
+    """</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s">"Hello World"</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">hello_world</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Analysing the program with vulture is as simple as running the following
+command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(venv) $ vulture program.py
+</code></pre></div></div>
+
+<p>which would produce the following output (on <code class="highlighter-rouge">vulture 0.26</code>):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>program.py:2: unused import 'os' (90% confidence)
+program.py:4: unused function 'false_positive_function' (60% confidence)
+program.py:12: unused variable 'message' (60% confidence)
+</code></pre></div></div>
+
+<p>As you can see, along with every result, vulture also reports a confidence
+value - which is a measure of how sure vulture is about that part of code being
+unused. This output can be made even more meaningful with the help of flags like
+<code class="highlighter-rouge">--min-confidence</code> and <code class="highlighter-rouge">--sort-by-size</code>. Read more about them
+<a href="https://github.com/jendrikseipp/vulture/tree/master/README.rst">here</a></p>
+
+<p>Owing to Python’s dynamic nature, Vulture is likely to miss some dead code.
+Also, code which is only implicitly used is reported unused, such as overloading
+a parent class method, overriding methods of C/C++ extensions, etc.</p>
+
+<p>Some other examples where vulture may report “useful” code as unused:</p>
+<ul>
+  <li><strong>API Endpoints</strong> - They are meant for users and are not employed to any use
+directly in the source code, therefore confusing vulture.</li>
+  <li><strong>ORM Schema</strong> - Again, they aren’t used by program’s source code directly.</li>
+</ul>
+
+<h3 id="handling-false-positives">Handling false positives</h3>
+
+<p>One way to prevent Vulture from reporting false positives is to explicitly use
+the code anyway. &gt; WHAT! - Are you telling me to run my already used code?</p>
+
+<p>Worry not! - no need to actually call the code - If you create a mocking class
+with attributes, name of whose exactly match the name of the unused code
+(variables, functions, classes, anything which can be unused and has a name),
+you can very cleverly fool Vulture into believing that that part of the code is
+being used (because Vulture keeps only track of the names parsed from the AST).
+This is known as “Whitelisting” and since it is a fairly common practice to
+create such a class for mocking objects, we already ship it with Vulture.</p>
+
+<p>Let me show how you can create your own whitelists with our previous example.
+(Remeber we had a <code class="highlighter-rouge">false_positive_function</code> - let’s whitelist it.)</p>
+
+<p>Note that I am calling this file <code class="highlighter-rouge">whitelist_program.py</code> because it’s a good idea
+to start the name with <code class="highlighter-rouge">whitelist</code> just so you know what that file does, but
+there is no such compulsion - You can call it whatever you want.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># whitelist_program.py
+</span><span class="kn">from</span> <span class="nn">vulture.whitelist_utils</span> <span class="kn">import</span> <span class="n">Whitelist</span>
+
+<span class="n">awesome_whitelist</span> <span class="o">=</span> <span class="n">Whitelist</span><span class="p">()</span>
+
+<span class="n">Whitelist</span><span class="o">.</span><span class="n">false_positive_function</span>
+</code></pre></div></div>
+
+<p>Now, let’s run Vulture using the following command:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(venv) $ vulture program.py whitelist_program.py
+</code></pre></div></div>
+
+<p>And hurray, output does not contain the false positive function.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>program.py:2: unused import 'os' (90% confidence)
+program.py:12: unused variable 'message' (60% confidence)
+</code></pre></div></div>
+
+<p><strong>How did that work?</strong></p>
+
+<p>Since you also passed the whitelist file along with the file to be analysed,
+vulture created <code class="highlighter-rouge">ast</code>’s for both of them and while parsing those trees, Vulture
+created a common <code class="highlighter-rouge">set</code> for storing the names of used and defined objects. Since
+the name of the false positive function occurs in both of them, it is therefore
+not treated as unused.</p>
+
+<p>A thing you may find interesting and  noteworthy about the <code class="highlighter-rouge">Whitelist</code> class is that  it does absolutely “nothing”. It’s current implementation is as follows:</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Whitelist</span><span class="p">:</span>
+    <span class="s">"""
+    Helper class that allows mocking Python objects.
+    Use it to create whitelist files that are not only syntactically
+    correct, but can also be executed.
+    """</span>
+    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+        <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>Now, since whitelists are so extensively used, Vulture already comes <a href="https://github.com/jendrikseipp/vulture/tree/master/vulture/whitelists/">loaded for
+some popular libraries like <code class="highlighter-rouge">sys</code>, <code class="highlighter-rouge">collections</code>, <code class="highlighter-rouge">unittest</code>,
+etc.</a> -
+These whitelists are automatically “activated” as soon as the user imports that
+library. The developers at Vulture are working hard (gives a pat on his back) to
+ship even more of these. Guess what, you can add one for your library, or just
+open an issue and we would create one for you. PR’s are more than welcome! :-)</p>
+
+<p><strong>Some other ways of dealing with false poisitives:</strong></p>
+<ul>
+  <li>Mark unused variables by starting them with an “<code class="highlighter-rouge">_</code>”. (e.g., <code class="highlighter-rouge">_x, y =
+get_pos()</code>)</li>
+  <li>Use different files for API endpoints, ORM, etc. and exclude them with the
+help of <code class="highlighter-rouge">--exclude</code> flag.</li>
+</ul>
+
+<p>You can find more information about <a href="https://github.com/jendrikseipp/vulture/tree/master/README.rst">vulture in it’s
+documentation</a>.</p>
+
+<h2 id="what-more-does-vulture-want">What more does vulture want?</h2>
+
+<p>As we saw earlier, the results reported by vulture sometimes contain false
+positives. We want to be able to develop such a system which should be able to
+detect wether or not the result given by vulture is a false positive.</p>
+
+<p>Please note that this discussion originally occurred on
+<a href="https://github.com/jendrikseipp/vulture/issues/109">jendrikseipp/vulture/#109</a>
+and this post is going to be a translation with some insight on how we finally
+came up with a decision.</p>
+
+<h3 id="approach-1---user-employed-regular-expressions">Approach 1 - User employed regular expressions</h3>
+
+<p>Vulture has different methods for parsing different kind of nodes in an <code class="highlighter-rouge">ast</code>.
+So for example, if Vulture encounters a function definition, it triggers the
+<code class="highlighter-rouge">visitFunctionDef</code> method for parsing that node and similarly for classes,
+variables, etc. Now, in those methods, we can easily insert a check to see if a
+name matches with any of the regex then we should ignore that construct.</p>
+
+<p>The implementation for this was very easy, but there was a whole new problem -
+How do we present this functionality to the user?</p>
+
+<p>All the inputs in Vulture are supplied through command line arguments and there
+aren’t any config files or variables (because that would be an overkill for such
+a simple tool). Although passing regex through a cli argument is possibe,
+seeking that it would be a non trivial task to write such a command and that
+there would be way too many different permutations of “lists” of regex for all
+the different types of constructs (functions, classes, variables, methods,
+properties, etc.), we soon dropped the idea.</p>
+
+<h3 id="approach-2---using-xml-output-from-coveragepy">Approach 2 - Using XML output from <code class="highlighter-rouge">coverage.py</code></h3>
+
+<p>Now, since we were restricted to minimum user interaction, Jendrik came up with
+this brilliant idea of automatically generating an initial whitelist and then
+letting user adapt it to her needs. This lead us to think that we should let
+user run <a href="http://coverage.readthedocs.io/"><code class="highlighter-rouge">coverage.py</code></a> on their code base and
+export the XML output which could then be consumed by Vulture to detect which
+lines are actually used.</p>
+
+<p>So, we tried a basic prototype. We took a sample file, let’s say <code class="highlighter-rouge">ab.py</code>:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">a</span>
+<span class="k">def</span> <span class="nf">b</span><span class="p">():</span>
+    <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>Running <code class="highlighter-rouge">coverage.py</code>, the following XML output was observed:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="nt">&lt;coverage</span> <span class="na">branch-rate=</span><span class="s">"0"</span> <span class="na">line-rate=</span><span class="s">"0.75"</span> <span class="na">timestamp=</span><span class="s">"1524751600489"</span> <span class="na">version=</span><span class="s">"4.3.4"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Generated by coverage.py: https://coverage.readthedocs.io --&gt;</span>
+    <span class="c">&lt;!-- Based on https://raw.githubusercontent.com/cobertura/web/f0366e5e2cf18f111cbd61fc34ef720a6584ba02/htdocs/xml/coverage-03.dtd --&gt;</span>
+    <span class="nt">&lt;sources&gt;</span>
+        <span class="nt">&lt;source&gt;</span>/Users/rahuljha/Documents/test_everything_here<span class="nt">&lt;/source&gt;</span>
+    <span class="nt">&lt;/sources&gt;</span>
+    <span class="nt">&lt;packages&gt;</span>
+        <span class="nt">&lt;package</span> <span class="na">branch-rate=</span><span class="s">"0"</span> <span class="na">complexity=</span><span class="s">"0"</span> <span class="na">line-rate=</span><span class="s">"0.75"</span> <span class="na">name=</span><span class="s">"."</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;classes&gt;</span>
+                <span class="nt">&lt;class</span> <span class="na">branch-rate=</span><span class="s">"0"</span> <span class="na">complexity=</span><span class="s">"0"</span> <span class="na">filename=</span><span class="s">"ab.py"</span> <span class="na">line-rate=</span><span class="s">"0.75"</span> <span class="na">name=</span><span class="s">"ab.py"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;methods/&gt;</span>
+                    <span class="nt">&lt;lines&gt;</span>
+                        <span class="nt">&lt;line</span> <span class="na">hits=</span><span class="s">"1"</span> <span class="na">number=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;line</span> <span class="na">hits=</span><span class="s">"1"</span> <span class="na">number=</span><span class="s">"2"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;line</span> <span class="na">hits=</span><span class="s">"1"</span> <span class="na">number=</span><span class="s">"4"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;line</span> <span class="na">hits=</span><span class="s">"0"</span> <span class="na">number=</span><span class="s">"6"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/lines&gt;</span>
+                <span class="nt">&lt;/class&gt;</span>
+            <span class="nt">&lt;/classes&gt;</span>
+        <span class="nt">&lt;/package&gt;</span>
+    <span class="nt">&lt;/packages&gt;</span>
+<span class="nt">&lt;/coverage&gt;</span>
+</code></pre></div></div>
+
+<p>Now, as you may have observed, the problem with this was that the line numbers
+were not accurate (function <code class="highlighter-rouge">b</code> starts at line number 6, but according to the
+report, line only line number 6 is unused) and no information about the name of
+the unused code was provided. So, we discraded this idea and decided to go yet
+more bare bones and to write a tracer.</p>
+
+<h3 id="approach-3---writing-a-tracer">Approach 3 - Writing a <code class="highlighter-rouge">tracer</code></h3>
+
+<p>A tracer would allow us to keep track of what is going on in the current Python
+process, but after trying to develop a simple protoype, I knew that it wasn’t a
+trivial task. Also, Abdeali who have had previous experience working with such
+“technology” held the following opinion:</p>
+
+<blockquote>
+  <p>If vulture starts to maintain tracer and so on it is starting to go towards
+non-static analysis which I am not sure you guys want to maintain as it can
+have a bunch of issues :/</p>
+</blockquote>
+
+<p>So, in this moment of confusion, we decided to ask Ned Batchelder, the guy
+behind <code class="highlighter-rouge">coverage.py</code> himself. Let me quote him:</p>
+
+<blockquote>
+  <p>You will need a trace function. Writing your own doesn’t have to be
+complicated, though you are right there are details like subprocesses that can
+be a pain. Writing a file tracer plugin could be a way to piggy-back on
+coverage.py. Getting function names wouldn’t be hard, since you can inspect the
+frame object in the trace function to get what you need. Variables are harder.
+You’ve noted that coverage.py reports line numbers, but then you say it’s hard
+to go from line numbers to the information you need. But you already are doing
+AST analysis. Couldn’t you use coverage.py’s line numbers to index into the AST
+you already have, and then use your AST expertise from there?</p>
+</blockquote>
+
+<p>So, we were back to square one (well, square two in this case) - Use output from
+<code class="highlighter-rouge">coverage.xml</code></p>
+
+<h3 id="back-to-approach-2---use-xml-output-from-coveragepy">Back to approach 2 - Use XML output from <code class="highlighter-rouge">coverage.py</code></h3>
+
+<p>We quickly discovered that <code class="highlighter-rouge">&lt;line hits="1"&gt;</code> was merely a binary switch
+indicative of whether or not that line was called and contained no information
+about “how many times”. It was important because it would always be “1” for the
+first line of function (It is used when the program is initialised to store the
+name of the function in memory) and therefore we couldn’t use this switch as an
+indication of whether or not the function was actually used. This also explained
+why the line numbers were off when we inspected the output earlier.</p>
+
+<p>But, this gave us a workable idea: If Vulture says that a function is unused, we
+can check whether this is really the case by checking whether the next line is
+marked as unused in the coverage.py XML file. The only exception would be a
+function defined in a single line, such as:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">true</span><span class="p">():</span> <span class="k">return</span> <span class="bp">True</span>
+</code></pre></div></div>
+
+<p>which aren’t very common nor very useful and therefore can be neglected.</p>
+
+<p>And that’s how my dear friends we decided to use <code class="highlighter-rouge">coverage.py</code> to detect if code
+was actually used or not. Although, it would only enable vulture to detect
+unused “functions” (and properties, maybe) and not classes or variable, but it
+would still be a very useful feature.</p>
+
+<p>P.S. I am excited to work with the team on this feature. It is also one of the
+goals of my Google Summer of Code project.</p>
+
+
+
+
+    </article>
+    <span class="print-footer">Why use coverage to find which parts of a python code were executed? - May 19, 2018 - Rahul Jha</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:rahul722j@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/rahul722j"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/RJ722"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;RAHUL JHA</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Blogging is fun! </a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>
