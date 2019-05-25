@@ -48,8 +48,8 @@ the incident.
 
 {% marginfigure 'mf-id-manmohan' 'http://img.timeinc.net/time/images/covers/asia/2012/20120716_600.jpg' 'Manmohan Singh featured on one of the 2012 editions of the same magazine' %}
 
-In 2012, Manmohan Singh appeared on the cover of the same magazine as "The
-Underachiever", even which might have been an understatement at the time.
+In 2012, Manmohan Singh appeared on the cover of the same magazine as _"The
+Underachiever"_, even which might have been an understatement at the time.
 
 Many of BJP supporters including but not limited to their leader
 [Ravi Shankar Prasad, without a shred of doubt on the authenticity of the
