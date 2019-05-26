@@ -85,7 +85,7 @@ complaints begin.
 
 ### Controversy behind Pakistani Writer
 
-The article of author, Mr. Aatish Taseer is a Pakistani Journalist. Following the
+The author of article, Mr. Aatish Taseer is a Pakistani Journalist. Following the
 release of the magazine, his [wikipedia page was severly vandalized][wikivan] - stating
 that he writes against Brahmins, is a member of Lashkar-E-Tayabba, a pakistani
 militant group and that he is also working as a PR manager for Congress.
@@ -96,10 +96,10 @@ militant group and that he is also working as a PR manager for Congress.
 This false information was then tweeted numerous times as widespread propaganda
 by some trolls on the internet. Other means to defame him were also adopted.
 
-{% marginfigure 'mf-id-ateeshi' 'https://i.imgur.com/9d2Z78v.jpg' 'One of many fake TIME cover created by trolls for defaming Ateeshi' %}
+{% marginfigure 'mf-id-aatish' 'https://i.imgur.com/9d2Z78v.jpg' 'One of many fake TIME cover created by trolls for defaming Aatish' %}
 
 One thing worth noting here is that yes, the author actually is half-pakistani
-(born to an Indian mother, Tavleen Singh and a Pakistani father, Mr. Salmaan
+(born to an Indian mother, Mrs. Tavleen Singh and a Pakistani father, Mr. Salmaan
 Taseer). In fact, Mr. Salmaan was one of the most liberal politicians of Pakistan,
 leading to his [assassination in 2011 because of his strong opinions on Blasphemy
 Laws in Pakistan][salmaan] and his mother, [Mrs. Tavleen appeers to be a Modi supporter][tavleen].
@@ -277,7 +277,7 @@ dekh ki āhan-gar kī dukāñ meñ
 > See how in the blacksmith's forge
 
 tund haiñ sho.ale surḳh hai aahan 
-> Flames leap high and steel grows red
+> Flames leap high and steel glows red
 
 khulne lage qufloñ ke dahāne 
 > Padlocks opening wide their jaws
@@ -297,6 +297,6 @@ bol ki sach zinda hai ab tak
 bol jo kuchh kahnā hai kah le 
 > Speak whatever must be said!
 
-It is rather pressing that we, the citizens of India give
-a form factor to voice of Faiz and Ravish. I appeal that we, the citizens of India speak out, question the
-government, and spread awareness amongst our fellows citizens our rights.
+It is rather pressing that we give a form factor to voice of Faiz and Ravish. I
+appeal that we, the citizens of India speak out, question the government, and
+spread awareness amongst our fellows citizens our rights.
