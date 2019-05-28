@@ -139,8 +139,10 @@ movement appealing people to to adopt swadeshi goods and local handicrafts and
 to refuse to buy British goods. The movement was based on the principle of
 _Ahimsa_ (Non-Violence), and after two years of hard work, it gained full
 momentum in 1922. It seemed that the dream of _Swaraj_ (self-governance) was
-finally near. But giving a face to Gandhi's fears, the cases of violence were
-reported from all over the nation, and after the [Chauri-Chaura][chaurichaura]
+finally near.
+
+But giving a face to Gandhi's fears, the cases of violence were reported from
+all over the nation, and after the [Chauri-Chaura][chaurichaura]
 {% sidenote 'sn-id-chauri' 'A large group of protesters, participating in the
 Non-cooperation movement, clashed with police, who opened fire. In retaliation,
 the demonstrators attacked and set fire to a police station, killing all of its
@@ -150,13 +152,15 @@ very difficult and brave decision on his part - he could have got what he wanted
 ignoring these 'mild' cases of violence for the nation, but his moral cadre was
 defiant of such a behavior and he chose to voice it. 
 
-It was perhaps that because he because believed in a perpetual fight, a fight we
+It was perhaps because he believed in a perpetual fight, a fight we
 all have to fight against our own moral demons, and that the nation must not
-resort to the demon of violence. Subsequently, Gandhi launched many such
-campaigns perfecting the concept of [_Satyagrah_][satyagrah] {% sidenote
-'sn-id-satyagrah' "सत्याग्रह (Satyagrah): सत्य (Truth) + आग्रह (insistence) -
-सत्य के लिए आग्रह - _The truth force_, is a particular form of non-violent civil
-resistance" %} finally leading the nation to independence in 1947.
+resort to the demon of violence.
+
+Subsequently, Gandhi launched many such campaigns perfecting the concept of
+[_Satyagrah_][satyagrah] {% sidenote 'sn-id-satyagrah' "सत्याग्रह (Satyagrah):
+सत्य (Truth) + आग्रह (insistence) - सत्य के लिए आग्रह - _The truth force_, is a
+particular form of non-violent civil resistance" %} finally leading the nation
+to independence in 1947.
 
 [rowlatt]: https://en.wikipedia.org/wiki/Rowlatt_Act
 [jallianwala]: https://en.wikipedia.org/wiki/Jallianwala_Bagh_massacre
