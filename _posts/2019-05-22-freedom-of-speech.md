@@ -139,9 +139,13 @@ officials would then put up a huge mournful act to).
 
 The cases for all these victims was made further down by defaming them across
 mainstream media portraying them as criminals or associating them with terrorist
-organizations, which brings me to my second point - It isn't just the voice of
-the student leaders and activists which is silenced, but even the mainstream
-media journalists are being denied their right to free speech.
+organizations, which brings me to my second point...
+
+## Freedom of The Press
+
+It isn't just the voice of the student leaders and activists which is silenced,
+but even the mainstream media journalists are being denied their right to free
+speech.
 
 [Gauri Lankesh, one of the top political journalists of India was shot dead
 outside her house][6] because she was an outspoken critic of
@@ -193,7 +197,7 @@ Index][rank], which is a disaster for the world's largest democracy.
 ## What can we do?
 
 [In the words of Ravish Kumar][ravish] (one of the handful journalists
-{% sidenote 'sn-id-himmat' "Himmat, a magazine, edited by Rajmohan Gandhi, which maintained independence despite State repression [when Emergency was imposed during 1975] serves as a means of great inspiration for today's journalists, to find ways to resist corporate control and to tell readers the truth. [Read complete story][himmat]" %}
+{% sidenote 'sn-id-himmat' "Himmat, a magazine, edited by Rajmohan Gandhi, which maintained independence despite State repression [when Emergency was imposed during 1975] serves as a means of great inspiration for today's journalists, to find ways to resist corporate control and to tell readers the truth. [Read complete story here][himmat]" %}
 who haven't yet forgotten what journalism is and and still have the courage to raise the right
 questions):
 
