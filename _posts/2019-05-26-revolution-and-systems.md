@@ -12,7 +12,13 @@ personal privacy of users by concealing their details from anyone conducting
 network surveillance, from Government to their ISP. Additionally, all payments
 were made using [ Bitcoin ][bitcoin], a cryptocurrency which provides a certain
 degree of anonymity." %} bazaar for trading of illicit materials, mainly drugs,
-which he named Silk Road, .
+which he named Silk Road.
+
+The aim behind writing this blog post was to think out loud and trying to build
+an insight into the oversight of some of the most prominent revolutionaries of
+the past.
+
+<!--more-->
 
 When operating his online empire, Ross would take on the identity of Dread
 Pirate Roberts (~DPR) (borrowing the name from The Princess Bride, in which the
@@ -100,8 +106,8 @@ birthing dragons out of stone, freeing thousands of slaves, helping the Starks
 defeat an army of ice-zombies — the viewers first handedly experienced the
 mindset of a revolutionary who decided that they need to liberate the entire
 world. Yet, it was when she failed to draw a line between herself and her vision
-{% sidenote 'sn-id-dany' 'The time when she succumbed to her temptations,
-killing thousands of people in King's Landing' %}, that she failed as a ruler, becoming exactly
+{% sidenote 'sn-id-dany' "The time when she succumbed to her temptations,
+killing thousands of people in King's Landing" %}, that she failed as a ruler, becoming exactly
 what she came to abolish - tyranny. It is worth noting here that all the while
 she burned innocent people, she was fueled by the exact same idea - to liberate
 the world from tyranny.
