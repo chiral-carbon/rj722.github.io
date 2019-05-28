@@ -153,7 +153,7 @@ defiant of such a behavior and he chose to voice it.
 It was perhaps that because he because believed in a perpetual fight, a fight we
 all have to fight against our own moral demons, and that the nation must not
 resort to the demon of violence. Subsequently, Gandhi launched many such
-campaigns perfecting the concept of _Satyagrah_[satyagrah] {% sidenote
+campaigns perfecting the concept of [_Satyagrah_][satyagrah] {% sidenote
 'sn-id-satyagrah' "सत्याग्रह (Satyagrah): सत्य (Truth) + आग्रह (insistence) -
 सत्य के लिए आग्रह - _The truth force_, is a particular form of non-violent civil
 resistance" %} finally leading the nation to independence in 1947.
