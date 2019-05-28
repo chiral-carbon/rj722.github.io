@@ -49,9 +49,11 @@ href="malito:rahul722j@gmail.com">rahul722j [AT] gmail [DOT] com</a>.
 -->
 
 ### Reading
+
 I like to learn new things and that is why I read, a lot about tech and yet more
-about the open source movement. I also like poetry and plan to start reading
-literature soon.
+about the open source movement. I also like to read about history, otherwise I
+believe we're just going around in circles. I also like poetry and plan to start
+reading fiction soon.
 
 ### Meetups and Conferences
 
