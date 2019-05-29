@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dynamic code analysis with Vulture</title>
+  <meta name="description" content="This is a follow up post of Why use coverage to find which parts of a pythoncode were executed? - there we discussed how we stumbled on this plan ofdynamic c...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="https://rj722.github.io/articles/18/dynamic-analysis-with-vulture">
+
+  <link rel="alternate" type="application/rss+xml" title="Rahul Jha" href="https://rj722.github.io/feed.xml" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113881917-2"></script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'UA-113881917-2');
+  </script>
+
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+  	
+		
+		    
+		      <a href="/">RJ722's blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About RJ722</a>
+		    
+	    
+  	
+		
+  	
+		
+		    
+		      <a href="/newsletter/">Subscribe</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Dynamic code analysis with Vulture</h1>
+<p class="subtitle">June 27, 2018</p>
+
+<p>This is a follow up post of <a href="https://rj722.github.io/blog/2018/05/19/why-use-coverage-to-find-which-python-code-is-run/">Why use coverage to find which parts of a python
+code were executed?</a> - there we discussed how we stumbled on this plan of
+dynamic code analysis with vulture. Here, we talk about the development process
+we (the Vulture team) underwent to integrate Vulture with
+<a href="https://github.com/nedbat/coveragepy">coverage.py</a> in order to automatically generate a whitelist of
+functions which Vulture reports as unused but are actually being used.</p>
+
+<!--more-->
+
+<h1 id="overview">Overview</h1>
+
+<p>The idea was to let <a href="https://github.com/nedbat/coveragepy">coverage</a> do the dynamic analysis and report it’s
+results to Vulture (through <code class="highlighter-rouge">XML</code>) which could then be used to cross check
+functions being reported as unused by Vulture. It was further decided to present
+this functionality to user in the form of a command line flag, eg.:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vulture --make-whitelist coverage.xml files/
+</code></pre></div></div>
+
+<p>This would print a whitelist containing false positives reported for <code class="highlighter-rouge">files/</code> to
+<code class="highlighter-rouge">stdout</code>. Let’s walk through all of it step by step:</p>
+
+<h1 id="dynamic-code-analysis---what-is-it">Dynamic Code Analysis - What is it?</h1>
+
+<p>To analyse a program dynamically means to execute the program on a real or
+virtual processor and to monitor the process to check which lines are being hit
+(i.e. being used). This is in contrast to static analysis where the program is
+analysed on the sole basis of source code or some form of code object.</p>
+
+<p><a href="https://github.com/nedbat/coveragepy">coverage.py</a> is a tool, widely popular in Python community which
+allows user to perform code coverage measurements through dynamic code analysis.</p>
+
+<h1 id="implementing-make-whitelist">Implementing –make-whitelist</h1>
+
+<p>Code was pretty simple - just look up for <code class="highlighter-rouge">hit</code> switch in the <code class="highlighter-rouge">XML</code> in the
+entire range of the unused function. As soon as you find any line which is used,
+print it. ;-)</p>
+
+<p>Here is the <code class="highlighter-rouge">make_whitelist</code> module from vulture:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># vulture/make_whitelist.py
+</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">from</span> <span class="nn">xml.etree</span> <span class="kn">import</span> <span class="n">ElementTree</span> <span class="k">as</span> <span class="n">ET</span>
+
+<span class="kn">from</span> <span class="nn">vulture</span> <span class="kn">import</span> <span class="n">utils</span>
+
+
+<span class="k">def</span> <span class="nf">create_namewise_dict</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="n">namewise_unused_funcs</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="p">[])</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">unused_funcs</span><span class="p">:</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normcase</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">format_path</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">filename</span><span class="p">))</span>
+        <span class="n">namewise_unused_funcs</span><span class="p">[</span><span class="n">filename</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">namewise_unused_funcs</span>
+
+
+<span class="k">def</span> <span class="nf">make_whitelist</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">xml</span><span class="p">):</span>
+    <span class="n">xpath_file</span> <span class="o">=</span> <span class="s">'./packages/package/classes/class'</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s">'filename'</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">xpath_file</span><span class="p">)]</span>
+    <span class="n">namewise_unused_funcs</span> <span class="o">=</span> <span class="n">create_namewise_dict</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="n">xpath</span> <span class="o">=</span> <span class="p">(</span><span class="s">'./packages/package/classes/class/[@filename="{}"]'</span>
+                 <span class="s">'/lines/line[@hits="1"]'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+        <span class="n">lines_hit</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s">'number'</span><span class="p">])</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">xpath</span><span class="p">)]</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normcase</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">unused_funcs</span> <span class="o">=</span> <span class="n">namewise_unused_funcs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">if</span> <span class="n">unused_funcs</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"# "</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">unused_funcs</span><span class="p">:</span>
+                <span class="n">span</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">first_lineno</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">item</span><span class="o">.</span><span class="n">last_lineno</span><span class="o">+</span><span class="mi">1</span>
+                <span class="k">for</span> <span class="n">lineno</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">*</span><span class="n">span</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">lineno</span> <span class="ow">in</span> <span class="n">lines_hit</span><span class="p">:</span>
+                        <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                        <span class="k">break</span>
+            <span class="k">print</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="were-there-any-problems">Were there any problems?</h2>
+
+<p>Yes, a lot of them. But, I’m glad that there are a lot of smart people in the
+Vulture community. ;-)</p>
+
+<p>Here are some weird &amp; notable issues I would like to document:</p>
+
+<h3 id="output-all-over-pytest-results">Output all over pytest results</h3>
+
+<p>When writing tests, I had to capture the output when running <code class="highlighter-rouge">make_whitelist</code>,
+so I decided to use pytest’s <a href="https://docs.pytest.org/en/latest/capture.html#accessing-captured-output-from-a-test-function">capsys</a> fixture. The code was as follows:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">test_create_whitelist</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">tmpdir</span><span class="p">,</span> <span class="n">capsys</span><span class="p">):</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="s">"""</span><span class="se">\
+</span><span class="s">class Greeter:
+    def greet(self):
+        print("Hi")
+greeter = Greeter()
+greet_func = getattr(greeter, "greet")
+greet_func()
+"""</span>
+    <span class="n">expected_output</span> <span class="o">=</span> <span class="s">"""</span><span class="se">\
+</span><span class="s"># {}
+greet
+
+"""</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normcase</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tmpdir</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">"unused_code.py"</span><span class="p">)))</span>
+    <span class="n">xml</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">tmpdir</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">"coverage.xml"</span><span class="p">))</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s">"coverage"</span><span class="p">,</span> <span class="s">"run"</span><span class="p">,</span> <span class="n">sample</span><span class="p">])</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s">"coverage"</span><span class="p">,</span> <span class="s">"xml"</span><span class="p">,</span> <span class="s">"-o"</span><span class="p">,</span> <span class="n">xml</span><span class="p">])</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">scavenge</span><span class="p">([</span><span class="n">sample</span><span class="p">])</span>
+    <span class="n">make_whitelist</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">xml</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">capsys</span><span class="o">.</span><span class="n">readouterr</span><span class="p">()</span><span class="o">.</span><span class="n">out</span> <span class="o">==</span> <span class="n">expected_output</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>But, the output from <code class="highlighter-rouge">coverage</code> and <code class="highlighter-rouge">scavenge</code> (in verbose mode) would pollute
+<code class="highlighter-rouge">capsys.readouterr().out</code>, so I tried disabling capsys from recording while
+executing these commmands, therefore tried this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ...
+</span><span class="k">with</span> <span class="n">capsys</span><span class="o">.</span><span class="n">disabled</span><span class="p">():</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s">"coverage"</span><span class="p">,</span> <span class="s">"run"</span><span class="p">,</span> <span class="n">sample</span><span class="p">])</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s">"coverage"</span><span class="p">,</span> <span class="s">"xml"</span><span class="p">,</span> <span class="s">"-o"</span><span class="p">,</span> <span class="n">xml</span><span class="p">])</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">scavenge</span><span class="p">([</span><span class="n">sample</span><span class="p">])</span>
+<span class="n">make_whitelist</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">xml</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">capsys</span><span class="o">.</span><span class="n">readouterr</span><span class="p">()</span><span class="o">.</span><span class="n">out</span> <span class="o">==</span> <span class="n">expected_output</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The tests now passed, <code class="highlighter-rouge">\o/</code>, but the output we just omitted would now show up
+while running the tests, thus ruining pytest’s output when running tests, just
+like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>============================= test session starts ==============================
+platform linux -- Python 3.5.5, pytest-3.6.2, py-1.5.3, pluggy-0.6.0
+rootdir: /home/travis/build/RJ722/vulture, inifile: setup.cfg
+plugins: cov-2.5.1
+collected 156 items                                                            
+tests/test_conditions.py ..............                                  [  8%]
+tests/test_confidence.py .......                                         [ 13%]
+tests/test_errors.py ....                                                [ 16%]
+tests/test_format_strings.py ......                                      [ 19%]
+tests/test_imports.py .............                                      [ 28%]
+tests/test_item.py .                                                     [ 28%]
+tests/test_make_whitelist.py Hi
+Scanning: /tmp/pytest-of-travis/pytest-0/test_create_whitelist0/unused_code.py
+1 Module(body=[ClassDef(name='Greeter', bases=[], keywords=[], body=[FunctionDef(name='greet', args=arguments(args=[arg(arg='self', 
+etc...
+etc...
+1 Load() class Greeter:
+.                                           [ 29%]
+tests/test_scavenging.py ...........................................     [ 57%]
+tests/test_script.py ...........                                         [ 64%]
+tests/test_size.py ..............................                        [ 83%]
+tests/test_sorting.py .                                                  [ 83%]
+tests/test_unreachable.py .........................                      [100%]
+</code></pre></div></div>
+
+<p>Now, after scratching my head for a while, when I was on the brink of giving up,
+I pinged Grand Master <strong><a href="https://github.com/the-compiler">The-Compiler</a></strong> for help <label for="sn-id-florian" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-id-florian" class="margin-toggle" /><span class="sidenote">I think that I underrepresented the enthusiasm and humility
+with which <a href="https://github.com/the-compiler">Florian</a> helped me. He even asked me to ask for help
+sooner rather than later to prevent confusion. A huge shoutout to him - Thank You
+so much! </span> . In a matter of seconds, he inspected the code and the output and
+pointed out that whenever <code class="highlighter-rouge">capsys.disabled()</code> is used, the output is printed to
+<code class="highlighter-rouge">stdout</code> immediately. Aha!</p>
+
+<p>He suggested the following:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ...
+</span><span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s">"coverage"</span><span class="p">,</span> <span class="s">"run"</span><span class="p">,</span> <span class="n">sample</span><span class="p">])</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s">"coverage"</span><span class="p">,</span> <span class="s">"xml"</span><span class="p">,</span> <span class="s">"-o"</span><span class="p">,</span> <span class="n">xml</span><span class="p">])</span>
+<span class="n">v</span><span class="o">.</span><span class="n">scavenge</span><span class="p">([</span><span class="n">sample</span><span class="p">])</span>
+<span class="n">capsys</span><span class="o">.</span><span class="n">readouterr</span><span class="p">()</span>  <span class="c1"># Flush output from coverage run
+</span><span class="n">make_whitelist</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">xml</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">capsys</span><span class="o">.</span><span class="n">readouterr</span><span class="p">()</span><span class="o">.</span><span class="n">out</span> <span class="o">==</span> <span class="n">expected_output</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Hooray! <code class="highlighter-rouge">\o/</code> Thank You Florian! <code class="highlighter-rouge">:-)</code></p>
+
+<h3 id="how-to-pass-around-fixtures">How to pass around fixtures?</h3>
+
+<p>Observing the test case, it came to me that most of the code could be reused and
+thereby I decided to write a helper function and soon came up with the following
+implementation:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">check_whitelist</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">expected_output</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">tmpdir</span><span class="p">,</span> <span class="n">capsys</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normcase</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tmpdir</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">"unused_code.py"</span><span class="p">)))</span>
+    <span class="n">xml</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">tmpdir</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">"coverage.xml"</span><span class="p">))</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s">"coverage"</span><span class="p">,</span> <span class="s">"run"</span><span class="p">,</span> <span class="n">sample</span><span class="p">])</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s">"coverage"</span><span class="p">,</span> <span class="s">"xml"</span><span class="p">,</span> <span class="s">"-o"</span><span class="p">,</span> <span class="n">xml</span><span class="p">])</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">scavenge</span><span class="p">([</span><span class="n">sample</span><span class="p">])</span>
+    <span class="n">capsys</span><span class="o">.</span><span class="n">readouterr</span><span class="p">()</span>  <span class="c1"># Flush output from coverage run
+</span>    <span class="n">make_whitelist</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">xml</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">capsys</span><span class="o">.</span><span class="n">readouterr</span><span class="p">()</span><span class="o">.</span><span class="n">out</span> <span class="o">==</span> <span class="n">expected_output</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">test_create_whitelist</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">tmpdir</span><span class="p">,</span> <span class="n">capsys</span><span class="p">):</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="s">"""</span><span class="se">\
+</span><span class="s">class Greeter:
+    def greet(self):
+        print("Hi")
+greeter = Greeter()
+greet_func = getattr(greeter, "greet")
+greet_func()
+"""</span>
+    <span class="n">expected_output</span> <span class="o">=</span> <span class="s">"""</span><span class="se">\
+</span><span class="s"># {}
+greet
+
+"""</span>
+    <span class="n">check_whitelist</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">expected_output</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">tmpdir</span><span class="p">,</span> <span class="n">capsys</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The problem with this implementation was that with every test case, all the
+fixture objects (<code class="highlighter-rouge">v</code>, <code class="highlighter-rouge">tmpdir</code>, <code class="highlighter-rouge">capsys</code>, etc.) needed to be juggled around to
+the helper function - there had to be a better way, I thought and started
+digging things around but soon, I was down the rabbit hole.</p>
+
+<p>Once again, I went to <a href="https://github.com/the-compiler">The-Compiler</a> for rescue - He said that
+this problem was not uncommon and pointed me to check out the following
+solutions:</p>
+<ul>
+  <li>Creating a class for test cases - Particularly helpful when having a lot of
+test cases. eg.
+<a href="https://github.com/qutebrowser/qutebrowser/blob/master/tests/unit/javascript/conftest.py">qutebrowser/qutebrowser/tests/unit/javascript/conftest.py</a></li>
+  <li>Defining an inner function inside a fixture, and then using that fixture
+instead of calling the function directly. eg.
+<a href="https://github.com/qutebrowser/qutebrowser/blob/master/tests/unit/browser/webkit/network/test_filescheme.py#L125-L153">qutebrowser/qutebrowser/tests/unit/browser/webkit/network/test_filescheme.py#L125-L153</a></li>
+</ul>
+
+<p>Since the former option “looked” like a lot of work, I decided to go with the
+inner function and quickly came up with the following:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="k">def</span> <span class="nf">check_whitelist</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">expected_output</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">tmpdir</span><span class="p">,</span> <span class="n">capsys</span><span class="p">):</span>
+        <span class="n">sample</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normcase</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tmpdir</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">"unused_code.py"</span><span class="p">)))</span>
+        <span class="n">xml</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">tmpdir</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">"coverage.xml"</span><span class="p">))</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s">"coverage"</span><span class="p">,</span> <span class="s">"run"</span><span class="p">,</span> <span class="n">sample</span><span class="p">])</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s">"coverage"</span><span class="p">,</span> <span class="s">"xml"</span><span class="p">,</span> <span class="s">"-o"</span><span class="p">,</span> <span class="n">xml</span><span class="p">])</span>
+        <span class="n">v</span><span class="o">.</span><span class="n">scavenge</span><span class="p">([</span><span class="n">sample</span><span class="p">])</span>
+        <span class="n">capsys</span><span class="o">.</span><span class="n">readouterr</span><span class="p">()</span>  <span class="c1"># Flush output from coverage run
+</span>        <span class="n">make_whitelist</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">xml</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">capsys</span><span class="o">.</span><span class="n">readouterr</span><span class="p">()</span><span class="o">.</span><span class="n">out</span> <span class="o">==</span> <span class="n">expected_output</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">check</span>
+
+
+<span class="k">def</span> <span class="nf">test_create_whitelist</span><span class="p">(</span><span class="n">check_whitelist</span><span class="p">):</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="s">"""</span><span class="se">\
+</span><span class="s">class Greeter:
+    def greet(self):
+        print("Hi")
+greeter = Greeter()
+greet_func = getattr(greeter, "greet")
+greet_func()
+"""</span>
+    <span class="n">expected_output</span> <span class="o">=</span> <span class="s">"""</span><span class="se">\
+</span><span class="s"># {}
+greet
+
+"""</span>
+    <span class="n">check_whitelist</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">expected_output</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>and soon the tests were green and I was busy finding a bottle of Champagne for
+celebrations when I receive a message from <a href="https://github.com/the-compiler">The-Compiler</a> saying
+that it isn’t supposed to work that way, did it do the job? and myself while
+being drunk in the divine green flavours of <a href="https://travis-ci.org">travis</a>
+replied: “It did :-p”. Next, he tells me that the test running successfully was
+a false positive - Behind the hoods, it wasn’t running at all. :-(</p>
+
+<p>Due to the way, pytest’s fixtures work, <code class="highlighter-rouge">check_whitelist</code> - the argument to
+<code class="highlighter-rouge">test_create_whitelist</code> wasn’t the function <code class="highlighter-rouge">check_whitelist</code> declared outside
+and that it was a mere representation and when calling it from within the test,
+pytest would intelligently call the inner function. Let’s see the final code:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="k">def</span> <span class="nf">check_whitelist</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">tmpdir</span><span class="p">,</span> <span class="n">capsys</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">expected_output</span><span class="p">):</span>
+        <span class="n">sample</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normcase</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tmpdir</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">"unused_code.py"</span><span class="p">)))</span>
+        <span class="n">xml</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">tmpdir</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">"coverage.xml"</span><span class="p">))</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s">"coverage"</span><span class="p">,</span> <span class="s">"run"</span><span class="p">,</span> <span class="n">sample</span><span class="p">])</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s">"coverage"</span><span class="p">,</span> <span class="s">"xml"</span><span class="p">,</span> <span class="s">"-o"</span><span class="p">,</span> <span class="n">xml</span><span class="p">])</span>
+        <span class="n">v</span><span class="o">.</span><span class="n">scavenge</span><span class="p">([</span><span class="n">sample</span><span class="p">])</span>
+        <span class="n">capsys</span><span class="o">.</span><span class="n">readouterr</span><span class="p">()</span>  <span class="c1"># Flush output from coverage run
+</span>        <span class="n">make_whitelist</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">xml</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">capsys</span><span class="o">.</span><span class="n">readouterr</span><span class="p">()</span><span class="o">.</span><span class="n">out</span> <span class="o">==</span> <span class="n">expected_output</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">check</span>
+
+
+<span class="k">def</span> <span class="nf">test_create_whitelist</span><span class="p">(</span><span class="n">check_whitelist</span><span class="p">):</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="s">"""</span><span class="se">\
+</span><span class="s">class Greeter:
+    def greet(self):
+        print("Hi")
+greeter = Greeter()
+greet_func = getattr(greeter, "greet")
+greet_func()
+"""</span>
+    <span class="n">expected_output</span> <span class="o">=</span> <span class="s">"""</span><span class="se">\
+</span><span class="s"># {}
+greet
+
+"""</span>
+    <span class="n">check_whitelist</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">expected_output</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Despite being deceptive at first (especially given the mismatch in the arguments
+and parameters to <code class="highlighter-rouge">check_whitelist</code>), the resulting test case still provides a
+neat and robust hack.</p>
+
+<p>Again, Thank You so much Florian! :-)</p>
+
+<h3 id="ms-windows">MS Windows</h3>
+
+<p><em>As usual</em>, Microsoft Windows was being a pain in the ass - which in the end
+(after 6 hours of swearing and 44 appveyor builds - I do not have access to a
+Windows machine) was a result of non normalised (wrong slashes and case
+sensitive) paths, <em>as usual</em>. :-p</p>
+
+<p>At one point, I was thinking of dropping support for Windows, but thanks to
+<a href="https://github.com/jendrikseipp">Jendrik</a> - I could finally find my way out.</p>
+
+
+
+
+    </article>
+    <span class="print-footer">Dynamic code analysis with Vulture - June 27, 2018 - Rahul Jha</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:rahul722j@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/rahul722j"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/RJ722"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;RAHUL JHA</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Musings of RJ722 </a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>

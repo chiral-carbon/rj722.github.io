@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Google Summer of Code 2018 - Phase 1</title>
+  <meta name="description" content="Here’s my work progress with the first phase of Google Summer of Code 2018.">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="https://rj722.github.io/articles/18/gsoc-18-phase-1">
+
+  <link rel="alternate" type="application/rss+xml" title="Rahul Jha" href="https://rj722.github.io/feed.xml" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113881917-2"></script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'UA-113881917-2');
+  </script>
+
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+  	
+		
+		    
+		      <a href="/">RJ722's blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About RJ722</a>
+		    
+	    
+  	
+		
+  	
+		
+		    
+		      <a href="/newsletter/">Subscribe</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Google Summer of Code 2018 - Phase 1</h1>
+<p class="subtitle">June 14, 2018</p>
+
+<p>Here’s my work progress with the first phase of Google Summer of Code 2018.</p>
+
+<!--more-->
+
+<h2 id="goals">Goals</h2>
+
+<p>There were two primary goals to be achieved:</p>
+
+<ul>
+  <li>Create a tool which would to create whitelists for projects using <a href="https://www.riverbankcomputing.com/software/sip/intro"><code class="highlighter-rouge">sip</code></a>
+(eg. <code class="highlighter-rouge">PyQt</code>).</li>
+  <li>Maximise test coverage for <a href="https://github.com/jendrikseipp/vulture">Vulture</a>.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="vulture-whitelist">Vulture-Whitelist</h1>
+
+<p>Idea was to create a tool for people running Vulture analysis on projects using
+<a href="https://www.riverbankcomputing.com/software/sip/intro"><code class="highlighter-rouge">sip</code></a> to create Python bingings for C/C++ code.</p>
+
+<h3 id="problem">Problem</h3>
+
+<p>Consider a scenario where a user imports a class in Python, defined through a
+C++ module. Now, if the user decides to overload any virtual function of that
+class - It won’t be executed by Python <em>directly</em>. Thus, leaving no way to
+determine beforehand if that particular method is used anytime, thus causing
+static analysis tools, like Vulture to report them as unused.</p>
+
+<h3 id="proposed-solution">Proposed Solution</h3>
+
+<p>The most obvious solution is parse virtual functions present in <code class="highlighter-rouge">sip</code> files and
+write them to a file which could then be included in the list of files to be
+analysed by Vulture which would then inturn treat these methods as if they are
+used, thus preventing Vulture from reporting them as unused.</p>
+
+<p>It has one caveat though - The results may contain a false negative when there
+is an overloaded method which isn’t run anytime because Vulture would consider
+it as “used” anyways, but nonetheless given that projects like PyQt (the main
+consumer of <code class="highlighter-rouge">sip</code>) have thousands of virtual functions, it would still be better
+to negotiate a false negative than a false positive.</p>
+
+<p>Gladly, <code class="highlighter-rouge">sip</code> already provided us with a way to export data in XML format, and
+in no time <a href="https://github.com/The-Compiler">@The-Compiler</a> <a href="http://www.riverbankcomputing.com/pipermail/pyqt/2015-July/036150.html">merged a patch</a> so that XML
+includes a <code class="highlighter-rouge">virtual="(1|0)"</code> attribute for Function tag and he quickly
+implemented a <a href="https://github.com/jendrikseipp/vulture/issues/8#issuecomment-284328136">script</a> to parse the XML and filter out all virtual
+functions and save them as a whitelist.</p>
+
+<p>My job was to create a plugin based python package as a wrapper around that
+script because there are multiple generators for creating bindings and we would
+want to support many of them incrementally. <a href="https://github.com/RJ722/vulture-whitelist-generators"><code class="highlighter-rouge">vulture-whitelist</code></a> can be
+found <a href="https://github.com/RJ722/vulture-whitelist-generators">here</a>.</p>
+
+<h1 id="code-coverage">Code Coverage</h1>
+
+<p>Vulture had an excellent code coverage of <code class="highlighter-rouge">95%</code> prior to my stride on maximizing
+the coverage ratio. At first, <a href="https://github.com/jendrikseipp">Jendrik</a> thought that achieving <code class="highlighter-rouge">100%</code>
+wouldn’t be possible without major changes in how the tests were currently
+written. But, after inspecting the coverage report closely we found out that
+only a minor tweaks and removal of some obsolete code did the job. It also
+unveiled a bug in how the tests for <code class="highlighter-rouge">async</code> functions were written - They
+weren’t even being run because of a <a href="https://github.com/jendrikseipp/vulture/commit/7ff8d6814844b321d62cb3c1a7797567b0bd94a1#diff-498cf53d35427897613cdfc4b76fc6ea">faulty fixture I wrote.</a></p>
+
+<p><br /></p>
+
+<p>Now, after the successful culmination of the first phase, I look forward to
+working on an entirely new feature on Vulture - Dynamic Analysis for detecting
+false positives. Stay tuned for more info.</p>
+
+
+
+
+    </article>
+    <span class="print-footer">Google Summer of Code 2018 - Phase 1 - June 14, 2018 - Rahul Jha</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:rahul722j@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/rahul722j"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/RJ722"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;RAHUL JHA</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Musings of RJ722 </a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>

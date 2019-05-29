@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Meeting Jendrik</title>
+  <meta name="description" content="A meeting with my mentor, tweaking the VultureBear and my new laptop. Ahh, perfect!">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="https://rj722.github.io/articles/17/meeting-jendrik">
+
+  <link rel="alternate" type="application/rss+xml" title="Rahul Jha" href="https://rj722.github.io/feed.xml" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113881917-2"></script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'UA-113881917-2');
+  </script>
+
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+  	
+		
+		    
+		      <a href="/">RJ722's blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About RJ722</a>
+		    
+	    
+  	
+		
+  	
+		
+		    
+		      <a href="/newsletter/">Subscribe</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Meeting Jendrik</h1>
+<p class="subtitle">June 10, 2017</p>
+
+<p>A meeting with my mentor, tweaking the VultureBear and my new laptop. Ahh, perfect!</p>
+
+<!--more-->
+
+<h1 id="coding-period-kicks-off">Coding period kicks off</h1>
+
+<p>A quite has happened since I last wrote, most important of which was a meeting with my mentor <a href="https://github.com/jendrikseipp">@jendrikseipp</a>, which by the way went awesome. Thank You! @jendrik</p>
+
+<h2 id="a-meeting-with-my-mentor-jendrikseipp">A meeting with my mentor @jendrikseipp</h2>
+
+<p>A little overview - In the starting of the session, we had already discussed
+that we would be meeting weekly on Wednesdays at 3ish PM UTC +2:30 on
+hangouts, but due to some circumstances we couldn’t meet prior June 7.</p>
+
+<p><strong>Wednesday, 7 June 2017</strong>- I was feeling a little nauseatic, so I decided to take a short nap (which later turned out to be of 4 hours ). When I woke up, it had already been past 7 (in my timezone UTC +5:30) - Oh! I missed the meeting again, I thought, it had been quite a bad day, so this was kind of expected :cry:. But I thought it would be better if I could atleast update the doc which we maintain for our meets. I quickly penned down some points I thought would be better if Jendrik took a look and also drafted an email stating the same.</p>
+
+<p>Just a couple of seconds later, he messaged me, saying if he could call me in 10 mins. I was excited and nervous both at the same time, and replied with a text stating it would be great indeed (Finally). I went upstairs to the rooftop - the only place you <em>might</em> get silence in an Indian joint family :stuck_out_tongue_winking_eye:. Waiting meanwhile, I browsed through Jendirk’s G+ profile, saw that he is currently studying at University of Basel, Switzerland, probably doing PhD - I read some of the blog posts about the student life over there and immediately fell in love with it.</p>
+
+<p>When I picked up the phone call, to my surprise, it was a video call - I wasn’t presentable <strong>at all</strong> (I thought that this would be a voice call). While looking at my screen, I can see there is a handsome guy, dressed up nicely ,in his cabin, and me on the other hand, was somewhere in the dark, and was shabbily dressed perhaps food deprived for a few days (atleast, I imagine myself that way) - I am very sorry @Jendrik, I would be presentable the next time you call me ;P . Quickly, I ran into my room and caught my breath. We exchanged greetings and then Jendrik asked me about how was everything going? To my surprise (I am quite talkative), I couldn’t speak anything - I knew exactly what to, but just couldn’t - I was quite nervous, but since Jendrik sounded nice and rehearsed, the conversational flow went very well :-). We talked about a wide variety of topics ranging from VultureBear to college life, coala and what not.</p>
+
+<p>To conclude, Jendrik is quite an astonishing guy and that it was a thrilling experience to talk to him. I had a conversation that is amongst the most cherished ones of my life. I am looking forward to our next meeting.</p>
+
+<h2 id="tweaking-the-vulturebear-to-follow-the-vulture-api">Tweaking the VultureBear to follow the vulture API</h2>
+
+<h3 id="overview">Overview</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">coala</code>
+    <ul>
+      <li><code class="highlighter-rouge">coala</code> is a smart code linter - It finds problems in your code and even proposes a patch to fix them. It has primary processors called Bears - They contain the logical part whereas the infrastructure is provided by coala.</li>
+      <li><a href="https://coala.io">coala</a></li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">vulture</code>
+    <ul>
+      <li>It is a dead code reporter - It reports unused variables, functions, classes, etc.</li>
+      <li><a href="https://github.com/jendrikseipp/vulture">vulture</a></li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">VulturBear</code> is a coala bear which finds dead python code by running vulture over it.</li>
+</ul>
+
+<h3 id="the-problem">The Problem</h3>
+
+<p>How <code class="highlighter-rouge">VultureBear</code> currently worked:</p>
+<ul>
+  <li>It runs a shell command: <code class="highlighter-rouge">vulture filename1.py filename2.py ...</code> where filenames is provided by coala.</li>
+  <li>It then captures the output.</li>
+  <li>Analyses the output through <code class="highlighter-rouge">re</code> catching every line of result for getting the <code class="highlighter-rouge">filename</code>, <code class="highlighter-rouge">lineno</code>, type of entity(function, variable, class, etc.)</li>
+  <li>Creates a Result Object</li>
+</ul>
+
+<p>This implementation had several issues:</p>
+<ul>
+  <li>It creates a <code class="highlighter-rouge">Popen</code> instance.</li>
+  <li>It uses <code class="highlighter-rouge">re</code> to analyse the files and their asymptotic complexity may rise exponentially.</li>
+  <li>If vulture tweaks the way results are displayed, <code class="highlighter-rouge">VultureBear</code> won’t be able to cope up with this.</li>
+</ul>
+
+<h3 id="the-current-implementation">The current implementation</h3>
+
+<p>Taking a closer look at vulture, I found that there is a utility provided by vulture which would do just the same thing in a much more cleaner way:
+<code class="highlighter-rouge">vulture.Vulture.scavenge(filenames)</code> and this would store all the relevant info (lineno, filename, etc.) in the <code class="highlighter-rouge">vulture.Item</code> object.</p>
+
+<p>Implementation of a wrapper around this can be like this:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">_retrieve_unused</span><span class="p">(</span><span class="n">filenames</span><span class="p">):</span>
+    <span class="s">"""
+    :param filenames: List containing paths to all the files
+                      which are to be checked by vulture.
+    :return: List of Result objects containing information about
+             dead code (filename, lineno, message).
+    """</span>
+
+    <span class="k">def</span> <span class="nf">file_lineno</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">filename</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">item</span><span class="o">.</span><span class="n">lineno</span><span class="p">)</span>
+    <span class="n">unused</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">vulture</span> <span class="o">=</span> <span class="n">Vulture</span><span class="p">()</span>
+    <span class="n">vulture</span><span class="o">.</span><span class="n">scavenge</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="n">vulture</span><span class="o">.</span><span class="n">unused_funcs</span> <span class="o">+</span> <span class="n">vulture</span><span class="o">.</span><span class="n">unused_imports</span> <span class="o">+</span>
+            <span class="n">vulture</span><span class="o">.</span><span class="n">unused_props</span> <span class="o">+</span> <span class="n">vulture</span><span class="o">.</span><span class="n">unused_vars</span> <span class="o">+</span>
+            <span class="n">vulture</span><span class="o">.</span><span class="n">unused_attrs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">file_lineno</span><span class="p">):</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="s">'Unused {0}: {1}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">typ</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="n">unused</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Result</span><span class="o">.</span><span class="n">from_values</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="s">'VultureBear'</span><span class="p">,</span>
+                                         <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+                                         <span class="nb">file</span><span class="o">=</span><span class="n">item</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span>
+                                         <span class="n">line</span><span class="o">=</span><span class="n">item</span><span class="o">.</span><span class="n">lineno</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">unused</span>
+
+</code></pre></div></div>
+
+<h3 id="a-note">A note:</h3>
+
+<p>When I first tried this implementation, all the things seemed to be in place, except for this <code class="highlighter-rouge">AttributeError: 'Vulture' object has no attribute 'unused_imports'</code>.</p>
+
+<p>After half an hour of debugging and scratching my hair, suddenly the <code class="highlighter-rouge">PipRequirement</code> version of <code class="highlighter-rouge">vulture</code> caught my eye: <code class="highlighter-rouge">0.10.0</code> whereas current version of coala is <code class="highlighter-rouge">0.14.0</code> and then it occured to me - Oh! God! may be this wasn’t introduced in this version of vulture, quickly upgraded to latest version and everything worked like a charm.</p>
+
+<h2 id="my-laptop">My Laptop</h2>
+
+<p>I finally managed to buy a new Macbook Air. Yay!
+Previously, I was using a Dell Inspiron Mini Netbook - Intel Atom, 2 GB RAM, 10.5 inches screen and a tampered keyboard, and absolutely no battery life.
+I am crazy happy. :-)</p>
+
+
+
+    </article>
+    <span class="print-footer">Meeting Jendrik - June 10, 2017 - Rahul Jha</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:rahul722j@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/rahul722j"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/RJ722"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;RAHUL JHA</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Musings of RJ722 </a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>

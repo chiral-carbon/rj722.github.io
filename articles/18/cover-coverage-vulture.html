@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Do we really need to cover coverage with Vulture?</title>
+  <meta name="description" content="The team behind Vulture (a tool used for detecting unused Python code) decidednot to integrate it with coverage (a tool for measuring code coverage of Python...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="https://rj722.github.io/articles/18/cover-coverage-vulture">
+
+  <link rel="alternate" type="application/rss+xml" title="Rahul Jha" href="https://rj722.github.io/feed.xml" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113881917-2"></script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'UA-113881917-2');
+  </script>
+
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+  	
+		
+		    
+		      <a href="/">RJ722's blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About RJ722</a>
+		    
+	    
+  	
+		
+  	
+		
+		    
+		      <a href="/newsletter/">Subscribe</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Do we really need to cover coverage with Vulture?</h1>
+<p class="subtitle">August 18, 2018</p>
+
+<p>The team behind Vulture (a tool used for detecting unused Python code) decided
+not to integrate it with coverage (a tool for measuring code coverage of Python
+programs). Read why!</p>
+
+<!--more-->
+
+<h2 id="coverage---wow-so-accurate---we-need-it"><code class="highlighter-rouge">coverage</code> - wow, so accurate - we need it…?</h2>
+
+<p>When this phase kicked in, I was still wrapping my head around coverage - My
+plan was to get coverage integrated with Vulture, which would allow users to
+“transfer” the results from coverage to Vulture so that the false positives were
+automatically detected and thereby supressed. It sounded so neat and moreso
+doable (using an interminnent xml file) and so naturally, I just quickly got
+down to nuts and bolts and started a Pull Request. But, alongst those splendid
+colors of awesome functionality, Jendrik comes in and talks a bunch on why we
+shouldn’t do it. I could extrapolate the following reasons:</p>
+<ul>
+  <li>We already created an easier, dynamic and robust way to create and manage
+whitelists (<code class="highlighter-rouge">--make-whitelist</code>) which shall eliminate the need of having 10
+different things for dealing with false positives.</li>
+  <li>Coverage is a tool for dynamic analysis (which requires your code to be
+actually run) and is therefore slow, but gives much more accurate results.
+And, if we already have results from coverage, why would we then need Vulture
+for??</li>
+  <li>Vulture is supposed to be a static analysis tool.</li>
+  <li>Vulture would’ve no longer been independent of external modules.</li>
+</ul>
+
+<p>But, still it struck me as a little odd at that time because I thought that the
+functionality was optional and if someone didn’t want it, he would simply just
+not use it - simple. By now, may be you’ve judged that that this was the
+<em>“feature syndrome”</em> talking (The more features we have, the more usable we are)
+and yes, you’re right. Luckily, Jendrik foresaw this early and redirected me
+towards <a href="this blog post">http://neugierig.org/software/blog/2018/07/options</a>
+which explains why it’s actually toxic for anything to have more “options” and
+how it was an expensive process in terms of time spent on writing, documenting
+and maintaining it.</p>
+
+<p>I’m very thankful of Jendrik and proud of the fact that we’ve still managed to
+keep the workflow involved when using <code class="highlighter-rouge">Vulture</code> as simple as it could get. :-)</p>
+
+
+
+    </article>
+    <span class="print-footer">Do we really need to cover coverage with Vulture? - August 18, 2018 - Rahul Jha</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:rahul722j@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/rahul722j"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/RJ722"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;RAHUL JHA</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Musings of RJ722 </a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>

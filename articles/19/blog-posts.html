@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Announcing new blog series on Deep Learning</title>
+  <meta name="description" content=" TLDR: I’m gonna be digitizing my notes from Andrew Ng’s course -deeplearning.ai as a series of blog posts over the next few days.  Staytuned!  :) ">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="https://rj722.github.io/articles/19/blog-posts">
+
+  <link rel="alternate" type="application/rss+xml" title="Rahul Jha" href="https://rj722.github.io/feed.xml" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113881917-2"></script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'UA-113881917-2');
+  </script>
+
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+  	
+		
+		    
+		      <a href="/">RJ722's blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About RJ722</a>
+		    
+	    
+  	
+		
+  	
+		
+		    
+		      <a href="/newsletter/">Subscribe</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Announcing new blog series on Deep Learning</h1>
+<p class="subtitle">May 27, 2019</p>
+
+<p><i> <strong>TLDR</strong>: I’m gonna be digitizing my notes from Andrew Ng’s course -
+<a href="https://deeplearning.ai">deeplearning.ai</a> as a series of blog posts over the next few days. <a href="/newsletter"> Stay
+tuned! </a> :) </i></p>
+
+<!--more-->
+
+<h2 id="background">Background</h2>
+
+<p><span class="newthought">As</span>  you might have noticed during the past few days, on the
+recommendation of my mentor and a dear friend, <a href="https://janusworx.com/">Jason Braganza</a>, I have
+been trying to push beyond my boundaries and trying to get some rust off of this
+blog.</p>
+
+<p>I also thought that this was a nice opportunity to get myself out of my comfort
+zone and write about different themes which I had always enjoyed reading but
+never really dread to write about, things like politics and philosophy.</p>
+
+<p><label for="mf-id-xkcd" class="margin-toggle">⊕</label><input type="checkbox" id="mf-id-xkcd" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="https://imgs.xkcd.com/comics/machine_learning.png" /><br />There’s an xkcd for everything</span></p>
+
+<p>Although I really enjoyed nearly every part of such writing: churning out
+research material, looking for counter statements, understanding the argument as
+a whole &amp; putting it all together, etc., but I find that to put together a
+rather convincing post, it takes up a lot of time and effort, something which my
+upcoming schedule wouldn’t allow.</p>
+
+<p>Instead, I’ve come up with a new scheme. I am currently revising the first few
+courses of the popular online specialization taught by Andrew Ng,
+<a href="https://deeplearning.ai">deeplearning.ai</a> and this blog serves as a great opportunity to digitize my
+notes and making them publicly available.</p>
+
+<p>And the selfish reason behind me doing this “noble task” is best <a href="https://hackernoon.com/interview-with-deep-learning-researcher-and-leader-of-openmined-andrew-trask-77cd33570a8c">summarized by 
+Andrew Trask</a>, who is a DeepMind Researcher and a Ph.D. student at
+Oxford University. He’s also the author of the amazing book: Grokking Deep
+Learning. Here’s what he says:</p>
+
+<blockquote>
+  <p>The secret to getting into the deep learning community is high quality
+ blogging. Read 5 different blog posts about the same subject and then try to
+ synthesize your own view. Don’t just write something ok, either — take 3 or 4
+ full days on a post and try to make it as short and simple (yet complete) as
+ possible. Re-write it multiple times. As you write and re-write and think
+ about the topic you’re trying to teach, you will come to understand it.
+ Furthermore, other people will come to understand it as well (and they’ll
+ understand that you understand it, which helps you get a job). Most folks
+ want someone to hold their hand through the process, but the best way to
+ learn is to write a blogpost that holds someone else’s hand, step by step
+ (with toy code examples!). Also, when you do code examples, don’t write some
+ big object-oriented mess. Fewer lines the better. Make it a script. Only use
+ numpy. Teach what each line does. Rinse and repeat. When you feel comfortable
+ enough you’ll then be able to do this with recently published papers — which
+ is when you really know you’re making progress!</p>
+</blockquote>
+
+<p>Rachel Thomas, who is a Ph.D. in Math, a professor at USF Data Institute and is
+very well known as the cofounder of <a href="https://fast.ai">fast.ai</a>, has the <a href="https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045"> following to say
+for blogs </a>:</p>
+
+<blockquote>
+  <p>It’s like a resume, only better. I know of a few people who have had blog
+posts lead to job offers!</p>
+
+  <p>Helps you learn. Organizing knowledge always helps me synthesize my own ideas.
+One of the tests of whether you understand something is whether you can
+explain it to someone else. A blog post is a great way to do that.</p>
+</blockquote>
+
+<p>Now, those are excellent reasons for me to start blogging already, but I’ve an
+additional whip from our very own <a href="https://janusworx.com/">Mr. J. Braganza</a> looming over my head
+waiting to crank down on me the moment I stop writing, so I rather prefer to
+continue!</p>
+
+<p>Thanks again <a href="https://janusworx.com/">Jason</a>!</p>
+
+<p>P.S. For regular updates, please <a href="/newsletter">subscribe to my newsletter</a> or <a href="/feed.xml">to
+the RSS feed</a>.</p>
+
+
+
+
+    </article>
+    <span class="print-footer">Announcing new blog series on Deep Learning - May 27, 2019 - Rahul Jha</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:rahul722j@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/rahul722j"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/RJ722"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;RAHUL JHA</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Musings of RJ722 </a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>

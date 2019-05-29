@@ -1,17 +1,374 @@
----
-layout: full-width
-title: RJ722's blog
-# Note that this index page uses a full-width layout!
----
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <h1 class="content-listing-header sans">Articles</h1>
+  <title>RJ722's blog</title>
+  <meta name="description" content="A means to being!">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="https://rj722.github.io/">
+
+  <link rel="alternate" type="application/rss+xml" title="Rahul Jha" href="https://rj722.github.io/feed.xml" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113881917-2"></script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'UA-113881917-2');
+  </script>
+
+</head>
+
+  <body class="full-width">
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+  	
+		
+		    
+		      <a class="active" href="/" class="active">RJ722's blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About RJ722</a>
+		    
+	    
+  	
+		
+  	
+		
+		    
+		      <a href="/newsletter/">Subscribe</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article>
+        <h1 class="content-listing-header sans">Articles</h1>
   <ul class="content-listing ">
-    {% for post in site.posts %}
+    
         <li class="listing">
           <hr class="slender">
-          <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="contrast">{{ post.title }}</h3></a>
-          <br><span class="smaller">{{ post.date | date: "%B %-d, %Y" }}</span>  <br/>
-          <div>{{ post.excerpt }}</div>
+          <a href="/articles/19/blog-posts"><h3 class="contrast">Announcing new blog series on Deep Learning</h3></a>
+          <br><span class="smaller">May 27, 2019</span>  <br/>
+          <div><p><i> <strong>TLDR</strong>: I’m gonna be digitizing my notes from Andrew Ng’s course -
+<a href="https://deeplearning.ai">deeplearning.ai</a> as a series of blog posts over the next few days. <a href="/newsletter"> Stay
+tuned! </a> :) </i></p>
+
+</div>
         </li>
-    {% endfor %}
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/19/revolution-and-systems"><h3 class="contrast">Silk Road, Revolutions and Systems</h3></a>
+          <br><span class="smaller">May 26, 2019</span>  <br/>
+          <div><p>Today, I read the <a href="https://www.wired.com/2015/04/silk-road-1/">story of Silk Road</a> - How an idealist, Ross
+Ulbricht, tired of chasing success the old school way, found his way around
+creating an online <label for="sn-id-darknet" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-id-darknet" class="margin-toggle" /><span class="sidenote">As a part of the
+<a href="https://en.wikipedia.org/wiki/Darknet">darkweb</a>, it was operated as a Tor hidden service which protects
+personal privacy of users by concealing their details from anyone conducting
+network surveillance, from Government to their ISP. Additionally, all payments
+were made using <a href="https://en.wikipedia.org/wiki/Bitcoin"> Bitcoin </a>, a cryptocurrency which provides a certain
+degree of anonymity. </span> bazaar for trading of illicit materials, mainly drugs,
+which he named Silk Road.</p>
+
+<p>The aim behind writing this blog post was to think out loud and trying to build
+an insight into the oversight of some of the most prominent revolutionaries of
+the past.</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/19/freedom-of-speech"><h3 class="contrast">Freedom of Speech, Authoritarianism, Freedom of Press and Faiz</h3></a>
+          <br><span class="smaller">May 22, 2019</span>  <br/>
+          <div><p>Right to Free Speech is essential for a democracy. This blog post aims to shed
+some light on the recent authoritarian attempts made by hindutva-right-wing to
+curb free speech and how can we fight back.</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/19/a-glimpse-into-the-darkness"><h3 class="contrast">A glimpse into the darkness: the 'Brutish' rule in India</h3></a>
+          <br><span class="smaller">May 18, 2019</span>  <br/>
+          <div><p>A second-generation freeborn attempts to understand the impact and aftermath of
+colonization of India by British. It turns out that even an educated Indian of
+today is still not aware of the atrocities and turmoil it caused the country.</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/18/cover-coverage-vulture"><h3 class="contrast">Do we really need to cover coverage with Vulture?</h3></a>
+          <br><span class="smaller">August 18, 2018</span>  <br/>
+          <div><p>The team behind Vulture (a tool used for detecting unused Python code) decided
+not to integrate it with coverage (a tool for measuring code coverage of Python
+programs). Read why!</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/18/dynamic-analysis-with-vulture"><h3 class="contrast">Dynamic code analysis with Vulture</h3></a>
+          <br><span class="smaller">June 27, 2018</span>  <br/>
+          <div><p>This is a follow up post of <a href="https://rj722.github.io/blog/2018/05/19/why-use-coverage-to-find-which-python-code-is-run/">Why use coverage to find which parts of a python
+code were executed?</a> - there we discussed how we stumbled on this plan of
+dynamic code analysis with vulture. Here, we talk about the development process
+we (the Vulture team) underwent to integrate Vulture with
+<a href="https://github.com/nedbat/coveragepy">coverage.py</a> in order to automatically generate a whitelist of
+functions which Vulture reports as unused but are actually being used.</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/18/gsoc-18-phase-1"><h3 class="contrast">Google Summer of Code 2018 - Phase 1</h3></a>
+          <br><span class="smaller">June 14, 2018</span>  <br/>
+          <div><p>Here’s my work progress with the first phase of Google Summer of Code 2018.</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/18/vulture-how-to"><h3 class="contrast">The story of Dead Code, Vulture and scavenging</h3></a>
+          <br><span class="smaller">May 30, 2018</span>  <br/>
+          <div><p>It isn’t uncommon for software developers to encounter some code that they had
+written in the past and reflecting on it - the most common reaction would
+probably be “It must be the most horrible thing I wrote”. But sometimes, there’s
+that aha moment where you find something and you are instantly gratified and
+proud of yourself, “Oh, this is so beautiful, no wonder it took so many
+sleepless nights”. However glamorous it may sound, but it is indeed a difficult
+task to write and maintain such code, and this is where automatic tools come in
+to the picture. Let’s discuss about one such tool - <a href="https://github.com/jendrikseipp/vulture">Vulture</a>, which
+helps discover unused stuff in Python code.</p>
+
+<p>So, today we present to you the voodoo which throws out unused code.</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/18/why-use-coverage-to-find-which-python-code-is-run"><h3 class="contrast">Why use coverage to find which parts of a python code were executed?</h3></a>
+          <br><span class="smaller">May 19, 2018</span>  <br/>
+          <div><p>In this post, I’ll walk you through the decision making process the team behind
+Vulture underwent to come up with a way to deal with false positives in it’s
+results.</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/18/a-meeting-with-my-gsoc'18-mentors"><h3 class="contrast">A meeting with my GSoC'18 mentors</h3></a>
+          <br><span class="smaller">May 13, 2018</span>  <br/>
+          <div><p>Tell me and I forget, teach me and I may remember, involve me and I learn. This
+blog post is a public memoir of an online meeting I had with my GSoC mentors.
+Kudos to me for having such awesome mentors! :P</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/18/gsoc-2018"><h3 class="contrast">GSoC 2018</h3></a>
+          <br><span class="smaller">May 10, 2018</span>  <br/>
+          <div><blockquote>
+  <p>“Good luck is a residue of preparation.”
+― Jack Youngblood</p>
+</blockquote>
+
+<p>Getting selected as a Google Summer of Code student with coala was a
+breakthrough for me. The coala community touched me on every aspect of open
+source software development, especially how to get along with peers (and troll
+them :-p). And it has happened again - I am a student with coala one more time,
+and I look forward to learn yet more from my dear mentors and the beloved coala
+community.</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/18/statement-of-chaos"><h3 class="contrast">Statement of Chaos</h3></a>
+          <br><span class="smaller">March 30, 2018</span>  <br/>
+          <div><p>Should I go for a job or an MS?</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/18/organising-the-mozilla-visit"><h3 class="contrast">Organising the Mozilla visit</h3></a>
+          <br><span class="smaller">March 3, 2018</span>  <br/>
+          <div><p>This blog post is about my experience with organising and attending a Mozilla
+session at my college.</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/18/how-to-get-started-with-self-driving-cars"><h3 class="contrast">How to get started with self driving cars</h3></a>
+          <br><span class="smaller">January 11, 2018</span>  <br/>
+          <div>
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/17/tmp-day-1"><h3 class="contrast">TMP Day 1: Introducing three months long backbreaking goals</h3></a>
+          <br><span class="smaller">August 24, 2017</span>  <br/>
+          <div><p>Challenging my limits - Completing 4 ridiculously difficult programs in a year.</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/17/phase-2"><h3 class="contrast">Phase-2</h3></a>
+          <br><span class="smaller">July 24, 2017</span>  <br/>
+          <div><p>Phase 2 is coming to an end today (24’th of July, 11:30 PM IST). It had been an
+intensive and healthy work-period with a high steep-learning curve. Let me
+reflect on my journey throughout the month.</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/17/phase-1"><h3 class="contrast">Phase-1</h3></a>
+          <br><span class="smaller">June 24, 2017</span>  <br/>
+          <div><p>Phase 1 of the coding period ended on 26’th June 23:30 GMT+5:30.
+With this post, I would like to reflect upon the development progress so far and
+share some of the challenges I faced.</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/17/change"><h3 class="contrast">change</h3></a>
+          <br><span class="smaller">June 20, 2017</span>  <br/>
+          <div><p>Trying to change my habits in a way it feels fun!</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/17/meeting-jendrik"><h3 class="contrast">Meeting Jendrik</h3></a>
+          <br><span class="smaller">June 10, 2017</span>  <br/>
+          <div><p>A meeting with my mentor, tweaking the VultureBear and my new laptop. Ahh, perfect!</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/17/coala"><h3 class="contrast">coala - COde AnaLysis Application</h3></a>
+          <br><span class="smaller">June 1, 2017</span>  <br/>
+          <div><p>How working with coala changed my life? :-)</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/17/project-timeline"><h3 class="contrast">GSoC Project Timeline</h3></a>
+          <br><span class="smaller">May 28, 2017</span>  <br/>
+          <div><p>Here is a description of how I plan to manage my schedule during GSoC period.</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/17/gsoc_project"><h3 class="contrast">GSoC Project</h3></a>
+          <br><span class="smaller">May 20, 2017</span>  <br/>
+          <div><p>The project I will be working this (G) summer (oC)</p>
+
+</div>
+        </li>
+    
+        <li class="listing">
+          <hr class="slender">
+          <a href="/articles/17/gsoc-17"><h3 class="contrast">Getting into GSoC</h3></a>
+          <br><span class="smaller">May 3, 2017</span>  <br/>
+          <div><p>Hello, this post is a brief description of what is GSoC and how I wrote my
+project proposal for GSoC</p>
+
+</div>
+        </li>
+    
   </ul>
+
+    </article>
+    <span class="print-footer">RJ722's blog - Rahul Jha</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:rahul722j@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//www.twitter.com/rahul722j"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/RJ722"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;RAHUL JHA</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Musings of RJ722 </a> in <a href="//jekyllrb.com">Jekyll</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>
