@@ -4,7 +4,7 @@ title: "Silk Road, Revolutions and Systems"
 categories: blog
 ---
 
-Today, I read the [story of Silk Road][silkroad]: how an idealist named Ross
+Today, I read the [story of Silk Road][silkroad]: how the young idealist Ross
 Ulbricht, tired of chasing success the old school way, found his way around the **darkweb** to 
 create an online {% sidenote 'sn-id-darknet' "As a part of the
 [darkweb][darknet], it was operated as a *Tor* hidden service which protected the
@@ -50,7 +50,7 @@ given point in our lives. And, like a flowing river, those same experiences, and
 those yet to come, continue to influence and reshape the person we are, and the
 person we become. None of us are the same as we were yesterday, nor will be
 tomorrow."' %}
-stemming from the influence Ludwig von Mises - an Austrian economist who was
+stemming from the influence Ludwig von Mises - an Austrian economist 
 described in the [story][silkroad] as "a totem of the modern American libertarian
 orthodoxy" - had on Ross. According to von Mises, a citizen must have economic
 freedom to be politically and morally free.
