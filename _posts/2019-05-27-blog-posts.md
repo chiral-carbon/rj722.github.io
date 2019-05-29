@@ -78,9 +78,9 @@ P.S. For regular updates, please [subscribe to my newsletter][newsletter] or [to
 the RSS feed][feed].
 
 [dl]: https://deeplearning.ai
-[feed]: http://localhost:4000/feed.xml
 [jason]: https://janusworx.com/
 [andrew]: https://hackernoon.com/interview-with-deep-learning-researcher-and-leader-of-openmined-andrew-trask-77cd33570a8c
 [fastai]: https://fast.ai
 [rachel]: https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045
+[feed]: /feed.xml
 [newsletter]: /newsletter
